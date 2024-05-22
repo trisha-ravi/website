@@ -1,0 +1,53 @@
+/* Contact.css */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.contact {
+    text-align: center; 
+    width: 1400px;  
+    height: 650px; 
+    padding: 20px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, lightblue 0%, lightgreen 100%); 
+    align-self: center;
+    margin: 0 auto; 
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.contact.visible {
+    opacity: 1;
+}
+
+.contact h2 {
+    font-size: 2.5rem; 
+    margin-top: 240px;
+    margin-bottom: 1rem; 
+}
+
+.contact p {
+    font-size: 1.2rem; 
+    margin-bottom: 1.5rem; 
+}
+
+@media (max-width: 768px) {
+    .contact {
+        width: 90%;  
+        height: auto; 
+        padding: 10px; 
+    }
+
+    .contact h2 {
+        font-size: 2rem; 
+    }
+
+    .contact p {
+        font-size: 1rem; 
+    }
+}

@@ -1,0 +1,94 @@
+/* About container styling */
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative; 
+}
+
+/* About section styling */
+.about {
+  position: relative; 
+  text-align: center; 
+  width: 1400px; 
+  height: 650px; 
+  padding: 20px; 
+  border-radius: 20px; 
+  background: linear-gradient(135deg, #FFFFCC 0%, #FFA500 100%); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  margin: 0 auto; 
+  overflow: hidden; 
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+/* Make the section visible when the .visible class is added */
+.about.visible {
+  opacity: 1;
+}
+
+/* About image styling */
+.about-image {
+  position: absolute; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  left: 100px; 
+  width: 400px; 
+  height: auto; 
+  border-radius: 50%; 
+}
+
+/* About text styling */
+.about-text {
+  position: absolute; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  left: calc(100px + 400px + 100px); 
+  text-align: left; 
+}
+
+/* About header styling */
+.about-text h2 {
+  font-size: 2.5rem; 
+  margin-top: 0; 
+  margin-bottom: 1rem; 
+}
+
+/* About paragraph styling */
+.about-text p {
+  font-size: 1.2rem; 
+  margin-bottom: 0; 
+}
+
+.about-paragraph {
+  padding-right: 100px; 
+}
+
+/* Signature image styling */
+.signature {
+  position: absolute;
+  bottom: 70px; 
+  right: 120px; 
+  width: 150px; 
+  height: auto; 
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .about {
+    width: 90%; 
+    height: auto; 
+    padding: 10px; 
+  }
+
+  .about h2 {
+    font-size: 2rem; 
+  }
+
+  .about p {
+    font-size: 1rem; 
+  }
+}

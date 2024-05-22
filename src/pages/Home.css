@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'Golden';
+    src: url('fonts/Golden.ttf') format('truetype');
+}
+
+/* Home container */
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Home Section */
+.home {
+    text-align: center; 
+    width: 1400px;  
+    height: 650px; 
+    padding: 20px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, orange 0%, hotpink 100%); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-self: center;
+    margin: 0 auto; 
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.home.visible {
+    opacity: 1;
+}
+
+/* Header styling */
+.home h2 {
+    font-size: 10.5rem; 
+    margin-top: 190px;
+    margin-bottom: 1rem; 
+    font-family: 'Golden', sans-serif;
+}
+
+/* Paragraph styling */
+.home p {
+    font-size: 1.2rem; 
+    margin-bottom: 1.5rem; 
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .home {
+        width: 90%;  
+        height: auto; 
+        padding: 10px; 
+    }
+
+    .home h2 {
+        font-size: 2rem; 
+    }
+
+    .home p {
+        font-size: 1rem; 
+    }
+}

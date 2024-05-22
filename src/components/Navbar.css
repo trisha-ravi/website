@@ -1,0 +1,37 @@
+.navbar {
+  position: fixed; /* Set the navbar position to fixed */
+  top: 30px; /* Adjust as needed */
+  left: 50%; /* Position it horizontally at the center */
+  transform: translateX(-50%); /* Center it horizontally */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  background-color: #F3F3F3; /* Light gray background */
+  color: #6cb2eb; /* Light blue text color */
+  border-radius: 100px; /* Increased border-radius for more rounding */
+  padding: 0 50px; /* Add spacing at the beginning and end */
+  z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  gap: 2rem; /* Adjust spacing between items */
+  align-items: center; /* Center vertically */
+  padding-left: 0; /* Reset padding */
+}
+
+.navbar ul li:first-child {
+  margin-left: 0; /* Remove margin from the first item */
+}
+
+.navbar ul li a {
+  color: #6cb2eb; /* Light blue color for links */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar ul li a:hover {
+  color: #747bff; /* Change hover color to a slightly darker shade of blue */
+}
+
