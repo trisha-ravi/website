@@ -1,4 +1,9 @@
-/* Update CSS to center everything */
+@font-face {
+  font-family: 'Golden';
+  src: url('/Golden.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
