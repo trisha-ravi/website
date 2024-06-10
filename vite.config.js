@@ -3,8 +3,11 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: "/website", // Ensure that the base URL is set correctly
+  base: '/', // Set the base URL to the root
   build: {
-    assetsDir: "", // Set the assets directory to the root
+    assetsDir: '', // Set the assets directory to the root
+  },
+  githubPages: {
+    root: '/', // Set the root directory for GitHub Pages
   },
 })
