@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
-import Illustrations from './pages/Illustrations';
+//import Illustrations from './pages/Illustrations';
 import Contact from './pages/Contact';
 
 const App = () => {
