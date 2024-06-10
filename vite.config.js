@@ -6,8 +6,5 @@ export default defineConfig({
   base: '/', // Set the base URL to the root
   build: {
     assetsDir: '', // Set the assets directory to the root
-  },
-  githubPages: {
-    root: '/', // Set the root directory for GitHub Pages
-  },
+  }
 })
