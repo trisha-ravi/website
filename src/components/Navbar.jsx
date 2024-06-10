@@ -9,7 +9,7 @@ const Navbar = () => {
         <li><Link to="/website">Home</Link></li>
         <li><Link to="/about">About</Link></li>
         <li><Link to="/projects">Projects</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
+        <li><a href="https://www.linkedin.com/in/trisha-ravichandran/" target="_blank" rel="noopener noreferrer">Contact</a></li>
       </ul>
     </nav>
   );

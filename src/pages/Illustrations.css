@@ -1,0 +1,43 @@
+/* Illustrations.css */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  .gallery-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .gallery-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .gallery-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Add this line for rounded corners */
+  }
+  
+  .gallery-title {
+    font-size: 1.5em;
+    margin: 15px 0;
+    color: #333;
+  }
+  
+  .gallery-description {
+    font-size: 1em;
+    margin: 0 15px 15px;
+    color: #666;
+  }
+  
