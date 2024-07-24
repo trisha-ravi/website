@@ -6,25 +6,25 @@
   min-height: 100vh;
   padding: 20px;
   box-sizing: border-box;
-  position: relative; /* Added to ensure absolute positioning works correctly */
+  position: relative;
 }
 
 .intro-text {
-  position: relative; /* Ensure that the butterfly image is positioned relative to this container */
+  position: relative;
   text-align: center;
-  margin-bottom: 5px !important; 
-  padding-top: 10px !important; 
+  margin-bottom: 5px !important;
+  padding-top: 10px !important;
   color: #333;
   font-size: 2.5rem;
-  z-index: 1;
+  z-index: 2; /* Ensure text is above the curvy line */
 }
 
 .projects-intro {
-  font-size: 80px; /* Bigger font size */
-  font-weight: bold; /* Thicker font weight */
-  background: linear-gradient(to right, #F3F3F3, #F79256, #A6D9F7); /* Gradient color */
+  font-size: 80px;
+  font-weight: bold;
+  background: linear-gradient(to right, #F3F3F3, #F79256, #A6D9F7);
   -webkit-background-clip: text;
-  background-clip: text; /* Standard property for compatibility */
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
   opacity: 0;
@@ -47,7 +47,7 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin-top: 10px !important; 
+  margin-top: 10px !important;
 }
 
 .project-box-wrapper {
@@ -75,12 +75,12 @@
 
 .butterfly-overlay {
   position: absolute;
-  top: 23%; /* Adjust as needed */
-  left: 68.5%; /* Adjust as needed */
-  transform: translate(-50%, -50%); /* Center the image */
-  width: 100px; /* Adjust width as needed */
-  height: auto; /* Maintain aspect ratio */
+  top: 23%;
+  left: 68.5%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: auto;
   z-index: 0; /* Ensure it is behind the text */
-  opacity: 0; /* Start with the image invisible */
+  opacity: 0;
   animation: fadeIn 10s forwards; /* Apply the fade-in animation */
 }

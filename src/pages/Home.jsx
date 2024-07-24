@@ -1,4 +1,4 @@
-// Home.jsx
+// src/Home.jsx
 import React, { useEffect, useRef } from 'react';
 import './Home.css';
 

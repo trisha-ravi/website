@@ -6,7 +6,16 @@ import butterfly from '../assets/butterfly.png';
 
 const Projects = () => {
   const projects = [
-    { id: 1, title: 'Spotify Wrapped App', description: 'Spotify Wrapped functionality redesigned.', gradientColors: ['#F3F3F3', '#F79256', '#A6D9F7'], size: { width: 1300, height: 650 }, position: 'relative', image: wrapped, url: 'https://mewkat36.wixstudio.io/spotifywrapped' },
+    {
+      id: 1,
+      title: 'Spotify Wrapped App',
+      description: 'Spotify Wrapped functionality redesigned.',
+      gradientColors: ['#F3F3F3', '#F79256', '#A6D9F7'],
+      size: { width: 1300, height: 650 },
+      position: 'relative',
+      image: wrapped,
+      url: 'https://mewkat36.wixstudio.io/spotifywrapped'
+    },
   ];
 
   const projectRefs = useRef([]);
@@ -40,7 +49,9 @@ const Projects = () => {
   return (
     <div className="projects-container">
       <div className="intro-text">
-        <p className="projects-intro animate-in"><strong>welcome to my portfolio, where innovation comes to life!</strong></p>
+        <p className="projects-intro animate-in">
+          <strong>welcome to my portfolio, where innovation comes to life!</strong>
+        </p>
         <img src={butterfly} alt="Butterfly" className="butterfly-overlay" />
       </div>
       <div className="project-list">
