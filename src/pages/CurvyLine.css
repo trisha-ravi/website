@@ -36,5 +36,5 @@
   stroke-dasharray: 1000; /* Set a large value to cover the line length */
   stroke-dashoffset: 0; /* Start with no offset */
   animation: draw 5s forwards, erase 5s forwards;
-  animation-delay: 0s, 5s infinite; /* Start erasing animation after drawing */
+  animation-delay: 0s, 5s; /* Start erasing animation after drawing */
 }
