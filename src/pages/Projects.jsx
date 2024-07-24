@@ -1,5 +1,7 @@
+// src/Projects.js
 import React, { useEffect, useRef } from 'react';
 import ProjectBox from '../components/ProjectBox';
+import CurvyLine from './CurvyLine'; // Import the CurvyLine component
 import './Projects.css';
 import wrapped from '../assets/wrapped-logo.png';
 import butterfly from '../assets/butterfly.png';
@@ -49,6 +51,7 @@ const Projects = () => {
   return (
     <div className="projects-container">
       <div className="intro-text">
+        <CurvyLine/>
         <p className="projects-intro animate-in">
           <strong>welcome to my portfolio, where innovation comes to life!</strong>
         </p>

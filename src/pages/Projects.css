@@ -1,3 +1,4 @@
+/* src/Projects.css */
 .projects-container {
   display: flex;
   flex-direction: column;
@@ -7,6 +8,7 @@
   padding: 20px;
   box-sizing: border-box;
   position: relative;
+  overflow: hidden; /* To prevent overflow issues */
 }
 
 .intro-text {
@@ -40,6 +42,29 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+.curvy-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%; /* Ensure it spans the width of the container */
+  z-index: 1; /* Ensure it is behind the text */
+  pointer-events: none; /* Prevent interaction with the SVG */
+}
+
+.line {
+  animation: draw 5s infinite;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 0, 1000;
+  }
+  100% {
+    stroke-dasharray: 1000, 0;
   }
 }
 
