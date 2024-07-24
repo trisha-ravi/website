@@ -6,22 +6,25 @@
   min-height: 100vh;
   padding: 20px;
   box-sizing: border-box;
+  position: relative; /* Added to ensure absolute positioning works correctly */
 }
 
 .intro-text {
+  position: relative; /* Ensure that the butterfly image is positioned relative to this container */
   text-align: center;
   margin-bottom: 5px !important; 
   padding-top: 10px !important; 
   color: #333;
   font-size: 2.5rem;
+  z-index: 1;
 }
 
 .projects-intro {
-  font-size: 80px; /* bigger font size */
-  font-weight: bold; /* thicker font weight */
-  background: linear-gradient(to right, #F3F3F3, #F79256, #A6D9F7); /* gradient color */
+  font-size: 80px; /* Bigger font size */
+  font-weight: bold; /* Thicker font weight */
+  background: linear-gradient(to right, #F3F3F3, #F79256, #A6D9F7); /* Gradient color */
   -webkit-background-clip: text;
-  background-clip: text; /* standard property for compatibility */
+  background-clip: text; /* Standard property for compatibility */
   -webkit-text-fill-color: transparent;
   text-align: center;
   opacity: 0;
@@ -68,4 +71,16 @@
 
 .mr-10 {
   margin-right: 0px;
+}
+
+.butterfly-overlay {
+  position: absolute;
+  top: 23%; /* Adjust as needed */
+  left: 68.5%; /* Adjust as needed */
+  transform: translate(-50%, -50%); /* Center the image */
+  width: 100px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 0; /* Ensure it is behind the text */
+  opacity: 0; /* Start with the image invisible */
+  animation: fadeIn 10s forwards; /* Apply the fade-in animation */
 }

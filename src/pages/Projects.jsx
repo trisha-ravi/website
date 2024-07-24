@@ -1,8 +1,8 @@
-// Projects.jsx
 import React, { useEffect, useRef } from 'react';
 import ProjectBox from '../components/ProjectBox';
 import './Projects.css';
 import wrapped from '../assets/wrapped-logo.png';
+import butterfly from '../assets/butterfly.png'; // Import butterfly image
 
 const Projects = () => {
   const projects = [
@@ -41,6 +41,7 @@ const Projects = () => {
     <div className="projects-container">
       <div className="intro-text">
         <p className="projects-intro animate-in"><strong>welcome to my portfolio, where innovation comes to life!</strong></p>
+        <img src={butterfly} alt="Butterfly" className="butterfly-overlay" />
       </div>
       <div className="project-list">
         {projects.map((project, index) => (
