@@ -34,7 +34,14 @@ const Home = () => {
   return (
     <div className="home-container">
       <div ref={homeRef} className="home">
-        <h2><strong>trisha</strong></h2>
+        <h2 className="fade-in">
+          <span className="letter">h</span>
+          <span className="letter">e</span>
+          <span className="letter">l</span>
+          <span className="letter">l</span>
+          <span className="letter">o</span>
+          <span className="letter">o</span>
+        </h2>
       </div>
     </div>
   );

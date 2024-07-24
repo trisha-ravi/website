@@ -40,7 +40,7 @@ const Projects = () => {
   return (
     <div className="projects-container">
       <div className="intro-text">
-        <p><strong>Here are some of the amazing projects I've worked on:</strong></p>
+        <p className="projects-intro animate-in"><strong>welcome to my portfolio, where innovation comes to life!</strong></p>
       </div>
       <div className="project-list">
         {projects.map((project, index) => (

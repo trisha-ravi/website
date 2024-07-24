@@ -35,3 +35,7 @@
   color: #747bff; /* Change hover color to a slightly darker shade of blue */
 }
 
+.navbar.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
