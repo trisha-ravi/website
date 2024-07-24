@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import ProjectBox from '../components/ProjectBox';
 import './Projects.css';
 import wrapped from '../assets/wrapped-logo.png';
-import butterfly from '../assets/butterfly.png'; // Import butterfly image
+import butterfly from '../assets/butterfly.png';
 
 const Projects = () => {
   const projects = [
