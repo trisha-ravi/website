@@ -1,4 +1,3 @@
-// src/Home.jsx
 import React, { useEffect, useRef } from 'react';
 import './Home.css';
 
@@ -40,7 +39,7 @@ const Home = () => {
           <span className="letter">l</span>
           <span className="letter">l</span>
           <span className="letter">o</span>
-          <span className="letter">.</span>
+          <span className="dot"></span>
         </h2>
       </div>
     </div>
