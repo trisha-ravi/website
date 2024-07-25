@@ -40,7 +40,7 @@ const Home = () => {
           <span className="letter">l</span>
           <span className="letter">l</span>
           <span className="letter">o</span>
-          <span className="letter">o</span>
+          <span className="letter">.</span>
         </h2>
       </div>
     </div>
