@@ -11,7 +11,7 @@ const Projects = () => {
     {
       id: 1,
       title: 'Spotify Wrapped App',
-      description: 'Spotify Wrapped functionality redesigned.',
+      description: 'A web application designed to provide users with an engaging and visually appealing experience, allowing them to view their annual music insights anytime. As a key contributor, I focused on UI design to create an aesthetically pleasing and user-friendly interface. Additionally, I played a significant role in backend development, ensuring the smooth integration of UI elements with backend functionalities for a seamless user experience. My efforts in designing innovative features and cohesive integration resulted in highly positive user feedback.',
       gradientColors: ['#F3F3F3', '#F79256', '#A6D9F7'],
       size: { width: 1300, height: 650 },
       position: 'relative',
