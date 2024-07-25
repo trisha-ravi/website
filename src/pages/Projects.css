@@ -56,7 +56,7 @@
 }
 
 .line {
-  animation: draw 5s infinite;
+  animation: draw 5s;
 }
 
 @keyframes draw {
