@@ -35,6 +35,6 @@
 .line {
   stroke-dasharray: 1000;
   stroke-dashoffset: 0;
-  animation: draw 5s forwards, erase 5s forwards;
+  animation: draw 5s forwards;
   animation-delay: 0s, 5s;
 }
