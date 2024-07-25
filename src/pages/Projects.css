@@ -51,7 +51,7 @@
   left: 0;
   transform: translateY(-50%);
   width: 100%; /* Ensure it spans the width of the container */
-  z-index: 1; /* Ensure it is behind the text */
+  z-index: -1; /* Ensure it is behind the text */
   pointer-events: none; /* Prevent interaction with the SVG */
 }
 
