@@ -1,23 +1,23 @@
 /* src/CurvyLine.css */
 @keyframes draw {
   0% {
-    stroke-dasharray: 0, 1000; /* Line starts as invisible */
+    stroke-dasharray: 0, 1000; 
     stroke-dashoffset: 0;
   }
   100% {
-    stroke-dasharray: 1000, 0; /* Line is fully visible */
+    stroke-dasharray: 1000, 0; 
     stroke-dashoffset: 0;
   }
 }
 
 @keyframes erase {
   100% {
-    stroke-dasharray: 1000, 0; /* Line starts fully visible */
+    stroke-dasharray: 1000, 0; 
     stroke-dashoffset: 0;
   }
   0% {
-    stroke-dasharray: 0, 1000; /* Line is fully erased */
-    stroke-dashoffset: 1000; /* Move offset to the end, effectively erasing */
+    stroke-dasharray: 0, 1000; 
+    stroke-dashoffset: 1000; 
   }
 }
 
@@ -25,16 +25,16 @@
   position: absolute;
   top: 50%;
   left: 0;
-  transform: translateY(-50%); /* Adjust if needed */
-  width: 100%; /* Ensure it spans the width of the container */
-  height: 200px; /* Adjust height as needed */
-  z-index: -1; /* Ensure it is behind the text */
-  pointer-events: none; /* Prevent interaction with the SVG */
+  transform: translateY(-50%); 
+  width: 100%;
+  height: 200px;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .line {
-  stroke-dasharray: 1000; /* Set a large value to cover the line length */
-  stroke-dashoffset: 0; /* Start with no offset */
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
   animation: draw 5s forwards, erase 5s forwards;
-  animation-delay: 0s, 5s; /* Start erasing animation after drawing */
+  animation-delay: 0s, 5s;
 }

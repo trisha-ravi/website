@@ -26,7 +26,7 @@
   .gallery-image {
     width: 100%;
     height: auto;
-    border-radius: 8px; /* Add this line for rounded corners */
+    border-radius: 8px; 
   }
   
   .gallery-title {

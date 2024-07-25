@@ -1,7 +1,7 @@
 // src/Projects.js
 import React, { useEffect, useRef } from 'react';
 import ProjectBox from '../components/ProjectBox';
-import CurvyLine from './CurvyLine'; // Import the CurvyLine component
+import CurvyLine from './CurvyLine'; 
 import './Projects.css';
 import wrapped from '../assets/wrapped-logo.png';
 import butterfly from '../assets/butterfly.png';

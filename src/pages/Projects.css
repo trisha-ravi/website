@@ -8,7 +8,7 @@
   padding: 20px;
   box-sizing: border-box;
   position: relative;
-  overflow: hidden; /* To prevent overflow issues */
+  overflow: hidden; 
 }
 
 .intro-text {
@@ -18,7 +18,7 @@
   padding-top: 10px !important;
   color: #333;
   font-size: 2.5rem;
-  z-index: 2; /* Ensure text is above the curvy line */
+  z-index: 2; 
 }
 
 .projects-intro {
@@ -50,9 +50,9 @@
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  width: 100%; /* Ensure it spans the width of the container */
-  z-index: -1; /* Ensure it is behind the text */
-  pointer-events: none; /* Prevent interaction with the SVG */
+  width: 100%; 
+  z-index: -1; 
+  pointer-events: none;
 }
 
 .line {
@@ -105,7 +105,7 @@
   transform: translate(-50%, -50%);
   width: 100px;
   height: auto;
-  z-index: 0; /* Ensure it is behind the text */
+  z-index: 0; 
   opacity: 0;
-  animation: fadeIn 10s forwards; /* Apply the fade-in animation */
+  animation: fadeIn 10s forwards; 
 }
