@@ -6,10 +6,12 @@
   min-height: 100vh; 
   padding: 20px;
   box-sizing: border-box;
+  position: relative; 
 }
 
 /* Home Section */
 .home {
+  position: relative; 
   text-align: center; 
   width: 1400px;  
   height: 650px; 
@@ -35,19 +37,30 @@
   font-family: sans-serif;
 }
 
-/* Responsive design */
+/* Responsive design for mobile view */
 @media (max-width: 768px) {
+  .home-container {
+    padding: 40px; /* Increase padding for a larger container on mobile */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+
   .home {
-    width: 90%;  
-    height: auto; 
-    padding: 10px; 
+    width: 90vw;  /* Use viewport width to make the home section larger */
+    height: 80vh;  /* Use viewport height for better scaling */
+    padding: 20px; /* Increase padding for mobile */
+    box-sizing: border-box; /* Ensure padding is included in width */
   }
 
   .home h2 {
-    font-size: 2rem; 
+    font-size: 4rem;  /* Adjust font size for better readability on mobile */
+    margin-top: 40; /* Remove top margin for better centering */
+    margin-bottom: 40; /* Remove bottom margin for better centering */
   }
 }
 
+/* Animation and styling for fade-in effect */
 .fade-in {
   display: inline-block;
   opacity: 0;
