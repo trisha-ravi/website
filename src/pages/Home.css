@@ -1,26 +1,171 @@
+/* About container styling */
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* About section styling */
+.about {
+  position: relative;
+  text-align: center;
+  width: 1400px; /* Original desktop width */
+  height: 650px; /* Original desktop height */
+  padding: 20px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #FFFFCC 0%, #FFA500 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+/* Make the section visible when the .visible class is added */
+.about.visible {
+  opacity: 1;
+}
+
+/* About image styling */
+.about-image {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 100px;
+  width: 400px; /* Original desktop width */
+  height: auto;
+  border-radius: 50%;
+}
+
+/* About text styling */
+.about-text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: calc(100px + 400px + 100px);
+  text-align: left;
+}
+
+/* About header styling */
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* About paragraph styling */
+.about-text p {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+.about-paragraph {
+  padding-right: 100px;
+}
+
+/* Signature image styling */
+.signature {
+  position: absolute;
+  bottom: 70px;
+  right: 120px;
+  width: 150px;
+  height: auto;
+}
+
+/* Responsive design for tablets and larger mobile screens */
+@media (max-width: 768px) {
+  .about {
+    width: 90vw; /* Use viewport width for responsiveness */
+    height: auto; /* Allow height to adjust according to content */
+    padding: 10px; /* Adjust padding for better fit */
+  }
+
+  .about-image {
+    width: 200px; /* Adjusted image size for tablets */
+    left: 20px; /* Adjusted position */
+  }
+
+  .about-text {
+    left: calc(20px + 200px + 20px); /* Adjusted text position */
+    text-align: center; /* Center align text */
+    top: 60%; /* Adjusted top position */
+    transform: translateY(-50%); /* Center vertically */
+  }
+
+  .about-text h2 {
+    font-size: 2rem; /* Adjust font size for tablets */
+  }
+
+  .about-text p {
+    font-size: 1rem; /* Adjust font size for tablets */
+  }
+
+  .signature {
+    width: 100px; /* Adjusted signature size for tablets */
+    right: 10px; /* Adjusted position */
+  }
+}
+
+/* Responsive design for smaller mobile screens */
+@media (max-width: 390px) {
+  .about {
+    width: 100%; /* Ensure the width takes up the full container width */
+    padding: 5px; /* Adjust padding for smaller screens */
+  }
+
+  .about-image {
+    width: 100px; /* Further adjusted image size for smaller screens */
+  }
+
+  .about-text {
+    left: 10px; /* Adjusted text position */
+    top: 70%; /* Adjusted top position for smaller screens */
+    transform: translateY(-50%); /* Center vertically */
+    text-align: center; /* Center align text */
+    margin: 0; /* Remove margins for smaller screens */
+  }
+
+  .about-text h2 {
+    font-size: 1.5rem; /* Further adjusted font size */
+  }
+
+  .about-text p {
+    font-size: 0.9rem; /* Further adjusted font size */
+  }
+
+  .signature {
+    width: 80px; /* Further adjusted signature size */
+    right: 5px; /* Adjusted position */
+  }
+}
+
 /* Home container */
 .home-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; 
+  min-height: 100vh;
   padding: 20px;
   box-sizing: border-box;
-  position: relative; 
+  position: relative;
 }
 
 /* Home Section */
 .home {
-  position: relative; 
-  text-align: center; 
-  width: 1400px;  
-  height: 650px; 
+  position: relative;
+  text-align: center;
+  width: 1400px;
+  height: 650px;
   padding: 20px;
   border-radius: 20px;
-  background: linear-gradient(135deg, orange 0%, hotpink 100%); 
+  background: linear-gradient(135deg, orange 0%, hotpink 100%);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   align-self: center;
-  margin: 0 auto; 
+  margin: 0 auto;
   opacity: 0;
   transition: opacity 1s ease;
 }
@@ -31,9 +176,9 @@
 
 /* Header styling */
 .home h2 {
-  font-size: 10.5rem; 
+  font-size: 10.5rem;
   margin-top: 190px;
-  margin-bottom: 1rem; 
+  margin-bottom: 1rem;
   font-family: sans-serif;
 }
 
@@ -47,14 +192,14 @@
   }
 
   .home {
-    width: 90vw;  /* Use viewport width to make the home section larger */
-    height: 80vh;  /* Use viewport height for better scaling */
+    width: 90vw; /* Use viewport width to make the home section larger */
+    height: 80vh; /* Use viewport height for better scaling */
     padding: 20px; /* Increase padding for mobile */
     box-sizing: border-box; /* Ensure padding is included in width */
   }
 
   .home h2 {
-    font-size: 4rem;  /* Adjust font size for better readability on mobile */
+    font-size: 4rem; /* Adjust font size for better readability on mobile */
     margin-top: 40; /* Remove top margin for better centering */
     margin-bottom: 40; /* Remove bottom margin for better centering */
   }
@@ -66,25 +211,25 @@
   opacity: 0;
   animation: fadeIn 4s forwards;
 }
-  
+
 .letter {
   display: inline-block;
   opacity: 0;
   animation: fadeIn 2s forwards;
 }
-  
+
 .letter:nth-child(1) {
   animation-delay: 0s;
 }
-  
+
 .letter:nth-child(2) {
   animation-delay: 0.5s;
 }
-  
+
 .letter:nth-child(3) {
   animation-delay: 1s;
 }
-  
+
 .letter:nth-child(4) {
   animation-delay: 1.5s;
 }
@@ -95,7 +240,7 @@
 
 .letter:nth-child(6) {
   animation-delay: 2.5s;
-}  
+}
 
 .dot {
   display: inline-block;
