@@ -1,10 +1,10 @@
-// src/Projects.js
 import React, { useEffect, useRef } from 'react';
 import ProjectBox from '../components/ProjectBox';
 import CurvyLine from './CurvyLine'; 
 import './Projects.css';
 import wrapped from '../assets/wrapped-logo.png';
 import butterfly from '../assets/butterfly.png';
+import schedulerApp from '../assets/scheduler-app.png'; // Import the new project's image
 
 const Projects = () => {
   const projects = [
@@ -17,6 +17,16 @@ const Projects = () => {
       position: 'relative',
       image: wrapped,
       url: 'https://mewkat36.wixstudio.io/spotifywrapped'
+    },
+    {
+      id: 2,
+      title: 'College Scheduler App',
+      description: 'Built with Android Studio, the College Scheduler App offers a user-friendly solution for managing class schedules, exams, assignments, and tasks. It allows students to input courses, add tasks, and track exam dates. A detailed tutorial website was also created to guide users on using Android Studio.',
+      gradientColors: ['#FF66B2', '#FFB347'],
+      size: { width: 1300, height: 650 },
+      position: 'relative',
+      image: schedulerApp, // New project's image
+      url: 'https://anishbandari19.wixsite.com/collegeappscheduler'
     },
   ];
 

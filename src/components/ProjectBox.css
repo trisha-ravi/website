@@ -1,4 +1,9 @@
-/* ProjectBox.css */
+.project-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px; /* Space between projects */
+}
 
 .project {
   overflow: hidden;
@@ -8,56 +13,54 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  transition: transform 0.3s ease-in-out; /* Add transition for smoother scaling */
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.project:hover .image-container {
+  transform: scale(1.011); /* Zoom effect applied only to image container */
 }
 
 .project:hover {
-  transform: scale(1.011); /* Scale up by 5% on hover */
+  transform: none; /* No zoom effect on the whole container */
 }
 
-.project-box-wrapper {
+.image-container {
+  width: 100%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.project-gradient {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  background-size: cover;
-  opacity: 0.8;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
 }
 
 .project-image {
-  position: absolute;
-  z-index: 2;
   max-width: 100%;
   max-height: 100%;
   border-radius: 10px;
   display: block;
+  object-fit: cover;
 }
 
-.project-text {
-  position: relative;
-  z-index: 3;
-  padding: 20px;
-  text-align: left;
+.text-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 90px; /* Add padding to the text container */
+  padding-right: 90px;
+  text-align: center;
 }
 
 .project-title {
   margin: 0;
   font-size: 24px;
-  margin-bottom: 10px;
-  color: white;
+  color: black;
 }
 
 .project-description {
-  margin: 0;
+  margin: 10px 0 0; /* Add margin to separate description from title */
   font-size: 16px;
-  color: white;
+  color: black;
 }
