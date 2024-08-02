@@ -13,8 +13,8 @@
 .about {
   position: relative;
   text-align: center;
-  width: 1400px; /* Original desktop width */
-  height: 650px; /* Original desktop height */
+  width: 1400px; 
+  height: 650px; 
   padding: 20px;
   border-radius: 20px;
   background: linear-gradient(135deg, #FFFFCC 0%, #FFA500 100%);
@@ -36,7 +36,7 @@
   top: 50%;
   transform: translateY(-50%);
   left: 100px;
-  width: 400px; /* Original desktop width */
+  width: 400px;
   height: auto;
   border-radius: 50%;
 }
@@ -79,67 +79,67 @@
 /* Responsive design for tablets and larger mobile screens */
 @media (max-width: 768px) {
   .about {
-    width: 90vw; /* Use viewport width for responsiveness */
-    height: auto; /* Allow height to adjust according to content */
-    padding: 10px; /* Adjust padding for better fit */
+    width: 90vw; 
+    height: auto; 
+    padding: 10px; 
   }
 
   .about-image {
-    width: 200px; /* Adjusted image size for tablets */
-    left: 20px; /* Adjusted position */
+    width: 200px;
+    left: 20px;
   }
 
   .about-text {
-    left: calc(20px + 200px + 20px); /* Adjusted text position */
-    text-align: center; /* Center align text */
-    top: 60%; /* Adjusted top position */
-    transform: translateY(-50%); /* Center vertically */
+    left: calc(20px + 200px + 20px); 
+    text-align: center; 
+    top: 60%; 
+    transform: translateY(-50%); 
   }
 
   .about-text h2 {
-    font-size: 2rem; /* Adjust font size for tablets */
+    font-size: 2rem;
   }
 
   .about-text p {
-    font-size: 1rem; /* Adjust font size for tablets */
+    font-size: 1rem;
   }
 
   .signature {
-    width: 100px; /* Adjusted signature size for tablets */
-    right: 10px; /* Adjusted position */
+    width: 100px;
+    right: 10px;
   }
 }
 
 /* Responsive design for smaller mobile screens */
 @media (max-width: 390px) {
   .about {
-    width: 100%; /* Ensure the width takes up the full container width */
-    padding: 5px; /* Adjust padding for smaller screens */
+    width: 100%;
+    padding: 5px;
   }
 
   .about-image {
-    width: 100px; /* Further adjusted image size for smaller screens */
+    width: 100px;
   }
 
   .about-text {
-    left: 10px; /* Adjusted text position */
-    top: 70%; /* Adjusted top position for smaller screens */
-    transform: translateY(-50%); /* Center vertically */
-    text-align: center; /* Center align text */
-    margin: 0; /* Remove margins for smaller screens */
+    left: 10px;
+    top: 70%;
+    transform: translateY(-50%);
+    text-align: center;
+    margin: 0;
   }
 
   .about-text h2 {
-    font-size: 1.5rem; /* Further adjusted font size */
+    font-size: 1.5rem;
   }
 
   .about-text p {
-    font-size: 0.9rem; /* Further adjusted font size */
+    font-size: 0.9rem;
   }
 
   .signature {
-    width: 80px; /* Further adjusted signature size */
-    right: 5px; /* Adjusted position */
+    width: 80px;
+    right: 5px;
   }
 }
 
@@ -185,23 +185,23 @@
 /* Responsive design for mobile view */
 @media (max-width: 768px) {
   .home-container {
-    padding: 40px; /* Increase padding for a larger container on mobile */
+    padding: 40px;
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center;
+    align-items: center;
   }
 
   .home {
-    width: 90vw; /* Use viewport width to make the home section larger */
-    height: 80vh; /* Use viewport height for better scaling */
-    padding: 20px; /* Increase padding for mobile */
-    box-sizing: border-box; /* Ensure padding is included in width */
+    width: 90vw; 
+    height: 80vh;
+    padding: 20px;
+    box-sizing: border-box;
   }
 
   .home h2 {
-    font-size: 4rem; /* Adjust font size for better readability on mobile */
-    margin-top: 40; /* Remove top margin for better centering */
-    margin-bottom: 40; /* Remove bottom margin for better centering */
+    font-size: 4rem;
+    margin-top: 40;
+    margin-bottom: 40;
   }
 }
 

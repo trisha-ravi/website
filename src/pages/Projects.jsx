@@ -25,7 +25,7 @@ const Projects = () => {
       gradientColors: ['#FF66B2', '#FFB347'],
       size: { width: 1300, height: 650 },
       position: 'relative',
-      image: schedulerApp, // New project's image
+      image: schedulerApp,
       url: 'https://anishbandari19.wixsite.com/collegeappscheduler'
     },
   ];
