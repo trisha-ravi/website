@@ -13,8 +13,8 @@
 .about {
   position: relative;
   text-align: center;
-  width: 1400px; /* Original desktop width */
-  height: 650px; /* Original desktop height */
+  width: 1400px;
+  height: 650px;
   padding: 20px;
   border-radius: 20px;
   background: linear-gradient(135deg, #FFFFCC 0%, #FFA500 100%);
@@ -36,7 +36,7 @@
   top: 50%;
   transform: translateY(-50%);
   left: 100px;
-  width: 400px; /* Original desktop width */
+  width: 400px;
   height: auto;
   border-radius: 50%;
 }
@@ -79,61 +79,61 @@
 /* Responsive design for tablets and larger mobile screens */
 @media (max-width: 768px) {
   .about {
-    width: 90%; /* Adjust width for tablets and smaller screens */
-    height: auto; /* Allow height to adjust according to content */
-    padding: 10px; /* Adjust padding for better fit */
+    width: 90%;
+    height: auto;
+    padding: 10px;
   }
 
   .about-image {
-    width: 200px; /* Adjusted image size for tablets */
-    left: 20px; /* Adjusted position */
+    width: 200px;
+    left: 20px;
   }
 
   .about-text {
-    left: calc(20px + 200px + 20px); /* Adjusted text position */
-    text-align: center; /* Center align text */
+    left: calc(20px + 200px + 20px);
+    text-align: center;
   }
 
   .about-text h2 {
-    font-size: 2rem; /* Adjust font size for tablets */
+    font-size: 2rem;
   }
 
   .about-text p {
-    font-size: 1rem; /* Adjust font size for tablets */
+    font-size: 1rem;
   }
 
   .signature {
-    width: 100px; /* Adjusted signature size for tablets */
-    right: 10px; /* Adjusted position */
+    width: 100px;
+    right: 10px;
   }
 }
 
 /* Responsive design for smaller mobile screens */
 @media (max-width: 390px) {
   .about {
-    width: 100%; /* Ensure the width takes up the full container width */
-    padding: 5px; /* Adjust padding for smaller screens */
+    width: 100%;
+    padding: 5px;
   }
 
   .about-image {
-    width: 100px; /* Further adjusted image size for smaller screens */
+    width: 100px;
   }
 
   .about-text {
-    left: 10px; /* Adjusted text position */
-    margin: 0; /* Remove margins for smaller screens */
+    left: 10px;
+    margin: 0;
   }
 
   .about-text h2 {
-    font-size: 1.5rem; /* Further adjusted font size */
+    font-size: 1.5rem;
   }
 
   .about-text p {
-    font-size: 0.9rem; /* Further adjusted font size */
+    font-size: 0.9rem;
   }
 
   .signature {
-    width: 80px; /* Further adjusted signature size */
-    right: 5px; /* Adjusted position */
+    width: 80px;
+    right: 5px;
   }
 }
