@@ -18,11 +18,11 @@
 }
 
 .project:hover .image-container {
-  transform: scale(1.011); /* Zoom effect applied only to image container */
+  transform: scale(1.011);
 }
 
 .project:hover {
-  transform: none; /* No zoom effect on the whole container */
+  transform: none;
 }
 
 .image-container {
@@ -34,7 +34,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
+  transition: transform 0.3s ease-in-out; 
 }
 
 .project-image {
@@ -48,7 +48,7 @@
 .text-container {
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-left: 90px; /* Add padding to the text container */
+  padding-left: 90px; 
   padding-right: 90px;
   text-align: center;
 }
@@ -60,7 +60,7 @@
 }
 
 .project-description {
-  margin: 10px 0 0; /* Add margin to separate description from title */
+  margin: 10px 0 0; 
   font-size: 16px;
   color: black;
 }
