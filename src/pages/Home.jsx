@@ -196,12 +196,12 @@ const Home = () => {
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
           >
-            Hello <span className="emoji">👋</span> I'm a designer <span className="emoji">📎</span> crafting systems<br/>
-            and experiences <span className="emoji">⚡</span> for the digital space <span className="emoji">💻</span>
+            Hello <span className="emoji">👋</span> I'm a designer <span className="emoji">📎</span> creating simple,
+            intuitive,<span className="emoji">⚡</span> and meaningful experiences for the digital space.<span className="emoji">💻</span>
           </div>
           <div className="hero-description">
-            I help simplify complex problems and<br/>
-            transform them into intuitive interfaces.
+            I create digital systems and <br/>
+            experiences that connect people and technology.
           </div>
 
           {/* Call to Action Buttons */}
