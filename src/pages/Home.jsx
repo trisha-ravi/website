@@ -35,21 +35,21 @@ const ProjectsShowcase = () => {
   const projects = [
     {
       id: 1,
-      title: "Jadu AR",
+      title: "COming soon",
       subtitle: "Creating the next generation of immersive and spatial gaming.",
       category: "Product Design",
       type: "mobile"
     },
     {
       id: 2,
-      title: "Google Kids Space",
+      title: "College Scheduler App",
       subtitle: "A new tablet experience to inspire and nurture kids' curiosity.",
       category: "Product Design",
       type: "tablet"
     },
     {
       id: 3,
-      title: "Naver",
+      title: "Spotify Wrapped",
       subtitle: "Simplifying access to daily essentials.",
       category: "Product Design",
       type: "mobile-suite"
