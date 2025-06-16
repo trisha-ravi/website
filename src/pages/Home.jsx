@@ -1,142 +1,31 @@
+// Home.jsx - Homepage Component
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import './Home.css';
+import wrapped from '../assets/wrapped-logo.png';
+import schedulerApp from '../assets/scheduler-app.png';
 
-const ProjectsShowcase = () => {
-  const projectsRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-      }
-    );
-
-    if (projectsRef.current) {
-      observer.observe(projectsRef.current);
-    }
-
-    return () => {
-      if (projectsRef.current) {
-        observer.unobserve(projectsRef.current);
-      }
-    };
-  }, []);
-
-  const projects = [
-    {
-      id: 1,
-      title: "Coming soon",
-      subtitle: "Creating the next generation of immersive and spatial gaming.",
-      category: "Product Design",
-      type: "mobile"
-    },
-    {
-      id: 2,
-      title: "College Scheduler App",
-      subtitle: "A new tablet experience to inspire and nurture kids' curiosity.",
-      category: "Product Design",
-      type: "tablet"
-    },
-    {
-      id: 3,
-      title: "Spotify Wrapped",
-      subtitle: "Simplifying access to daily essentials.",
-      category: "Product Design",
-      type: "mobile-suite"
-    }
-  ];
-
-  const handleProjectClick = (projectTitle) => {
-    // Navigate to projects page - you can customize this later
-    console.log(`Viewing project: ${projectTitle}`);
-    // For now, you could navigate to a projects page:
-    // window.location.href = '/projects';
-  };
-
+const AppleBackground = () => {
   return (
-    <section ref={projectsRef} className="projects-showcase">
-      <div className="projects-container">
-        <h2 className="projects-title">Selected Work</h2>
-
-        <div className="projects-grid">
-          {projects.map((project, index) => (
-            <div
-              key={project.id}
-              className="project-item"
-            >
-              {/* Project Info */}
-              <div className="project-info">
-                <div className="project-category">{project.category}</div>
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-subtitle">{project.subtitle}</p>
-
-                <div className="project-buttons">
-                  <button 
-                    className="btn-primary"
-                    onClick={() => handleProjectClick(project.title)}
-                  >
-                    View Project
-                  </button>
-                  <button 
-                    className="btn-secondary"
-                    onClick={() => handleProjectClick(project.title)}
-                  >
-                    Case Study →
-                  </button>
-                </div>
-              </div>
-
-              {/* Project Visual */}
-              <div className="project-visual">
-                {project.type === 'mobile' && (
-                  <div className="device-mobile">
-                    <div className="device-screen">
-                      <div className="screen-placeholder">AR Gaming Interface</div>
-                    </div>
-                  </div>
-                )}
-
-                {project.type === 'tablet' && (
-                  <div className="device-tablet">
-                    <div className="device-screen">
-                      <div className="screen-placeholder">Kids Tablet Interface</div>
-                    </div>
-                  </div>
-                )}
-
-                {project.type === 'mobile-suite' && (
-                  <div className="device-suite">
-                    {[0, 1, 2].map((i) => (
-                      <div key={i} className={`device-suite-item device-${i}`}>
-                        <div className="device-screen">
-                          <div className="screen-placeholder">App {i + 1}</div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+    <div className="apple-background">
+      <div className="apple-mesh"></div>
+      <div className="apple-orb-1"></div>
+      <div className="apple-orb-2"></div>
+      <div className="apple-orb-3"></div>
+      <div className="apple-grid"></div>
+      <div className="apple-line-1"></div>
+      <div className="apple-line-2"></div>
+      <div className="apple-shape-1"></div>
+      <div className="apple-shape-2"></div>
+      <div className="apple-center-glow"></div>
+    </div>
   );
 };
 
-const Home = () => {
-  const homeRef = useRef(null);
-  const heroTextRef = useRef(null);
+const HomeHero = () => {
+  const heroRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -148,80 +37,299 @@ const Home = () => {
           }
         });
       },
-      {
-        threshold: 0.1,
-      }
+      { threshold: 0.1 }
     );
 
-    if (homeRef.current) {
-      observer.observe(homeRef.current);
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
     }
 
     return () => {
-      if (homeRef.current) {
-        observer.unobserve(homeRef.current);
+      if (heroRef.current) {
+        observer.unobserve(heroRef.current);
       }
     };
   }, []);
 
-  // Mouse tracking effect for hero text
-  const handleMouseMove = (e) => {
-    if (!heroTextRef.current) return;
-    
-    const rect = heroTextRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
-    heroTextRef.current.style.textShadow = `
-      ${(x - rect.width/2) * 0.01}px ${(y - rect.height/2) * 0.01}px 20px rgba(255, 255, 255, 0.1)
-    `;
-  };
+  return (
+    <section ref={heroRef} className="home-hero">
+      <div className="home-hero-container">
+        <h1 className="home-main-title">
+          Hello 👋 I'm a <span className="highlight">designer</span> 📎
+        </h1>
+        <p className="home-subtitle">
+          creating simple, intuitive, ⚡ and meaningful experiences for the digital space. 💻
+          <br />
+          I create digital systems and experiences that connect people and technology.
+        </p>
+        <div className="home-cta">
+          <Link to="/about" className="btn-secondary">
+            Learn More About Me
+          </Link>
+          <Link to="/projects" className="btn-primary">
+            View My Work →
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+};
 
-  const handleMouseLeave = () => {
-    if (heroTextRef.current) {
-      heroTextRef.current.style.textShadow = 'none';
+const AboutSection = () => {
+  const [visibleStats, setVisibleStats] = useState([]);
+  const statsRef = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    statsRef.current.forEach((stat) => {
+      if (stat) {
+        observer.observe(stat);
+      }
+    });
+
+    return () => {
+      statsRef.current.forEach((stat) => {
+        if (stat) {
+          observer.unobserve(stat);
+        }
+      });
+    };
+  }, []);
+
+  const stats = [
+    { number: '2+', label: 'Years Experience' },
+    { number: '10+', label: 'Projects Completed' },
+    { number: '5+', label: 'Technologies Mastered' },
+    { number: '100%', label: 'Client Satisfaction' }
+  ];
+
+  return (
+    <section className="about-section">
+      <div className="about-container">
+        <h2 className="about-title">About Me</h2>
+        <div className="about-content">
+          <p>
+            I'm a dedicated software developer with a passion for creating meaningful digital experiences. 
+            My journey in technology has led me to specialize in web and mobile development, 
+            with a focus on user-centered design and clean, efficient code.
+          </p>
+          <p>
+            When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, 
+            or sharing knowledge with the developer community. I believe in continuous learning and 
+            the power of technology to solve real-world problems.
+          </p>
+        </div>
+        <div className="about-stats">
+          {stats.map((stat, index) => (
+            <div
+              key={index}
+              ref={(el) => (statsRef.current[index] = el)}
+              className="stat-item"
+            >
+              <div className="stat-number">{stat.number}</div>
+              <div className="stat-label">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const FeaturedProjectsPreview = () => {
+  const [visibleCards, setVisibleCards] = useState([]);
+  const cardsRef = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    cardsRef.current.forEach((card) => {
+      if (card) {
+        observer.observe(card);
+      }
+    });
+
+    return () => {
+      cardsRef.current.forEach((card) => {
+        if (card) {
+          observer.unobserve(card);
+        }
+      });
+    };
+  }, []);
+
+  const featuredProjects = [
+    {
+      id: 1,
+      title: 'Spotify Wrapped App',
+      description: 'A web application that provides users with engaging annual music insights, featuring beautiful UI design and data visualization.',
+      image: wrapped,
+      tags: ['React', 'UI Design', 'Data Visualization']
+    },
+    {
+      id: 2,
+      title: 'College Scheduler App',
+      description: 'Mobile application built with Android Studio for managing class schedules, exams, and assignments with an intuitive interface.',
+      image: schedulerApp,
+      tags: ['Android Studio', 'Java', 'Mobile Development']
     }
-  };
+  ];
+
+  return (
+    <section className="featured-preview-section">
+      <div className="featured-preview-container">
+        <h2 className="featured-preview-title">Featured Projects</h2>
+        <div className="featured-preview-grid">
+          {featuredProjects.map((project, index) => (
+            <div
+              key={project.id}
+              ref={(el) => (cardsRef.current[index] = el)}
+              className="preview-card"
+            >
+              <div className="preview-image-container">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="preview-image"
+                />
+              </div>
+              <div className="preview-content">
+                <h3 className="preview-title">{project.title}</h3>
+                <p className="preview-description">{project.description}</p>
+                <div className="preview-tags">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span key={tagIndex} className="preview-tag">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="view-all-projects">
+          <Link to="/projects" className="btn-primary">
+            View All Projects
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const SkillsSection = () => {
+  const [visibleSkills, setVisibleSkills] = useState([]);
+  const skillsRef = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    skillsRef.current.forEach((skill) => {
+      if (skill) {
+        observer.observe(skill);
+      }
+    });
+
+    return () => {
+      skillsRef.current.forEach((skill) => {
+        if (skill) {
+          observer.unobserve(skill);
+        }
+      });
+    };
+  }, []);
+
+  const skillCategories = [
+    {
+      title: 'Frontend Development',
+      skills: ['React', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'SASS']
+    },
+    {
+      title: 'Backend Development',
+      skills: ['Node.js', 'Python', 'Java', 'Express.js', 'REST APIs', 'GraphQL']
+    },
+    {
+      title: 'Mobile Development',
+      skills: ['Android Studio', 'Java', 'Kotlin', 'React Native', 'Flutter']
+    },
+    {
+      title: 'Tools & Technologies',
+      skills: ['Git', 'Docker', 'AWS', 'Firebase', 'MongoDB', 'PostgreSQL']
+    }
+  ];
+
+  return (
+    <section className="skills-section">
+      <div className="skills-container">
+        <h2 className="skills-title">Skills & Technologies</h2>
+        <div className="skills-grid">
+          {skillCategories.map((category, index) => (
+            <div
+              key={index}
+              ref={(el) => (skillsRef.current[index] = el)}
+              className="skill-category"
+            >
+              <h3 className="skill-category-title">{category.title}</h3>
+              <div className="skill-list">
+                {category.skills.map((skill, skillIndex) => (
+                  <span key={skillIndex} className="skill-item">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Home = () => {
+  useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="home-page">
-      {/* Your Custom Navbar */}
+      <AppleBackground />
       <Navbar />
-
-      <div className="home-container" id="home" ref={homeRef}>
-        <main className="hero">
-          <div 
-            className="hero-text"
-            ref={heroTextRef}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-          >
-            Hello <span className="emoji">👋</span> I'm a designer <span className="emoji">📎</span> creating simple,
-            intuitive,<span className="emoji">⚡</span> and meaningful experiences for the digital space.<span className="emoji">💻</span>
-          </div>
-          <div className="hero-description">
-            I create digital systems and <br/>
-            experiences that connect people and technology.
-          </div>
-
-          {/* Call to Action Buttons */}
-          <div className="hero-cta">
-            <Link to="/about" className="btn-primary hero-btn">
-              Learn More About Me
-            </Link>
-            <Link to="/projects" className="btn-secondary hero-btn">
-              View My Work →
-            </Link>
-          </div>
-        </main>
-      </div>
-
-      {/* Projects Showcase Section */}
-      <div className="projects-section">
-        <ProjectsShowcase />
-      </div>
-      
-      {/* Footer Component - Using the reusable component */}
+      <HomeHero />
+      <AboutSection />
+      <FeaturedProjectsPreview />
+      <SkillsSection />
       <Footer />
     </div>
   );
