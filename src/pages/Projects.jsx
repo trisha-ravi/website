@@ -1,4 +1,4 @@
-// Projects.jsx - Black Theme to Match Portfolio
+// Projects.jsx - Using ProjectBox Component
 import React, { useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -67,8 +67,6 @@ const ProjectsHero = () => {
 };
 
 const ProjectsGrid = () => {
-  const projectRefs = useRef([]);
-
   const projects = [
     {
       id: 1,
@@ -76,7 +74,10 @@ const ProjectsGrid = () => {
       description: 'A web application designed to provide users with an engaging and visually appealing experience, allowing them to view their annual music insights anytime. As a key contributor, I focused on UI design to create an aesthetically pleasing and user-friendly interface.',
       image: wrapped,
       url: 'https://mewkat36.wixstudio.io/spotifywrapped',
-      category: 'Web Application'
+      category: 'Web Application',
+      tags: ['React', 'UI Design', 'Data Visualization'],
+      status: 'live',
+      featured: true
     },
     {
       id: 2,
@@ -84,87 +85,76 @@ const ProjectsGrid = () => {
       description: 'Built with Android Studio, the College Scheduler App offers a user-friendly solution for managing class schedules, exams, assignments, and tasks. It allows students to input courses, add tasks, and track exam dates.',
       image: schedulerApp,
       url: 'https://anishbandari19.wixsite.com/collegeappscheduler',
-      category: 'Mobile Application'
+      category: 'Mobile Application',
+      tags: ['Android Studio', 'Java', 'Mobile Development'],
+      status: 'live'
     },
   ];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      {
-        threshold: 0.1
-      }
-    );
+  const featuredProjects = projects.filter(project => project.featured);
+  const otherProjects = projects.filter(project => !project.featured);
 
-    projectRefs.current.forEach(ref => {
-      if (ref) observer.observe(ref);
-    });
+  // Handlers for project interactions
+  const handleLearnMore = (project) => {
+    console.log('Learn more about:', project.title);
+    // Navigate to project detail page or show modal
+    // Example: navigate(`/projects/${project.id}`);
+  };
 
-    return () => {
-      projectRefs.current.forEach(ref => {
-        if (ref) observer.unobserve(ref);
-      });
-    };
-  }, []);
+  const handleCaseStudy = (project) => {
+    console.log('View case study for:', project.title);
+    // Navigate to case study page or show detailed view
+    // Example: navigate(`/case-studies/${project.id}`);
+  };
 
   return (
     <section className="projects-grid-section">
       <div className="projects-grid-container">
-        <h2 className="projects-section-title">Featured Projects</h2>
-        
-        <div className="projects-grid">
-          {projects.map((project, index) => (
-            <div
-              key={project.id}
-              ref={el => projectRefs.current[index] = el}
-              className="project-card"
-            >
-              <div className="project-image-container">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="project-image"
+        {/* Featured Projects */}
+        {featuredProjects.length > 0 && (
+          <div className="featured-section">
+            <h2 className="projects-section-title">Featured Work</h2>
+            <div className="featured-grid">
+              {featuredProjects.map((project) => (
+                <ProjectBox
+                  key={project.id}
+                  project={project}
+                  featured={true}
+                  onLearnMore={handleLearnMore}
+                  onCaseStudy={handleCaseStudy}
                 />
-                <div className="project-overlay">
-                  <a 
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-link"
-                  >
-                    View Project →
-                  </a>
-                </div>
-              </div>
-              
-              <div className="project-content">
-                <div className="project-category">{project.category}</div>
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
-                
-                <div className="project-actions">
-                  <a 
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary"
-                  >
-                    Live Demo
-                  </a>
-                  <button className="btn-secondary">
-                    Learn More →
-                  </button>
-                </div>
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        )}
+
+        {/* Other Projects */}
+        {otherProjects.length > 0 && (
+          <div className="other-projects-section">
+            <h2 className="projects-section-title">
+              {featuredProjects.length > 0 ? 'More Projects' : 'All Projects'}
+            </h2>
+            <div className="projects-grid">
+              {otherProjects.map((project) => (
+                <ProjectBox
+                  key={project.id}
+                  project={project}
+                  featured={false}
+                  onLearnMore={handleLearnMore}
+                  onCaseStudy={handleCaseStudy}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Empty State */}
+        {projects.length === 0 && (
+          <div className="empty-state">
+            <h3>Projects Coming Soon</h3>
+            <p>Stay tuned for exciting new projects!</p>
+          </div>
+        )}
       </div>
     </section>
   );

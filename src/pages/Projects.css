@@ -1,4 +1,4 @@
-/* Projects.css - Black Theme to Match Portfolio */
+/* Projects.css - Updated with Enhanced Design */
 
 .projects-page {
   background: #000000;
@@ -109,7 +109,7 @@
   width: 60px;
   height: 60px;
   border: 1px solid rgba(255, 255, 255, 0.02);
-  border-radius: 12px;
+  border-radius: 0;
   animation: appleShape1 25s ease-in-out infinite;
 }
 
@@ -307,18 +307,46 @@
   color: #ffffff;
 }
 
-.projects-grid {
+/* Featured Projects Section */
+.featured-section {
+  margin-bottom: 8rem;
+}
+
+.featured-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
   gap: 4rem;
 }
 
+.featured-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transform: translateY(0);
+}
+
+.featured-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-15px);
+}
+
+/* Other Projects Section */
+.other-projects-section {
+  margin-top: 6rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 3rem;
+}
+
 .project-card {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
+  border-radius: 0;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   opacity: 0;
   transform: translateY(30px);
 }
@@ -332,24 +360,29 @@
   transform: translateY(-10px);
   background: rgba(255, 255, 255, 0.04);
   border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .project-image-container {
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 350px;
   overflow: hidden;
+}
+
+.featured-card .project-image-container {
+  height: 400px;
 }
 
 .project-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .project-card:hover .project-image {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .project-overlay {
@@ -358,16 +391,36 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
 }
 
 .project-card:hover .project-overlay {
   opacity: 1;
+}
+
+.project-overlay-content {
+  text-align: center;
+  padding: 2rem;
+}
+
+.overlay-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.overlay-category {
+  font-size: 1rem;
+  color: #ccc;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .project-link {
@@ -377,17 +430,32 @@
   font-weight: 600;
   padding: 1rem 2rem;
   border: 2px solid #ffffff;
-  border-radius: 30px;
+  border-radius: 0;
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .project-link:hover {
   background: #ffffff;
   color: #000000;
+  transform: scale(1.05);
 }
 
 .project-content {
-  padding: 2.5rem;
+  padding: 3rem;
+}
+
+.featured-card .project-content {
+  padding: 3.5rem;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .project-category {
@@ -395,22 +463,41 @@
   color: #999;
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.project-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.project-tag {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 0;
+  font-size: 0.75rem;
+  color: #ccc;
   font-weight: 500;
 }
 
 .project-title {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 600;
   color: #ffffff;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   line-height: 1.2;
+}
+
+.featured-card .project-title {
+  font-size: 2.5rem;
 }
 
 .project-description {
   color: #aaa;
-  line-height: 1.6;
-  margin-bottom: 2rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
   font-size: 1rem;
 }
 
@@ -424,28 +511,41 @@
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border: none;
   color: #ffffff;
-  padding: 0.8rem 2rem;
-  border-radius: 25px;
+  padding: 1rem 2.5rem;
+  border-radius: 0;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   display: inline-block;
+  cursor: pointer;
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary.disabled {
+  background: rgba(255, 255, 255, 0.1);
+  color: #666;
+  cursor: not-allowed;
+}
+
+.btn-primary.disabled:hover {
+  transform: none;
+  box-shadow: none;
 }
 
 .btn-secondary {
   background: none;
   border: none;
   color: #888;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: color 0.3s ease;
   font-weight: 500;
+  padding: 0.5rem 0;
 }
 
 .btn-secondary:hover {
@@ -453,6 +553,18 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .projects-hero {
     padding: 100px 2rem 0;
@@ -462,13 +574,25 @@
     padding: 4rem 2rem;
   }
 
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .featured-section {
+    margin-bottom: 6rem;
+  }
+
+  .other-projects-section {
+    margin-top: 4rem;
   }
 
   .project-content {
     padding: 2rem;
+  }
+
+  .featured-card .project-content {
+    padding: 2.5rem;
+  }
+
+  .project-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .project-actions {
@@ -479,6 +603,14 @@
 
   .btn-primary {
     text-align: center;
+  }
+
+  .project-image-container {
+    height: 250px;
+  }
+
+  .featured-card .project-image-container {
+    height: 300px;
   }
 }
 
@@ -495,7 +627,27 @@
     padding: 1.5rem;
   }
 
+  .featured-card .project-content {
+    padding: 2rem;
+  }
+
+  .project-title {
+    font-size: 1.8rem;
+  }
+
+  .featured-card .project-title {
+    font-size: 2rem;
+  }
+
   .project-image-container {
     height: 200px;
+  }
+
+  .featured-card .project-image-container {
+    height: 250px;
+  }
+
+  .overlay-title {
+    font-size: 2rem;
   }
 }
