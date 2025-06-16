@@ -49,8 +49,8 @@ const Footer = () => {
         <div className="footer-info">
           {/* Left Side - Copyright */}
           <div className="footer-copyright">
-            <p className="copyright-text">© 2024 Isa Pinheiro</p>
-            <p className="status-text">Currently working remotely.</p>
+            <p className="copyright-text">© 2025 Trisha Ravichandran</p>
+            <p className="status-text">Currently blooming.</p>
           </div>
 
           {/* Right Side - Links */}
