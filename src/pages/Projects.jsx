@@ -1,36 +1,92 @@
+// Projects.jsx - Black Theme to Match Portfolio
 import React, { useEffect, useRef } from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import ProjectBox from '../components/ProjectBox';
-import CurvyLine from './CurvyLine'; 
 import './Projects.css';
 import wrapped from '../assets/wrapped-logo.png';
-import butterfly from '../assets/butterfly.png';
-import schedulerApp from '../assets/scheduler-app.png'; // Import the new project's image
+import schedulerApp from '../assets/scheduler-app.png';
 
-const Projects = () => {
+const AppleBackground = () => {
+  return (
+    <div className="apple-background">
+      <div className="apple-mesh"></div>
+      <div className="apple-orb-1"></div>
+      <div className="apple-orb-2"></div>
+      <div className="apple-orb-3"></div>
+      <div className="apple-grid"></div>
+      <div className="apple-line-1"></div>
+      <div className="apple-line-2"></div>
+      <div className="apple-shape-1"></div>
+      <div className="apple-shape-2"></div>
+      <div className="apple-center-glow"></div>
+    </div>
+  );
+};
+
+const ProjectsHero = () => {
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
+    }
+
+    return () => {
+      if (heroRef.current) {
+        observer.unobserve(heroRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <section ref={heroRef} className="projects-hero">
+      <div className="projects-hero-container">
+        <h1 className="projects-main-title">
+          Welcome to my portfolio, where 
+          <span className="highlight"> innovation comes to life</span>
+        </h1>
+        <p className="projects-subtitle">
+          Explore my latest work and creative solutions that bring ideas to reality.
+        </p>
+      </div>
+    </section>
+  );
+};
+
+const ProjectsGrid = () => {
+  const projectRefs = useRef([]);
+
   const projects = [
     {
       id: 1,
       title: 'Spotify Wrapped App',
-      description: 'A web application designed to provide users with an engaging and visually appealing experience, allowing them to view their annual music insights anytime. As a key contributor, I focused on UI design to create an aesthetically pleasing and user-friendly interface. Additionally, I played a significant role in backend development, ensuring the smooth integration of UI elements with backend functionalities for a seamless user experience. My efforts in designing innovative features and cohesive integration resulted in highly positive user feedback.',
-      gradientColors: ['#F3F3F3', '#F79256', '#A6D9F7'],
-      size: { width: 1300, height: 650 },
-      position: 'relative',
+      description: 'A web application designed to provide users with an engaging and visually appealing experience, allowing them to view their annual music insights anytime. As a key contributor, I focused on UI design to create an aesthetically pleasing and user-friendly interface.',
       image: wrapped,
-      url: 'https://mewkat36.wixstudio.io/spotifywrapped'
+      url: 'https://mewkat36.wixstudio.io/spotifywrapped',
+      category: 'Web Application'
     },
     {
       id: 2,
       title: 'College Scheduler App',
-      description: 'Built with Android Studio, the College Scheduler App offers a user-friendly solution for managing class schedules, exams, assignments, and tasks. It allows students to input courses, add tasks, and track exam dates. A detailed tutorial website was also created to guide users on using Android Studio.',
-      gradientColors: ['#FF66B2', '#FFB347'],
-      size: { width: 1300, height: 650 },
-      position: 'relative',
+      description: 'Built with Android Studio, the College Scheduler App offers a user-friendly solution for managing class schedules, exams, assignments, and tasks. It allows students to input courses, add tasks, and track exam dates.',
       image: schedulerApp,
-      url: 'https://anishbandari19.wixsite.com/collegeappscheduler'
+      url: 'https://anishbandari19.wixsite.com/collegeappscheduler',
+      category: 'Mobile Application'
     },
   ];
-
-  const projectRefs = useRef([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -38,7 +94,6 @@ const Projects = () => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
           }
         });
       },
@@ -59,35 +114,75 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="projects-container">
-      <div className="intro-text">
-        <CurvyLine/>
-        <p className="projects-intro animate-in">
-          <strong>welcome to my portfolio, where innovation comes to life!</strong>
-        </p>
-        <img src={butterfly} alt="Butterfly" className="butterfly-overlay" />
+    <section className="projects-grid-section">
+      <div className="projects-grid-container">
+        <h2 className="projects-section-title">Featured Projects</h2>
+        
+        <div className="projects-grid">
+          {projects.map((project, index) => (
+            <div
+              key={project.id}
+              ref={el => projectRefs.current[index] = el}
+              className="project-card"
+            >
+              <div className="project-image-container">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="project-image"
+                />
+                <div className="project-overlay">
+                  <a 
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-link"
+                  >
+                    View Project →
+                  </a>
+                </div>
+              </div>
+              
+              <div className="project-content">
+                <div className="project-category">{project.category}</div>
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-description">{project.description}</p>
+                
+                <div className="project-actions">
+                  <a 
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary"
+                  >
+                    Live Demo
+                  </a>
+                  <button className="btn-secondary">
+                    Learn More →
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="project-list">
-        {projects.map((project, index) => (
-          <div
-            key={project.id}
-            ref={el => projectRefs.current[index] = el}
-            className="project-box-wrapper"
-          >
-            <ProjectBox
-              title={project.title}
-              description={project.description}
-              gradientColors={project.gradientColors}
-              width={project.size.width}
-              height={project.size.height}
-              position={project.position}
-              image={project.image}
-              style={{ width: `${project.size.width}px`, height: `${project.size.height}px` }}
-              url={project.url}
-            />
-          </div>
-        ))}
-      </div>
+    </section>
+  );
+};
+
+const Projects = () => {
+  useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <div className="projects-page">
+      <AppleBackground />
+      <Navbar />
+      <ProjectsHero />
+      <ProjectsGrid />
+      <Footer />
     </div>
   );
 };

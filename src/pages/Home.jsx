@@ -1,8 +1,142 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import './Home.css';
+
+const ProjectsShowcase = () => {
+  const projectsRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    if (projectsRef.current) {
+      observer.observe(projectsRef.current);
+    }
+
+    return () => {
+      if (projectsRef.current) {
+        observer.unobserve(projectsRef.current);
+      }
+    };
+  }, []);
+
+  const projects = [
+    {
+      id: 1,
+      title: "Jadu AR",
+      subtitle: "Creating the next generation of immersive and spatial gaming.",
+      category: "Product Design",
+      type: "mobile"
+    },
+    {
+      id: 2,
+      title: "Google Kids Space",
+      subtitle: "A new tablet experience to inspire and nurture kids' curiosity.",
+      category: "Product Design",
+      type: "tablet"
+    },
+    {
+      id: 3,
+      title: "Naver",
+      subtitle: "Simplifying access to daily essentials.",
+      category: "Product Design",
+      type: "mobile-suite"
+    }
+  ];
+
+  const handleProjectClick = (projectTitle) => {
+    // Navigate to projects page - you can customize this later
+    console.log(`Viewing project: ${projectTitle}`);
+    // For now, you could navigate to a projects page:
+    // window.location.href = '/projects';
+  };
+
+  return (
+    <section ref={projectsRef} className="projects-showcase">
+      <div className="projects-container">
+        <h2 className="projects-title">Selected Work</h2>
+
+        <div className="projects-grid">
+          {projects.map((project, index) => (
+            <div
+              key={project.id}
+              className={`project-item ${index % 2 === 1 ? 'reverse' : ''}`}
+            >
+              {/* Project Info */}
+              <div className="project-info">
+                <div className="project-category">{project.category}</div>
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-subtitle">{project.subtitle}</p>
+
+                <div className="project-buttons">
+                  <button 
+                    className="btn-primary"
+                    onClick={() => handleProjectClick(project.title)}
+                  >
+                    View Project
+                  </button>
+                  <button 
+                    className="btn-secondary"
+                    onClick={() => handleProjectClick(project.title)}
+                  >
+                    Case Study →
+                  </button>
+                </div>
+              </div>
+
+              {/* Project Visual */}
+              <div className="project-visual">
+                {project.type === 'mobile' && (
+                  <div className="device-mobile">
+                    <div className="device-screen">
+                      <div className="screen-placeholder">AR Gaming Interface</div>
+                    </div>
+                  </div>
+                )}
+
+                {project.type === 'tablet' && (
+                  <div className="device-tablet">
+                    <div className="device-screen">
+                      <div className="screen-placeholder">Kids Tablet Interface</div>
+                    </div>
+                  </div>
+                )}
+
+                {project.type === 'mobile-suite' && (
+                  <div className="device-suite">
+                    {[0, 1, 2].map((i) => (
+                      <div key={i} className={`device-suite-item device-${i}`}>
+                        <div className="device-screen">
+                          <div className="screen-placeholder">App {i + 1}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const Home = () => {
   const homeRef = useRef(null);
+  const heroTextRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -30,18 +164,65 @@ const Home = () => {
     };
   }, []);
 
+  // Mouse tracking effect for hero text
+  const handleMouseMove = (e) => {
+    if (!heroTextRef.current) return;
+    
+    const rect = heroTextRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    heroTextRef.current.style.textShadow = `
+      ${(x - rect.width/2) * 0.01}px ${(y - rect.height/2) * 0.01}px 20px rgba(255, 255, 255, 0.1)
+    `;
+  };
+
+  const handleMouseLeave = () => {
+    if (heroTextRef.current) {
+      heroTextRef.current.style.textShadow = 'none';
+    }
+  };
+
   return (
-    <div className="home-container">
-      <div ref={homeRef} className="home">
-        <h2 className="fade-in">
-          <span className="letter">h</span>
-          <span className="letter">e</span>
-          <span className="letter">l</span>
-          <span className="letter">l</span>
-          <span className="letter">o</span>
-          <span className="dot"></span>
-        </h2>
+    <div className="home-page">
+      {/* Your Custom Navbar */}
+      <Navbar />
+
+      <div className="home-container" id="home" ref={homeRef}>
+        <main className="hero">
+          <div 
+            className="hero-text"
+            ref={heroTextRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+          >
+            Hello <span className="emoji">👋</span> I'm a designer <span className="emoji">📎</span> crafting systems<br/>
+            and experiences <span className="emoji">⚡</span> for the digital space <span className="emoji">💻</span>
+          </div>
+          <div className="hero-description">
+            I help simplify complex problems and<br/>
+            transform them into intuitive interfaces.
+          </div>
+
+          {/* Call to Action Buttons */}
+          <div className="hero-cta">
+            <Link to="/about" className="btn-primary hero-btn">
+              Learn More About Me
+            </Link>
+            <Link to="/projects" className="btn-secondary hero-btn">
+              View My Work →
+            </Link>
+          </div>
+        </main>
       </div>
+
+      {/* Projects Showcase Section */}
+      <div className="projects-section">
+        <ProjectsShowcase />
+      </div>
+      
+      {/* Footer Component - Using the reusable component */}
+      <Footer />
     </div>
   );
 };
