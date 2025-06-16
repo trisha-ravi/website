@@ -35,7 +35,7 @@ const ProjectsShowcase = () => {
   const projects = [
     {
       id: 1,
-      title: "COming soon",
+      title: "Coming soon",
       subtitle: "Creating the next generation of immersive and spatial gaming.",
       category: "Product Design",
       type: "mobile"
@@ -72,7 +72,7 @@ const ProjectsShowcase = () => {
           {projects.map((project, index) => (
             <div
               key={project.id}
-              className={`project-item ${index % 2 === 1 ? 'reverse' : ''}`}
+              className="project-item"
             >
               {/* Project Info */}
               <div className="project-info">

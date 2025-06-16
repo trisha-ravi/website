@@ -423,7 +423,7 @@ body {
   color: #bbb;
 }
 
-/* Projects Showcase - Ensure Visibility */
+/* Projects Showcase - Vertical Layout */
 .projects-section {
   position: relative;
   z-index: 10;
@@ -468,33 +468,38 @@ body {
   color: #ffffff;
 }
 
+/* Updated Projects Grid - Vertical Layout */
 .projects-grid {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 8rem;
 }
 
 .project-item {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 6rem;
   align-items: center;
   min-height: 70vh;
   position: relative;
   z-index: 11;
+  width: 100%;
 }
 
-.project-item.reverse .project-info {
-  order: 2;
-  justify-self: end;
-}
-
-.project-item.reverse .project-visual {
-  order: 1;
+/* Alternating layout for visual variety */
+.project-item:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
 .project-info {
+  flex: 1;
   max-width: 500px;
-  justify-self: start;
+}
+
+.project-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .project-category {
@@ -577,11 +582,6 @@ body {
 
 .btn-secondary:hover {
   color: #bbb;
-}
-
-.project-visual {
-  position: relative;
-  justify-self: center;
 }
 
 /* Device Mockups */
@@ -813,28 +813,27 @@ body {
     padding: 4rem 2rem;
   }
 
+  .projects-grid {
+    gap: 4rem;
+  }
+
   .project-item {
-    grid-template-columns: 1fr !important;
+    flex-direction: column !important;
     gap: 3rem !important;
     text-align: center;
+    min-height: auto;
   }
 
-  .project-item > div {
-    order: 1 !important;
-    justify-self: center !important;
-    max-width: 100% !important;
+  .project-item:nth-child(even) {
+    flex-direction: column !important;
   }
 
-  .project-item > div:last-child {
-    order: 2 !important;
-  }
-
-  .project-item.reverse .project-info {
+  .project-info {
+    max-width: 100%;
     order: 1;
-    justify-self: center;
   }
 
-  .project-item.reverse .project-visual {
+  .project-visual {
     order: 2;
   }
 
