@@ -87,13 +87,19 @@ const AboutStory = () => {
             <h2 className="story-title">My Journey</h2>
             <div className="story-text">
               <p>
-                My journey in Computer Science at Georgia Tech has been driven by a fascination with the intersection of technology and human experience. Through my concentration in Intelligence & People (Human-Computer Interaction), I've discovered my passion for creating AI systems that truly serve people.
+                My journey in Computer Science at Georgia Tech began with a simple curiosity about how technology could better serve people. What started as an interest in programming quickly evolved into a deep fascination with the intersection of artificial intelligence and human experience. Through my concentration in Intelligence & People (Human-Computer Interaction), I've discovered that the most powerful technology isn't just about what it can do, but how it makes people feel and how seamlessly it integrates into their lives.
               </p>
               <p>
-                From conducting user research at PARCE-Lab to leading design initiatives in Georgia Tech's competitive I2P program, I believe in building technology that is not only innovative but also accessible and intuitive. Every project is an opportunity to bridge the gap between complex systems and meaningful user experiences.
+                At PARCE-Lab, I dive deep into understanding how users interact with virtual agents, always asking the critical question: how can we make AI more trustworthy and engaging? This research has shaped my perspective that technology should amplify human potential, not replace human connection. Whether I'm analyzing user interactions or designing accessible interfaces, I'm constantly thinking about the person on the other side of the screen.
               </p>
               <p>
-                When I'm not coding or designing, you'll find me exploring the latest developments in AI ethics, contributing to the AI @ GT community, or experimenting with new ways to make technology more human-centered.
+                My experience leading UI/UX and backend development in Georgia Tech's competitive I2P program has taught me that great products emerge from the marriage of technical excellence and user empathy. When I achieved a 25% reduction in user navigation time or improved data processing efficiency by 20%, those weren't just numbers—they represented real people having better, more intuitive experiences with technology.
+              </p>
+              <p>
+                Beyond the classroom and lab, I've found my voice in the AI community at Georgia Tech, where I've had the privilege of shaping our organization's visual identity and growing our community of future AI innovators. Every design I create, every interface I build, and every research question I pursue is driven by my belief that technology should be a force for human flourishing.
+              </p>
+              <p>
+                When I'm not immersed in code or conducting user research, you'll find me exploring the latest developments in AI ethics, sketching interface ideas, or brainstorming new ways to make complex systems more human-centered. I'm constantly inspired by the challenge of building technology that doesn't just work, but truly serves and uplifts the people who use it.
               </p>
             </div>
             <div className="signature-container">
@@ -229,24 +235,48 @@ const AboutSkills = () => {
 
   const skills = [
     { 
-      category: 'Programming', 
-      items: ['Java', 'Python', 'JavaScript', 'ReactJS', 'Node.js'],
-      icon: '💻'
+      category: 'Programming Languages', 
+      items: [
+        { name: 'Java', level: 90 },
+        { name: 'Python', level: 85 },
+        { name: 'JavaScript', level: 80 },
+        { name: 'Swift', level: 70 }
+      ],
+      icon: '💻',
+      color: '#667eea'
     },
     { 
-      category: 'Design & UX', 
-      items: ['UI/UX Design', 'Wireframing', 'Prototyping', 'User Research'],
-      icon: '🎨'
+      category: 'Frontend & Design', 
+      items: [
+        { name: 'ReactJS', level: 85 },
+        { name: 'UI/UX Design', level: 90 },
+        { name: 'Figma', level: 95 },
+        { name: 'Adobe Creative Suite', level: 80 }
+      ],
+      icon: '🎨',
+      color: '#f093fb'
     },
     { 
-      category: 'Development', 
-      items: ['Android Studio', 'Database Management', 'Backend Systems', 'Agile Methodologies'],
-      icon: '🛠️'
+      category: 'Backend & Cloud', 
+      items: [
+        { name: 'Node.js', level: 75 },
+        { name: 'Database Management', level: 80 },
+        { name: 'AWS', level: 70 },
+        { name: 'Azure', level: 75 }
+      ],
+      icon: '☁️',
+      color: '#4facfe'
     },
     { 
-      category: 'Tools & Cloud', 
-      items: ['GitHub', 'Figma', 'AWS', 'Adobe Creative Suite'],
-      icon: '☁️'
+      category: 'Research & Development', 
+      items: [
+        { name: 'User Research', level: 90 },
+        { name: 'Human-Computer Interaction', level: 85 },
+        { name: 'Android Studio', level: 85 },
+        { name: 'A/B Testing', level: 80 }
+      ],
+      icon: '🔬',
+      color: '#764ba2'
     }
   ];
 
@@ -279,16 +309,27 @@ const AboutSkills = () => {
         <h2 className="skills-title">Skills & Passions</h2>
         <div className="skills-grid">
           {skills.map((skillGroup, index) => (
-            <div key={index} className="skill-group">
+            <div key={index} className="skill-group" style={{'--skill-color': skillGroup.color}}>
               <div className="skill-header">
                 <span className="skill-icon">{skillGroup.icon}</span>
                 <h3 className="skill-category">{skillGroup.category}</h3>
               </div>
-              <ul className="skill-list">
+              <div className="skill-list">
                 {skillGroup.items.map((skill, skillIndex) => (
-                  <li key={skillIndex} className="skill-item">{skill}</li>
+                  <div key={skillIndex} className="skill-item">
+                    <div className="skill-info">
+                      <span className="skill-name">{skill.name}</span>
+                      <span className="skill-percentage">{skill.level}%</span>
+                    </div>
+                    <div className="skill-bar">
+                      <div 
+                        className="skill-progress" 
+                        style={{'--progress': `${skill.level}%`}}
+                      ></div>
+                    </div>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           ))}
         </div>
