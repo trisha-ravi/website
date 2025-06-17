@@ -1,7 +1,4 @@
-.about-skills,
-  .about-cta {
-    padding: 3rem 2rem;
-  }/* About.css - Modern Apple-Inspired About Page Styles with Experience Section */
+/* About.css - Modern Apple-Inspired About Page Styles with Experience Section */
 
 .about-page {
   background: #000000;
@@ -83,7 +80,7 @@
 
 /* About Story Section */
 .about-story {
-  padding: 5rem 4rem 0.5rem 4rem;
+  padding: 5rem 4rem 3rem 4rem;
   background: #000000;
   opacity: 0;
   transition: opacity 1.5s ease;
@@ -103,26 +100,65 @@
   grid-template-columns: 2fr 1fr;
   gap: 8rem;
   align-items: start;
+  margin-bottom: 4rem;
 }
 
 .story-title {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-size: clamp(2.2rem, 3.5vw, 2.8rem);
   font-weight: 300;
   margin-bottom: 3rem;
   color: #ffffff;
 }
 
 .story-text p {
-  font-size: 1.2rem;
-  line-height: 1.8;
+  font-size: 1.1rem;
+  line-height: 1.75;
   color: #cccccc;
   margin-bottom: 2rem;
 }
 
 .story-text p:last-child {
-  margin-bottom: 3rem;
+  margin-bottom: 0;
 }
 
+.story-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Hello Me Image Styling */
+.hello-me-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120%;
+  height: 150%;
+  margin-left: -10%;
+}
+
+.hello-me-image {
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  max-height: calc(100vh - 50px);
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0.95;
+}
+
+.hello-me-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 16px 50px rgba(255, 255, 255, 0.2);
+  opacity: 1;
+}
+
+/* Keep original signature styling for backward compatibility */
 .signature-container {
   margin-top: 2rem;
 }
@@ -167,7 +203,7 @@
 
 /* About Experience Section */
 .about-experience {
-  padding: 0.5rem 4rem 5rem 4rem;
+  padding: 3rem 4rem 5rem 4rem;
   background: #000000;
   opacity: 0;
   transition: opacity 1.5s ease;
@@ -486,8 +522,6 @@
   opacity: 1;
 }
 
-/* Remove the old keyframe animation since we're using CSS transitions now */
-
 /* About CTA Section */
 .about-cta {
   padding: 5rem 4rem;
@@ -632,9 +666,22 @@
     padding: 0.25rem 2rem 3rem 2rem;
   }
 
+  .about-skills,
+  .about-cta {
+    padding: 3rem 2rem;
+  }
+
   .profile-image {
     width: 280px;
     height: 280px;
+  }
+
+  .hello-me-container {
+    max-width: 200px;
+  }
+
+  .hello-me-image {
+    max-height: 150px;
   }
 
   .story-stats {
@@ -729,6 +776,16 @@
   .profile-image {
     width: 240px;
     height: 240px;
+  }
+
+  .hello-me-container {
+    max-width: 150px;
+    padding: 0.5rem;
+  }
+
+  .hello-me-image {
+    max-height: 120px;
+    border-radius: 8px;
   }
 
   .signature-image {

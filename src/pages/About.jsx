@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import './About.css';
 import aboutImage from '../assets/avatar-me.png';
-import signatureImage from '../assets/signature.png';
+import helloMeImage from '../assets/hello-trisha.png';
 
 const AboutHero = () => {
   const heroRef = useRef(null);
@@ -102,22 +102,14 @@ const AboutStory = () => {
                 When I'm not immersed in code or conducting user research, you'll find me exploring the latest developments in AI ethics, sketching interface ideas, or brainstorming new ways to make complex systems more human-centered. I'm constantly inspired by the challenge of building technology that doesn't just work, but truly serves and uplifts the people who use it.
               </p>
             </div>
-            <div className="signature-container">
-              <img src={signatureImage} alt="Trisha's Signature" className="signature-image" />
-            </div>
           </div>
-          <div className="story-stats">
-            <div className="stat-item">
-              <span className="stat-number">25%</span>
-              <span className="stat-label">UI Navigation Improvement</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-number">30%</span>
-              <span className="stat-label">Data Retrieval Speed Boost</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-number">3+</span>
-              <span className="stat-label">Years at Georgia Tech</span>
+          <div className="story-sidebar">
+            <div className="hello-me-container">
+              <img 
+                src={helloMeImage} 
+                alt="Hello from Trisha" 
+                className="hello-me-image"
+              />
             </div>
           </div>
         </div>
