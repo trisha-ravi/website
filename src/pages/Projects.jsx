@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import './Projects.css';
 import wrapped from '../assets/wrapped.png';
-import schedulerApp from '../assets/scheduler-app.png';
+import schedulerApp from '../assets/collegeschedulerapp.png';
 
 
 
