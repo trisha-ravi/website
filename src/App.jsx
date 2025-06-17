@@ -25,7 +25,7 @@ const App = () => {
           <Route path="/gallery" element={<div style={{padding: '120px 4rem 4rem', minHeight: '100vh', background: '#0a0a0a', color: '#fff'}}><h1>Gallery - Coming Soon</h1></div>} />
           
           {/* Legacy route support */}
-          <Route path="/website" element={<Home />} />
+          <Route path="/website" element={<Projects />} />
         </Routes>
       </div>
     </Router>
