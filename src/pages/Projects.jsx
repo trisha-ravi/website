@@ -1,28 +1,12 @@
-// Projects.jsx - Using ProjectBox Component
+// Projects.jsx - Modified to show only images
 import React, { useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import ProjectBox from '../components/ProjectBox';
 import './Projects.css';
-import wrapped from '../assets/wrapped-logo.png';
+import wrapped from '../assets/wrapped.png';
 import schedulerApp from '../assets/scheduler-app.png';
 
-const AppleBackground = () => {
-  return (
-    <div className="apple-background">
-      <div className="apple-mesh"></div>
-      <div className="apple-orb-1"></div>
-      <div className="apple-orb-2"></div>
-      <div className="apple-orb-3"></div>
-      <div className="apple-grid"></div>
-      <div className="apple-line-1"></div>
-      <div className="apple-line-2"></div>
-      <div className="apple-shape-1"></div>
-      <div className="apple-shape-2"></div>
-      <div className="apple-center-glow"></div>
-    </div>
-  );
-};
+
 
 const ProjectsHero = () => {
   const heroRef = useRef(null);
@@ -55,11 +39,11 @@ const ProjectsHero = () => {
     <section ref={heroRef} className="projects-hero">
       <div className="projects-hero-container">
         <h1 className="projects-main-title">
-          Welcome to my portfolio, where 
-          <span className="highlight"> innovation comes to life</span>
+          Hello 👋 I'm a designer 📎 creating simple, intuitive, ⚡ and meaningful experiences for the 
+          <span className="highlight"> digital space</span>
         </h1>
         <p className="projects-subtitle">
-          Explore my latest work and creative solutions that bring ideas to reality.
+          💻 I create digital systems and experiences that connect people and technology.
         </p>
       </div>
     </section>
@@ -71,82 +55,43 @@ const ProjectsGrid = () => {
     {
       id: 1,
       title: 'Spotify Wrapped App',
-      description: 'A web application designed to provide users with an engaging and visually appealing experience, allowing them to view their annual music insights anytime. As a key contributor, I focused on UI design to create an aesthetically pleasing and user-friendly interface.',
+      description: 'A web application providing users with engaging annual music insights and visualizations.',
       image: wrapped,
-      url: 'https://mewkat36.wixstudio.io/spotifywrapped',
-      category: 'Web Application',
-      tags: ['React', 'UI Design', 'Data Visualization'],
-      status: 'live',
-      featured: true
+      url: 'https://mewkat36.wixstudio.io/spotifywrapped'
     },
     {
       id: 2,
       title: 'College Scheduler App',
-      description: 'Built with Android Studio, the College Scheduler App offers a user-friendly solution for managing class schedules, exams, assignments, and tasks. It allows students to input courses, add tasks, and track exam dates.',
+      description: 'Android app for managing class schedules, exams, assignments, and academic tasks.',
       image: schedulerApp,
-      url: 'https://anishbandari19.wixsite.com/collegeappscheduler',
-      category: 'Mobile Application',
-      tags: ['Android Studio', 'Java', 'Mobile Development'],
-      status: 'live'
+      url: 'https://anishbandari19.wixsite.com/collegeappscheduler'
     },
   ];
-
-  const featuredProjects = projects.filter(project => project.featured);
-  const otherProjects = projects.filter(project => !project.featured);
-
-  // Handlers for project interactions
-  const handleLearnMore = (project) => {
-    console.log('Learn more about:', project.title);
-    // Navigate to project detail page or show modal
-    // Example: navigate(`/projects/${project.id}`);
-  };
-
-  const handleCaseStudy = (project) => {
-    console.log('View case study for:', project.title);
-    // Navigate to case study page or show detailed view
-    // Example: navigate(`/case-studies/${project.id}`);
-  };
 
   return (
     <section className="projects-grid-section">
       <div className="projects-grid-container">
-        {/* Featured Projects */}
-        {featuredProjects.length > 0 && (
-          <div className="featured-section">
-            <h2 className="projects-section-title">Featured Work</h2>
-            <div className="featured-grid">
-              {featuredProjects.map((project) => (
-                <ProjectBox
-                  key={project.id}
-                  project={project}
-                  featured={true}
-                  onLearnMore={handleLearnMore}
-                  onCaseStudy={handleCaseStudy}
+        <h2 className="projects-section-title">My Work</h2>
+        <div className="projects-image-grid">
+          {projects.map((project) => (
+            <div key={project.id} className="project-image-card">
+              <a 
+                href={project.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="project-image-link"
+              >
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="project-image-only"
                 />
-              ))}
+              </a>
+              <h3 className="project-title-below">{project.title}</h3>
+              <p className="project-description-below">{project.description}</p>
             </div>
-          </div>
-        )}
-
-        {/* Other Projects */}
-        {otherProjects.length > 0 && (
-          <div className="other-projects-section">
-            <h2 className="projects-section-title">
-              {featuredProjects.length > 0 ? 'More Projects' : 'All Projects'}
-            </h2>
-            <div className="projects-grid">
-              {otherProjects.map((project) => (
-                <ProjectBox
-                  key={project.id}
-                  project={project}
-                  featured={false}
-                  onLearnMore={handleLearnMore}
-                  onCaseStudy={handleCaseStudy}
-                />
-              ))}
-            </div>
-          </div>
-        )}
+          ))}
+        </div>
 
         {/* Empty State */}
         {projects.length === 0 && (
@@ -168,7 +113,6 @@ const Projects = () => {
 
   return (
     <div className="projects-page">
-      <AppleBackground />
       <Navbar />
       <ProjectsHero />
       <ProjectsGrid />
