@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
@@ -11,9 +11,9 @@ const App = () => {
     <Router>
       <div className="app">
         <Routes>
-          {/* Main routes */}
+          {/* Main routes - Projects page as default */}
           <Route path="/" element={<Projects />} />
-          <Route path="/home" element={<Projects />} />
+          <Route path="/home" element={<Navigate to="/" replace />} />
           <Route path="/about" element={<About />} />
           <Route path="/work" element={<Projects />} />
           <Route path="/projects" element={<Projects />} />
@@ -26,6 +26,9 @@ const App = () => {
           
           {/* Legacy route support */}
           <Route path="/website" element={<Projects />} />
+          
+          {/* Catch-all route - redirects any unknown paths to Projects */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
     </Router>
