@@ -1,4 +1,4 @@
-/* About.css - Modern Apple-Inspired About Page Styles */
+/* About.css - Modern Apple-Inspired About Page Styles with Experience Section */
 
 .about-page {
   background: #000000;
@@ -160,6 +160,166 @@
   color: #888888;
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+
+/* About Experience Section */
+.about-experience {
+  padding: 8rem 4rem;
+  background: #000000;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+  position: relative;
+}
+
+.about-experience.visible {
+  opacity: 1;
+}
+
+.about-experience-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.experience-title {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 5rem;
+  color: #ffffff;
+}
+
+.experience-timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  left: 2rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.1) 10%, rgba(255, 255, 255, 0.1) 90%, transparent 100%);
+}
+
+.experience-item {
+  position: relative;
+  margin-bottom: 4rem;
+  padding-left: 4rem;
+  opacity: 0;
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.experience-item:nth-child(1) { animation-delay: 0.1s; }
+.experience-item:nth-child(2) { animation-delay: 0.2s; }
+.experience-item:nth-child(3) { animation-delay: 0.3s; }
+.experience-item:nth-child(4) { animation-delay: 0.4s; }
+
+.experience-marker {
+  position: absolute;
+  left: -4rem;
+  top: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid var(--accent-color, #667eea);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.experience-item:hover .experience-marker {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.experience-icon {
+  font-size: 1.2rem;
+}
+
+.experience-content {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px;
+  padding: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.experience-content:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+  gap: 1rem;
+}
+
+.experience-role {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0;
+  flex: 1;
+}
+
+.experience-period {
+  font-size: 0.9rem;
+  color: var(--accent-color, #667eea);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.experience-company {
+  font-size: 1.1rem;
+  color: #aaaaaa;
+  margin: 0 0 1.5rem 0;
+  font-weight: 400;
+}
+
+.experience-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #cccccc;
+  margin-bottom: 1.5rem;
+}
+
+.experience-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  background: rgba(255, 255, 255, 0.05);
+  color: #dddddd;
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  transform: translateY(-1px);
 }
 
 /* About Skills Section */
@@ -341,6 +501,17 @@
   }
 }
 
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .about-hero-container {
@@ -358,6 +529,24 @@
     max-width: 500px;
     margin: 0 auto;
   }
+
+  .experience-timeline {
+    padding-left: 1rem;
+  }
+
+  .experience-timeline::before {
+    left: 1rem;
+  }
+
+  .experience-item {
+    padding-left: 3rem;
+  }
+
+  .experience-marker {
+    left: -2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -367,7 +556,8 @@
 
   .about-story,
   .about-skills,
-  .about-cta {
+  .about-cta,
+  .about-experience {
     padding: 4rem 2rem;
   }
 
@@ -398,6 +588,29 @@
     gap: 1rem;
     align-items: stretch;
   }
+
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .experience-period {
+    align-self: flex-start;
+  }
+
+  .experience-content {
+    padding: 2rem;
+  }
+
+  .experience-technologies {
+    gap: 0.4rem;
+  }
+
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -407,7 +620,8 @@
 
   .about-story,
   .about-skills,
-  .about-cta {
+  .about-cta,
+  .about-experience {
     padding: 3rem 1rem;
   }
 
@@ -435,5 +649,13 @@
 
   .skill-group {
     padding: 1.5rem;
+  }
+
+  .experience-timeline {
+    padding-left: 0.5rem;
+  }
+
+  .experience-timeline::before {
+    left: 0.5rem;
   }
 }
