@@ -58,12 +58,12 @@ const Navbar = () => {
         >
           Work
         </Link>
-        <Link 
+        {/* <Link 
           to="/sketchbook" 
           className={`navbar-link ${isActive('/sketchbook') ? 'active' : ''}`}
         >
           Sketchbook
-        </Link>
+        </Link> */}
         <Link 
           to="/contact" 
           className={`navbar-link ${isActive('/contact') ? 'active' : ''}`}
@@ -73,13 +73,13 @@ const Navbar = () => {
       </div>
 
       {/* Gallery Link with Dots */}
-      <Link 
+      {/* <Link 
         to="/gallery" 
         className={`navbar-gallery ${isActive('/gallery') ? 'active' : ''}`}
       >
         <span className="gallery-dots">⋅⋅<br/>⋅⋅</span>
         Gallery
-      </Link>
+      </Link> */}
     </nav>
   );
 };

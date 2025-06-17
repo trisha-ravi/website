@@ -7,27 +7,27 @@ const Footer = () => {
   const footerLinks = [
     {
       category: 'Networking',
-      items: [{ name: 'Read.cv', url: 'https://read.cv/trisha', icon: '↗', external: true }]
+      items: [{ name: 'LinkedIn', url: 'https://www.linkedin.com/in/trisha-ravichandran/', icon: '↗', external: true }]
     },
-    {
-      category: 'Illustrations',
-      items: [{ name: 'Sketchbook', url: '/sketchbook', icon: '↗', external: false }]
-    },
-    {
-      category: 'Latest Projects',
-      items: [{ name: 'Instagram', url: 'https://instagram.com/trisha', icon: '↗', external: true }]
-    },
-    {
-      category: 'Latest Updates',
-      items: [{ name: 'X (Twitter)', url: 'https://twitter.com/trisha', icon: '↗', external: true }]
-    },
-    {
-      category: 'Moodboard',
-      items: [{ name: 'Savee', url: 'https://savee.it/trisha', icon: '↗', external: true }]
-    },
+    // {
+    //   category: 'Illustrations',
+    //   items: [{ name: 'Sketchbook', url: '/sketchbook', icon: '↗', external: false }]
+    // },
+    // {
+    //   category: 'Latest Projects',
+    //   items: [{ name: 'Instagram', url: 'https://instagram.com/trisha', icon: '↗', external: true }]
+    // },
+    // {
+    //   category: 'Latest Updates',
+    //   items: [{ name: 'X (Twitter)', url: 'https://twitter.com/trisha', icon: '↗', external: true }]
+    // },
+    // {
+    //   category: 'Moodboard',
+    //   items: [{ name: 'Savee', url: 'https://savee.it/trisha', icon: '↗', external: true }]
+    // },
     {
       category: 'Connect',
-      items: [{ name: 'Mail', url: 'mailto:hello@trisha.com', icon: '↗', external: true }]
+      items: [{ name: 'Mail', url: 'mailto:trisha02.r@gmail.com', icon: '↗', external: true }]
     }
   ];
 
@@ -60,19 +60,19 @@ const Footer = () => {
                 <span className="link-category">{section.category}</span>
                 {section.items.map((item, itemIndex) => (
                   item.external ? (
-                    <a 
-                      key={itemIndex} 
-                      href={item.url} 
+                    <a
+                      key={itemIndex}
+                      href={item.url}
                       className="footer-link"
-                      target="_blank" 
+                      target="_blank"
                       rel="noopener noreferrer"
                     >
                       {item.name} {item.icon}
                     </a>
                   ) : (
-                    <Link 
-                      key={itemIndex} 
-                      to={item.url} 
+                    <Link
+                      key={itemIndex}
+                      to={item.url}
                       className="footer-link"
                     >
                       {item.name} {item.icon}
