@@ -1,5 +1,5 @@
 // About.jsx - Modern Apple-Inspired About Page with Experience Section
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import './About.css';
@@ -232,6 +232,7 @@ const AboutExperience = () => {
 
 const AboutSkills = () => {
   const skillsRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   const skills = [
     { 
@@ -286,10 +287,11 @@ const AboutSkills = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+            setIsVisible(true);
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.3 }
     );
 
     if (skillsRef.current) {
@@ -323,8 +325,12 @@ const AboutSkills = () => {
                     </div>
                     <div className="skill-bar">
                       <div 
-                        className="skill-progress" 
-                        style={{'--progress': `${skill.level}%`}}
+                        className={`skill-progress ${isVisible ? 'loaded' : ''}`}
+                        style={{
+                          '--progress': `${skill.level}%`,
+                          '--skill-color': skillGroup.color,
+                          animationDelay: `${(index * 4 + skillIndex) * 0.1}s`
+                        }}
                       ></div>
                     </div>
                   </div>

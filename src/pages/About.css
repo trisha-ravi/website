@@ -1,4 +1,7 @@
-/* About.css - Modern Apple-Inspired About Page Styles with Experience Section */
+.about-skills,
+  .about-cta {
+    padding: 3rem 2rem;
+  }/* About.css - Modern Apple-Inspired About Page Styles with Experience Section */
 
 .about-page {
   background: #000000;
@@ -80,7 +83,7 @@
 
 /* About Story Section */
 .about-story {
-  padding: 8rem 4rem;
+  padding: 5rem 4rem 0.5rem 4rem;
   background: #000000;
   opacity: 0;
   transition: opacity 1.5s ease;
@@ -164,7 +167,7 @@
 
 /* About Experience Section */
 .about-experience {
-  padding: 8rem 4rem;
+  padding: 0.5rem 4rem 5rem 4rem;
   background: #000000;
   opacity: 0;
   transition: opacity 1.5s ease;
@@ -324,7 +327,7 @@
 
 /* About Skills Section */
 .about-skills {
-  padding: 8rem 4rem;
+  padding: 5rem 4rem;
   background: #000000;
   opacity: 0;
   transition: opacity 1.5s ease;
@@ -456,10 +459,13 @@
   height: 100%;
   background: linear-gradient(90deg, var(--skill-color, #667eea), rgba(255, 255, 255, 0.8));
   border-radius: 3px;
-  width: var(--progress, 0%);
-  transition: width 1.2s ease-out;
+  width: 0%;
+  transition: width 1.5s ease-out;
   position: relative;
-  animation: skillLoad 1.5s ease-out;
+}
+
+.skill-progress.loaded {
+  width: var(--progress, 0%);
 }
 
 .skill-progress::after {
@@ -472,20 +478,19 @@
   background: rgba(255, 255, 255, 0.9);
   border-radius: 2px;
   box-shadow: 0 0 6px var(--skill-color, #667eea);
+  opacity: 0;
+  transition: opacity 0.3s ease 1.5s;
 }
 
-@keyframes skillLoad {
-  from {
-    width: 0%;
-  }
-  to {
-    width: var(--progress, 0%);
-  }
+.skill-progress.loaded::after {
+  opacity: 1;
 }
+
+/* Remove the old keyframe animation since we're using CSS transitions now */
 
 /* About CTA Section */
 .about-cta {
-  padding: 8rem 4rem;
+  padding: 5rem 4rem;
   background: #000000;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -619,11 +624,12 @@
     padding: 100px 2rem 0;
   }
 
-  .about-story,
-  .about-skills,
-  .about-cta,
+  .about-story {
+    padding: 3rem 2rem 0.25rem 2rem;
+  }
+
   .about-experience {
-    padding: 4rem 2rem;
+    padding: 0.25rem 2rem 3rem 2rem;
   }
 
   .profile-image {
@@ -707,11 +713,17 @@
     padding: 80px 1rem 0;
   }
 
-  .about-story,
-  .about-skills,
-  .about-cta,
+  .about-story {
+    padding: 2.5rem 1rem 0.125rem 1rem;
+  }
+
   .about-experience {
-    padding: 3rem 1rem;
+    padding: 0.125rem 1rem 2.5rem 1rem;
+  }
+
+  .about-skills,
+  .about-cta {
+    padding: 2.5rem 1rem;
   }
 
   .profile-image {
