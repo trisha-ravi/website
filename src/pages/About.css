@@ -158,48 +158,7 @@
   opacity: 1;
 }
 
-/* Keep original signature styling for backward compatibility */
-.signature-container {
-  margin-top: 2rem;
-}
 
-.signature-image {
-  width: 200px;
-  height: auto;
-  opacity: 0.8;
-  filter: invert(1);
-}
-
-.story-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  padding: 3rem;
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.stat-item {
-  text-align: center;
-}
-
-.stat-number {
-  display: block;
-  font-size: 3rem;
-  font-weight: 300;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  color: #888888;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
 
 /* About Experience Section */
 .about-experience {
@@ -629,11 +588,6 @@
     gap: 4rem;
   }
 
-  .story-stats {
-    max-width: 500px;
-    margin: 0 auto;
-  }
-
   .experience-timeline {
     padding-left: 1rem;
   }
@@ -682,14 +636,6 @@
 
   .hello-me-image {
     max-height: 150px;
-  }
-
-  .story-stats {
-    padding: 2rem;
-  }
-
-  .stat-number {
-    font-size: 2.5rem;
   }
 
   .skills-grid {
@@ -790,19 +736,6 @@
 
   .signature-image {
     width: 150px;
-  }
-
-  .story-stats {
-    flex-direction: row;
-    gap: 1rem;
-  }
-
-  .stat-item {
-    flex: 1;
-  }
-
-  .stat-number {
-    font-size: 2rem;
   }
 
   .skill-group {
