@@ -7,23 +7,6 @@ import './Home.css';
 import wrapped from '../assets/wrapped-logo.png';
 import schedulerApp from '../assets/scheduler-app.png';
 
-const AppleBackground = () => {
-  return (
-    <div className="apple-background">
-      <div className="apple-mesh"></div>
-      <div className="apple-orb-1"></div>
-      <div className="apple-orb-2"></div>
-      <div className="apple-orb-3"></div>
-      <div className="apple-grid"></div>
-      <div className="apple-line-1"></div>
-      <div className="apple-line-2"></div>
-      <div className="apple-shape-1"></div>
-      <div className="apple-shape-2"></div>
-      <div className="apple-center-glow"></div>
-    </div>
-  );
-};
-
 const HomeHero = () => {
   const heroRef = useRef(null);
 
@@ -324,7 +307,6 @@ const Home = () => {
 
   return (
     <div className="home-page">
-      <AppleBackground />
       <Navbar />
       <HomeHero />
       <AboutSection />
