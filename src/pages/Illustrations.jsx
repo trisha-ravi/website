@@ -1,6 +1,6 @@
 // Illustrations.jsx
 import React from 'react';
-import './Illustrations.css';
+import './styles/Illustrations.css';
 import aboutImage from '../assets/avatar-me.png';
 
 const illustrations = [

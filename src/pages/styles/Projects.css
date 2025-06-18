@@ -1,4 +1,4 @@
-/* Projects.css - Complete CSS with Fade-in Animations */
+/* Projects.css - Complete CSS with Fade-in Animations (No Green Highlight) */
 
 .projects-page {
   background: #000000;
@@ -38,11 +38,13 @@
   color: #ffffff;
 }
 
-.highlight {
+/* Purple/blue gradient highlight - more specific selector */
+.projects-main-title .highlight {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  color: transparent; /* Fallback for browsers that don't support background-clip */
 }
 
 .projects-subtitle {

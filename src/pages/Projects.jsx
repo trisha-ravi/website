@@ -1,8 +1,9 @@
-// Projects.jsx - Modified with scroll fade-in animations
+// Projects.jsx - Modified with scroll fade-in animations and navigation
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import './Projects.css';
+import './styles/Projects.css';
 import wrapped from '../assets/wrapped.png';
 import schedulerApp from '../assets/collegeschedulerapp.png';
 
@@ -58,14 +59,16 @@ const ProjectsGrid = () => {
       title: 'Spotify Wrapped App',
       description: 'A web application providing users with engaging annual music insights and visualizations.',
       image: wrapped,
-      url: 'https://mewkat36.wixstudio.io/spotifywrapped'
+      route: '/projects/spotify-wrapped', // Internal route for detailed page
+      externalUrl: 'https://mewkat36.wixstudio.io/spotifywrapped'
     },
     {
       id: 2,
       title: 'College Scheduler App',
       description: 'Android app for managing class schedules, exams, assignments, and academic tasks.',
       image: schedulerApp,
-      url: 'https://anishbandari19.wixsite.com/collegeappscheduler'
+      route: null, // No detailed page yet
+      externalUrl: 'https://anishbandari19.wixsite.com/collegeappscheduler'
     },
   ];
 
@@ -126,18 +129,32 @@ const ProjectsGrid = () => {
               className="project-image-card fade-in-element"
               style={{ transitionDelay: `${index * 0.2}s` }}
             >
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project-image-link"
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="project-image-only"
-                />
-              </a>
+              {/* Use Link for internal routes or anchor tag for external links */}
+              {project.route ? (
+                <Link
+                  to={project.route}
+                  className="project-image-link"
+                >
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="project-image-only"
+                  />
+                </Link>
+              ) : (
+                <a
+                  href={project.externalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-image-link"
+                >
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="project-image-only"
+                  />
+                </a>
+              )}
               <h3 className="project-title-below">{project.title}</h3>
               <p className="project-description-below">{project.description}</p>
             </div>

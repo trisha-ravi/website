@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import './Home.css';
+import './styles/Home.css';
 import wrapped from '../assets/wrapped-logo.png';
 import schedulerApp from '../assets/scheduler-app.png';
 

@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import SpotifyWrappedProject from './pages/project-pages/SpotifyWrappedProject';
 import './App.css';
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/work" element={<Projects />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/spotify-wrapped" element={<SpotifyWrappedProject />} />
           <Route path="/contact" element={<Contact />} />
           
           {/* Placeholder routes for navigation items that don't have pages yet */}

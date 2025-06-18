@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import './About.css';
+import './styles/About.css';
 import aboutImage from '../assets/avatar-me.png';
 import helloMeImage from '../assets/hello-trisha.png';
 

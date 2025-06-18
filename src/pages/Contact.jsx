@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import './Contact.css';
+import './styles/Contact.css';
 
 const AppleBackground = () => {
   return (

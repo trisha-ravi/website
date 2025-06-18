@@ -1,6 +1,6 @@
 // src/CurvyLine.js
 import React from 'react';
-import './CurvyLine.css';
+import './styles/CurvyLine.css';
 
 const CurvyLine = () => {
   return (
