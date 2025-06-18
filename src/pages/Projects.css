@@ -1,19 +1,4 @@
-.project-title-below {
-  font-size: 1rem;
-  font-weight: 400;
-  color: #aaaaaa;
-  margin: 1rem 0 0.5rem 0;
-  text-align: left;
-}
-
-.project-description-below {
-  font-size: 0.875rem;
-  font-weight: 400;
-  color: #888888;
-  margin: 0;
-  text-align: left;
-  line-height: 1.5;
-}/* Projects.css - Updated for Images Only Display */
+/* Projects.css - Complete CSS with Fade-in Animations */
 
 .projects-page {
   background: #000000;
@@ -21,8 +6,6 @@
   min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
-
-
 
 /* Projects Hero Section */
 .projects-hero {
@@ -124,13 +107,61 @@
   height: auto;
   display: block;
   transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+  will-change: transform;
 }
 
 .project-image-card:hover .project-image-only {
   transform: scale(1.05);
 }
 
+.project-title-below {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #aaaaaa;
+  margin: 1rem 0 0.5rem 0;
+  text-align: left;
+}
 
+.project-description-below {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #888888;
+  margin: 0;
+  text-align: left;
+  line-height: 1.5;
+}
+
+/* Fade-in Animation Styles */
+.fade-in-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.fade-in-element.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animation for project cards */
+.project-image-card.fade-in-element {
+  transition-delay: inherit; /* Uses the inline style delay */
+}
+
+/* Enhanced hover effects with fade-in support */
+.project-image-card.fade-in-visible:hover {
+  transform: translateY(-10px);
+}
+
+.project-image-card.fade-in-visible:hover .project-image-only {
+  transform: scale(1.05);
+}
+
+/* Section title specific animation */
+.projects-section-title.fade-in-element {
+  transition-duration: 1s;
+}
 
 /* Empty State */
 .empty-state {
@@ -168,6 +199,12 @@
   .project-image-only {
     height: auto;
   }
+
+  /* Responsive adjustments for animations */
+  .fade-in-element {
+    transform: translateY(20px);
+    transition-duration: 0.6s;
+  }
 }
 
 @media (max-width: 480px) {
@@ -187,12 +224,26 @@
   .project-image-only {
     height: auto;
   }
+}
 
-  .project-image-overlay {
-    padding: 1.5rem;
+/* Accessibility - Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-element {
+    transition: none;
+    opacity: 1;
+    transform: none;
   }
-
-  .project-image-title {
-    font-size: 1.2rem;
+  
+  .project-image-card {
+    transition: none;
+  }
+  
+  .project-image-only {
+    transition: none;
+  }
+  
+  .projects-hero {
+    transition: none;
+    opacity: 1;
   }
 }

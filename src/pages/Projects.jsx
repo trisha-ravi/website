@@ -1,12 +1,10 @@
-// Projects.jsx - Modified to show only images
+// Projects.jsx - Modified with scroll fade-in animations
 import React, { useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import './Projects.css';
 import wrapped from '../assets/wrapped.png';
 import schedulerApp from '../assets/collegeschedulerapp.png';
-
-
 
 const ProjectsHero = () => {
   const heroRef = useRef(null);
@@ -51,6 +49,9 @@ const ProjectsHero = () => {
 };
 
 const ProjectsGrid = () => {
+  const titleRef = useRef(null);
+  const projectRefs = useRef([]);
+
   const projects = [
     {
       id: 1,
@@ -68,21 +69,71 @@ const ProjectsGrid = () => {
     },
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { 
+        threshold: 0.1,
+        rootMargin: '50px 0px -50px 0px'
+      }
+    );
+
+    // Observe the section title
+    if (titleRef.current) {
+      observer.observe(titleRef.current);
+    }
+
+    // Observe each project card
+    projectRefs.current.forEach((ref) => {
+      if (ref) {
+        observer.observe(ref);
+      }
+    });
+
+    return () => {
+      if (titleRef.current) {
+        observer.unobserve(titleRef.current);
+      }
+      projectRefs.current.forEach((ref) => {
+        if (ref) {
+          observer.unobserve(ref);
+        }
+      });
+    };
+  }, [projects.length]);
+
   return (
     <section className="projects-grid-section">
       <div className="projects-grid-container">
-        <h2 className="projects-section-title">My Work</h2>
+        <h2 
+          ref={titleRef}
+          className="projects-section-title fade-in-element"
+        >
+          My Work
+        </h2>
         <div className="projects-image-grid">
-          {projects.map((project) => (
-            <div key={project.id} className="project-image-card">
-              <a 
-                href={project.url} 
-                target="_blank" 
+          {projects.map((project, index) => (
+            <div 
+              key={project.id} 
+              ref={(el) => projectRefs.current[index] = el}
+              className="project-image-card fade-in-element"
+              style={{ transitionDelay: `${index * 0.2}s` }}
+            >
+              <a
+                href={project.url}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="project-image-link"
               >
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
                   className="project-image-only"
                 />
