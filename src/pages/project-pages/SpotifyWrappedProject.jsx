@@ -53,11 +53,15 @@ const ProjectHero = () => {
               </div>
               <div className="meta-item">
                 <span className="icon">👥</span>
-                <span>Solo Project</span>
+                <span>Team Project</span>
+              </div>
+              <div className="meta-item">
+                <span className="icon">📱</span>
+                <span>Android Development</span>
               </div>
               <div className="meta-item">
                 <span className="icon">💻</span>
-                <span>Web Development</span>
+                <span>Frontend Development</span>
               </div>
               <div className="meta-item">
                 <span className="icon">🎨</span>
@@ -150,16 +154,16 @@ const ProjectDetails = () => {
         <div ref={detailsRef} className="project-overview fade-in-element">
           <h2>Project Overview</h2>
           <p>
-            The Spotify Wrapped Reimagined project was born from a desire to create a more comprehensive 
-            and visually appealing alternative to Spotify's annual Wrapped feature. While Spotify's version 
-            offers great insights, I wanted to push the boundaries of what music analytics could look like 
-            with enhanced visualizations, deeper data analysis, and more personalization options.
+            The Spotify Wrapped Reimagined project was a collaborative team effort to create a more comprehensive 
+            and visually appealing alternative to Spotify's annual Wrapped feature. As a team, we wanted to push 
+            the boundaries of what music analytics could look like with enhanced visualizations, deeper data analysis, 
+            and more personalization options across both mobile and web platforms.
           </p>
           <p>
-            This web application connects to users' Spotify accounts through the official API, analyzes 
-            their listening history, and presents the data through interactive charts, personalized 
-            recommendations, and shareable content cards. The focus was on creating an experience that 
-            feels both informative and entertaining.
+            This application was developed for both Android and web platforms, connecting to users' Spotify accounts 
+            through the official API to analyze listening history and present data through interactive charts, 
+            personalized recommendations, and shareable content cards. My role focused on frontend development and 
+            UI/UX design, working closely with the team to create an experience that feels both informative and entertaining.
           </p>
         </div>
 
@@ -185,12 +189,21 @@ const ProjectDetails = () => {
           <h2>Technical Implementation</h2>
           <div className="tech-details">
             <div className="tech-category">
-              <h3>Frontend</h3>
+              <h3>Frontend & Web</h3>
               <ul>
                 <li>React.js for component-based architecture</li>
                 <li>Chart.js for data visualizations</li>
                 <li>CSS3 with modern animations and transitions</li>
                 <li>Responsive design for all device sizes</li>
+              </ul>
+            </div>
+            <div className="tech-category">
+              <h3>Android Development</h3>
+              <ul>
+                <li>Native Android development with Java/Kotlin</li>
+                <li>Material Design components</li>
+                <li>Android SDK for mobile-specific features</li>
+                <li>Cross-platform data synchronization</li>
               </ul>
             </div>
             <div className="tech-category">
@@ -206,9 +219,9 @@ const ProjectDetails = () => {
               <h3>Design & UX</h3>
               <ul>
                 <li>Figma for wireframing and prototyping</li>
-                <li>Color psychology in data visualization</li>
+                <li>User research and testing methodologies</li>
                 <li>Accessibility-first design approach</li>
-                <li>Progressive web app principles</li>
+                <li>Cross-platform design consistency</li>
               </ul>
             </div>
           </div>
@@ -218,24 +231,27 @@ const ProjectDetails = () => {
           <h2>Challenges & Solutions</h2>
           <div className="challenges-grid">
             <div className="challenge-item">
-              <h3>API Rate Limits</h3>
+              <h3>Cross-Platform Consistency</h3>
               <p>
-                Spotify's API has strict rate limits that could impact user experience. I implemented 
-                intelligent caching and batch requests to minimize API calls while maintaining real-time data.
+                Maintaining design and functionality consistency between Android and web platforms required careful 
+                coordination between team members. We established design systems and shared components to ensure 
+                a unified user experience across all platforms.
               </p>
             </div>
             <div className="challenge-item">
-              <h3>Data Visualization</h3>
+              <h3>Team Collaboration</h3>
               <p>
-                Converting complex music data into meaningful visualizations required careful consideration 
-                of user psychology and information hierarchy. I conducted user testing to refine the charts.
+                Working with multiple developers across different platforms required effective communication and 
+                version control strategies. We implemented agile methodologies and used collaborative tools to 
+                keep the project synchronized and on track.
               </p>
             </div>
             <div className="challenge-item">
               <h3>Performance Optimization</h3>
               <p>
-                With large datasets and complex animations, performance was crucial. I implemented lazy 
-                loading, code splitting, and optimized rendering to ensure smooth user interactions.
+                With large datasets and complex animations across multiple platforms, performance was crucial. 
+                Each platform required specific optimization strategies while maintaining feature parity and 
+                smooth user interactions.
               </p>
             </div>
           </div>
