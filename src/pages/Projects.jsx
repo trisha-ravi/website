@@ -67,7 +67,7 @@ const ProjectsGrid = () => {
       title: 'College Scheduler App',
       description: 'Android app for managing class schedules, exams, assignments, and academic tasks.',
       image: schedulerApp,
-      route: null, // No detailed page yet
+      route: '/projects/college-scheduler', // Internal route for detailed page
       externalUrl: 'https://anishbandari19.wixsite.com/collegeappscheduler'
     },
   ];
