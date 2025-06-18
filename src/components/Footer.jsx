@@ -13,10 +13,10 @@ const Footer = () => {
     //   category: 'Illustrations',
     //   items: [{ name: 'Sketchbook', url: '/sketchbook', icon: '↗', external: false }]
     // },
-    // {
-    //   category: 'Latest Projects',
-    //   items: [{ name: 'Instagram', url: 'https://instagram.com/trisha', icon: '↗', external: true }]
-    // },
+    {
+    category: 'Social',
+       items: [{ name: 'Instagram', url: 'https://instagram.com/trisha.ravichandran', icon: '↗', external: true }]
+    },
     // {
     //   category: 'Latest Updates',
     //   items: [{ name: 'X (Twitter)', url: 'https://twitter.com/trisha', icon: '↗', external: true }]
