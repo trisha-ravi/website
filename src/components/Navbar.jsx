@@ -64,12 +64,12 @@ const Navbar = () => {
         >
           Sketchbook
         </Link> */}
-        <Link 
+       {/* <Link 
           to="/contact" 
           className={`navbar-link ${isActive('/contact') ? 'active' : ''}`}
         >
           Contact
-        </Link>
+        </Link>*/}
       </div>
 
       {/* Gallery Link with Dots */}
