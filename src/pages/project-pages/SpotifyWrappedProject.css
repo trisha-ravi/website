@@ -1,3 +1,5 @@
+/* SpotifyWrappedProject.css - Place this in src/pages/ */
+
 .spotify-wrapped-project {
   background: #000000;
   color: #ffffff;
@@ -62,7 +64,8 @@
   color: #ffffff;
 }
 
-.highlight {
+/* Project-specific highlight for Spotify Wrapped */
+.spotify-wrapped-project .highlight {
   background: linear-gradient(135deg, #1DB954 0%, #1ed760 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -95,7 +98,7 @@
   margin-right: 0.5rem;
 }
 
-.cta-button {
+.spotify-wrapped-project .cta-button {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
@@ -110,7 +113,7 @@
   cursor: pointer;
 }
 
-.cta-button:hover {
+.spotify-wrapped-project .cta-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(29, 185, 84, 0.3);
 }
@@ -193,7 +196,7 @@
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.feature-card:hover {
+.spotify-wrapped-project .feature-card:hover {
   transform: translateY(-5px);
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(29, 185, 84, 0.3);
@@ -234,7 +237,7 @@
   gap: 3rem;
 }
 
-.tech-category h3 {
+.spotify-wrapped-project .tech-category h3 {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
   color: #1DB954;
@@ -254,7 +257,7 @@
   line-height: 1.6;
 }
 
-.tech-category li::before {
+.spotify-wrapped-project .tech-category li::before {
   content: "▸";
   position: absolute;
   left: 0;
@@ -275,7 +278,7 @@
   gap: 2.5rem;
 }
 
-.challenge-item {
+.spotify-wrapped-project .challenge-item {
   background: rgba(255, 255, 255, 0.02);
   border-left: 4px solid #1DB954;
   padding: 2rem;
