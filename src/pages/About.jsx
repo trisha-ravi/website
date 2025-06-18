@@ -336,26 +336,6 @@ const AboutSkills = () => {
   );
 };
 
-const AboutCTA = () => {
-  return (
-    <section className="about-cta">
-      <div className="about-cta-container">
-        <div className="cta-content">
-          <h2 className="cta-title">Let's Create Something Amazing Together</h2>
-          <p className="cta-subtitle">
-            Dive into my portfolio to see where my imagination and coding expertise have taken me, 
-            and feel free to reach out if you'd like to collaborate or share a story!
-          </p>
-          <div className="cta-buttons">
-            <a href="/projects" className="btn-primary">View My Work</a>
-            <a href="/contact" className="btn-secondary">Get In Touch →</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
 const About = () => {
   useEffect(() => {
     // Scroll to top when component mounts
@@ -369,7 +349,6 @@ const About = () => {
       <AboutStory />
       <AboutExperience />
       <AboutSkills />
-      <AboutCTA />
       <Footer />
     </div>
   );

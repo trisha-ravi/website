@@ -236,7 +236,7 @@ const ContactInfo = () => {
     {
       title: 'Email',
       value: 'hello@trisha.com',
-      href: 'mailto:hello@trisha.com',
+      href: 'mailto:trisha02.r@gmail.com',
       icon: '✉️'
     },
     {
