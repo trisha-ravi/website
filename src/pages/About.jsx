@@ -1,4 +1,4 @@
-// About.jsx - Modern Apple-Inspired About Page with Experience Section
+// About.jsx - Enhanced Responsive Apple-Inspired About Page
 import React, { useEffect, useRef, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
