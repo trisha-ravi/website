@@ -1,5 +1,4 @@
-/* COMPLETE CSS FOR COLLEGE SCHEDULER PROJECT - Replace your existing CSS with this */
-
+/* COLLEGE SCHEDULER PROJECT - FULLY SCOPED */
 .college-scheduler-project {
   background: #000000 !important;
   color: #ffffff !important;
@@ -7,16 +6,8 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
 }
 
-/* Force black background on body and html */
-body.scheduler-page,
-html.scheduler-page {
-  background: #000000 !important;
-  margin: 0;
-  padding: 0;
-}
-
-/* Project Hero Section */
-.project-hero {
+/* College Project Hero */
+.college-scheduler-project .project-hero {
   position: relative;
   z-index: 10;
   min-height: 100vh;
@@ -28,17 +19,17 @@ html.scheduler-page {
   background: #000000 !important;
 }
 
-.project-hero.visible {
+.college-scheduler-project .project-hero.visible {
   opacity: 1;
 }
 
-.project-hero-container {
+.college-scheduler-project .project-hero-container {
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
 }
 
-.back-button {
+.college-scheduler-project .back-button {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -49,23 +40,23 @@ html.scheduler-page {
   transition: color 0.3s ease;
 }
 
-.back-button:hover {
+.college-scheduler-project .back-button:hover {
   color: #ffffff !important;
 }
 
-.back-button .arrow-left {
+.college-scheduler-project .back-button .arrow-left {
   font-size: 1.2rem;
   margin-right: 0.5rem;
 }
 
-.project-hero-content {
+.college-scheduler-project .project-hero-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
 }
 
-.project-main-title {
+.college-scheduler-project .project-main-title {
   font-size: clamp(3rem, 6vw, 4.5rem);
   font-weight: 300;
   line-height: 1.1;
@@ -73,7 +64,6 @@ html.scheduler-page {
   color: #ffffff !important;
 }
 
-/* Orange highlight for "App" */
 .college-scheduler-project .highlight {
   background: linear-gradient(135deg, #FF9800 0%, #FFB74D 100%) !important;
   -webkit-background-clip: text !important;
@@ -83,21 +73,21 @@ html.scheduler-page {
   display: inline !important;
 }
 
-.project-subtitle {
+.college-scheduler-project .project-subtitle {
   font-size: clamp(1.1rem, 2vw, 1.4rem);
   line-height: 1.6;
   color: #bbbbbb !important;
   margin-bottom: 2rem;
 }
 
-.project-meta {
+.college-scheduler-project .project-meta {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
   margin-bottom: 2.5rem;
 }
 
-.meta-item {
+.college-scheduler-project .meta-item {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -105,7 +95,7 @@ html.scheduler-page {
   font-size: 0.9rem;
 }
 
-.meta-item .icon {
+.college-scheduler-project .meta-item .icon {
   margin-right: 0.5rem;
 }
 
@@ -129,63 +119,63 @@ html.scheduler-page {
   box-shadow: 0 10px 25px rgba(255, 152, 0, 0.3);
 }
 
-.cta-button .external-link {
+.college-scheduler-project .cta-button .external-link {
   font-size: 1.2rem;
   margin-right: 0.75rem;
 }
 
-.project-hero-image {
+.college-scheduler-project .project-hero-image {
   position: relative;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-.project-hero-image img {
+.college-scheduler-project .project-hero-image img {
   width: 100%;
   height: auto;
   display: block;
   transition: transform 0.6s ease;
 }
 
-.project-hero-image:hover img {
+.college-scheduler-project .project-hero-image:hover img {
   transform: scale(1.02);
 }
 
-/* Project Details Section */
-.project-details {
+/* College Project Details */
+.college-scheduler-project .project-details {
   padding: 8rem 4rem 2rem;
   background: #000000 !important;
 }
 
-.project-details-container {
+.college-scheduler-project .project-details-container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.project-overview {
+.college-scheduler-project .project-overview {
   margin-bottom: 6rem;
 }
 
-.project-overview h2 {
+.college-scheduler-project .project-overview h2 {
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 300;
   margin-bottom: 2rem;
   color: #ffffff !important;
 }
 
-.project-overview p {
+.college-scheduler-project .project-overview p {
   font-size: 1.1rem;
   line-height: 1.8;
   color: #cccccc !important;
   margin-bottom: 1.5rem;
 }
 
-.features-section {
+.college-scheduler-project .features-section {
   margin-bottom: 6rem;
 }
 
-.section-title {
+.college-scheduler-project .section-title {
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 300;
   text-align: center;
@@ -193,13 +183,13 @@ html.scheduler-page {
   color: #ffffff !important;
 }
 
-.features-grid {
+.college-scheduler-project .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
-.feature-card {
+.college-scheduler-project .feature-card {
   background: rgba(255, 255, 255, 0.03) !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: 12px;
@@ -213,40 +203,40 @@ html.scheduler-page {
   border-color: rgba(255, 152, 0, 0.3) !important;
 }
 
-.feature-icon {
+.college-scheduler-project .feature-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   display: block;
 }
 
-.feature-card h3 {
+.college-scheduler-project .feature-card h3 {
   font-size: 1.3rem;
   font-weight: 500;
   margin-bottom: 1rem;
   color: #ffffff !important;
 }
 
-.feature-card p {
+.college-scheduler-project .feature-card p {
   color: #bbbbbb !important;
   line-height: 1.6;
 }
 
-/* Tech Stack Section */
-.tech-stack {
+/* College Tech Stack */
+.college-scheduler-project .tech-stack {
   margin-bottom: 6rem;
   opacity: 1 !important;
   visibility: visible !important;
   display: block !important;
 }
 
-.tech-stack h2 {
+.college-scheduler-project .tech-stack h2 {
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 300;
   margin-bottom: 3rem;
   color: #ffffff !important;
 }
 
-.tech-details {
+.college-scheduler-project .tech-details {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 3rem;
@@ -259,12 +249,12 @@ html.scheduler-page {
   font-weight: 500;
 }
 
-.tech-category ul {
+.college-scheduler-project .tech-category ul {
   list-style: none;
   padding: 0;
 }
 
-.tech-category li {
+.college-scheduler-project .tech-category li {
   color: #cccccc !important;
   margin-bottom: 0.75rem;
   padding-left: 1.5rem;
@@ -280,22 +270,22 @@ html.scheduler-page {
   font-weight: bold;
 }
 
-/* Project Challenges Section */
-.project-challenges {
+/* College Project Challenges */
+.college-scheduler-project .project-challenges {
   margin-bottom: 6rem;
   opacity: 1 !important;
   visibility: visible !important;
   display: block !important;
 }
 
-.project-challenges h2 {
+.college-scheduler-project .project-challenges h2 {
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 300;
   margin-bottom: 3rem;
   color: #ffffff !important;
 }
 
-.challenges-grid {
+.college-scheduler-project .challenges-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2.5rem;
@@ -308,30 +298,30 @@ html.scheduler-page {
   border-radius: 8px;
 }
 
-.challenge-item h3 {
+.college-scheduler-project .challenge-item h3 {
   font-size: 1.3rem;
   margin-bottom: 1rem;
   color: #ffffff !important;
   font-weight: 500;
 }
 
-.challenge-item p {
+.college-scheduler-project .challenge-item p {
   color: #bbbbbb !important;
   line-height: 1.7;
 }
 
-/* App Showcase Section */
-.app-showcase {
+/* College App Showcase */
+.college-scheduler-project .app-showcase {
   padding: 0rem 4rem 8rem;
   background: #000000 !important;
 }
 
-.app-showcase-container {
+.college-scheduler-project .app-showcase-container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.showcase-content h2 {
+.college-scheduler-project .showcase-content h2 {
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 300;
   text-align: center;
@@ -339,7 +329,7 @@ html.scheduler-page {
   color: #ffffff !important;
 }
 
-.showcase-subtitle {
+.college-scheduler-project .showcase-subtitle {
   text-align: center;
   font-size: 1.2rem;
   color: #bbbbbb !important;
@@ -349,21 +339,21 @@ html.scheduler-page {
   margin-right: auto;
 }
 
-.showcase-gallery {
+.college-scheduler-project .showcase-gallery {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
 }
 
-.gallery-main {
+.college-scheduler-project .gallery-main {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
 }
 
-.phone-mockup {
+.college-scheduler-project .phone-mockup {
   background: linear-gradient(145deg, #2c2c2c, #1a1a1a);
   padding: 1.5rem;
   border-radius: 2rem;
@@ -371,7 +361,7 @@ html.scheduler-page {
   border: 2px solid rgba(255, 152, 0, 0.2);
 }
 
-.main-screen {
+.college-scheduler-project .main-screen {
   width: 250px;
   height: 500px;
   object-fit: cover;
@@ -379,29 +369,29 @@ html.scheduler-page {
   transition: transform 0.6s ease;
 }
 
-.screen-info {
+.college-scheduler-project .screen-info {
   text-align: center;
   max-width: 400px;
 }
 
-.screen-info h3 {
+.college-scheduler-project .screen-info h3 {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   color: #FF9800 !important;
 }
 
-.screen-info p {
+.college-scheduler-project .screen-info p {
   color: #cccccc !important;
   line-height: 1.6;
 }
 
-.screen-thumbnails {
+.college-scheduler-project .screen-thumbnails {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.screen-thumb {
+.college-scheduler-project .screen-thumb {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -413,40 +403,40 @@ html.scheduler-page {
   background: rgba(255, 255, 255, 0.02);
 }
 
-.screen-thumb:hover {
+.college-scheduler-project .screen-thumb:hover {
   background: rgba(255, 255, 255, 0.05) !important;
 }
 
-.screen-thumb.active {
+.college-scheduler-project .screen-thumb.active {
   background: rgba(255, 152, 0, 0.1) !important;
   border-color: #FF9800 !important;
 }
 
-.screen-thumb img {
+.college-scheduler-project .screen-thumb img {
   width: 50px;
   height: 100px;
   object-fit: cover;
   border-radius: 6px;
 }
 
-.thumb-title {
+.college-scheduler-project .thumb-title {
   color: #ffffff !important;
   font-size: 0.9rem;
   font-weight: 500;
 }
 
-/* User Impact Section - Now Project Achievements */
-.user-impact {
+/* College User Impact */
+.college-scheduler-project .user-impact {
   padding: 8rem 4rem;
   background: #000000 !important;
 }
 
-.user-impact-container {
+.college-scheduler-project .user-impact-container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.impact-content h2 {
+.college-scheduler-project .impact-content h2 {
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 300;
   text-align: center;
@@ -454,7 +444,7 @@ html.scheduler-page {
   color: #ffffff !important;
 }
 
-.impact-description {
+.college-scheduler-project .impact-description {
   text-align: center;
   font-size: 1.2rem;
   color: #bbbbbb !important;
@@ -465,14 +455,14 @@ html.scheduler-page {
   line-height: 1.7;
 }
 
-.achievements-grid {
+.college-scheduler-project .achievements-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   margin-bottom: 4rem;
 }
 
-.achievement-card {
+.college-scheduler-project .achievement-card {
   text-align: center;
   padding: 2rem;
   background: rgba(255, 255, 255, 0.03) !important;
@@ -487,60 +477,60 @@ html.scheduler-page {
   border-color: rgba(255, 152, 0, 0.3) !important;
 }
 
-.achievement-icon {
+.college-scheduler-project .achievement-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-.achievement-card h3 {
+.college-scheduler-project .achievement-card h3 {
   font-size: 1.3rem;
   font-weight: 500;
   color: #FF9800 !important;
   margin-bottom: 1rem;
 }
 
-.achievement-card p {
+.college-scheduler-project .achievement-card p {
   color: #bbbbbb !important;
   line-height: 1.6;
 }
 
-.impact-highlights {
+.college-scheduler-project .impact-highlights {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
-.highlight-item {
+.college-scheduler-project .highlight-item {
   padding: 2rem;
   background: rgba(255, 255, 255, 0.02) !important;
   border-radius: 8px;
   border-left: 4px solid #FF9800 !important;
 }
 
-.highlight-item h3 {
+.college-scheduler-project .highlight-item h3 {
   color: #ffffff !important;
   font-size: 1.3rem;
   margin-bottom: 1rem;
   font-weight: 500;
 }
 
-.highlight-item p {
+.college-scheduler-project .highlight-item p {
   color: #cccccc !important;
   line-height: 1.6;
 }
 
-/* Development Process Section */
-.development-process {
+/* College Development Process */
+.college-scheduler-project .development-process {
   padding: 8rem 4rem;
   background: #000000 !important;
 }
 
-.development-process-container {
+.college-scheduler-project .development-process-container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.process-content h2 {
+.college-scheduler-project .process-content h2 {
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 300;
   text-align: center;
@@ -548,7 +538,7 @@ html.scheduler-page {
   color: #ffffff !important;
 }
 
-.process-description {
+.college-scheduler-project .process-description {
   text-align: center;
   font-size: 1.2rem;
   color: #bbbbbb !important;
@@ -559,53 +549,44 @@ html.scheduler-page {
   line-height: 1.7;
 }
 
-.team-grid {
+.college-scheduler-project .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   margin-bottom: 4rem;
 }
 
-.team-grid:empty {
-  display: none;
-}
-
-.team-member {
+.college-scheduler-project .team-member {
   padding: 2rem;
   background: rgba(255, 255, 255, 0.03) !important;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.4s ease;
-  min-height: 200px;
 }
 
-.team-member:empty {
-  display: none;
-}
-
-.team-member.highlight {
+.college-scheduler-project .team-member.highlight {
   background: rgba(255, 152, 0, 0.1) !important;
   border-color: rgba(255, 152, 0, 0.3) !important;
 }
 
-.team-member:hover {
+.college-scheduler-project .team-member:hover {
   transform: translateY(-5px);
   background: rgba(255, 255, 255, 0.05) !important;
 }
 
-.team-member h3 {
+.college-scheduler-project .team-member h3 {
   color: #FF9800 !important;
   font-size: 1.3rem;
   margin-bottom: 1.5rem;
   font-weight: 500;
 }
 
-.team-member ul {
+.college-scheduler-project .team-member ul {
   list-style: none;
   padding: 0;
 }
 
-.team-member li {
+.college-scheduler-project .team-member li {
   color: #cccccc !important;
   margin-bottom: 0.75rem;
   padding-left: 1.5rem;
@@ -613,7 +594,7 @@ html.scheduler-page {
   line-height: 1.6;
 }
 
-.team-member li::before {
+.college-scheduler-project .team-member li::before {
   content: "▸";
   position: absolute;
   left: 0;
@@ -621,11 +602,11 @@ html.scheduler-page {
   font-weight: bold;
 }
 
-.methodology-section {
+.college-scheduler-project .methodology-section {
   margin-top: 4rem;
 }
 
-.methodology-section h3 {
+.college-scheduler-project .methodology-section h3 {
   font-size: 2rem;
   color: #ffffff !important;
   text-align: center;
@@ -633,19 +614,19 @@ html.scheduler-page {
   font-weight: 300;
 }
 
-.methodology-steps {
+.college-scheduler-project .methodology-steps {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
 }
 
-.method-step {
+.college-scheduler-project .method-step {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
 }
 
-.step-number {
+.college-scheduler-project .step-number {
   background: linear-gradient(135deg, #FF9800 0%, #FFB74D 100%) !important;
   color: #000000 !important;
   width: 40px;
@@ -658,30 +639,30 @@ html.scheduler-page {
   flex-shrink: 0;
 }
 
-.step-content h4 {
+.college-scheduler-project .step-content h4 {
   color: #ffffff !important;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   font-weight: 500;
 }
 
-.step-content p {
+.college-scheduler-project .step-content p {
   color: #bbbbbb !important;
   line-height: 1.6;
 }
 
-/* Learnings and Future Section */
-.learnings-future {
+/* College Learnings and Future */
+.college-scheduler-project .learnings-future {
   padding: 8rem 4rem;
   background: #000000 !important;
 }
 
-.learnings-future-container {
+.college-scheduler-project .learnings-future-container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.learnings-content h2 {
+.college-scheduler-project .learnings-content h2 {
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 300;
   text-align: center;
@@ -689,7 +670,7 @@ html.scheduler-page {
   color: #ffffff !important;
 }
 
-.learnings-description {
+.college-scheduler-project .learnings-description {
   text-align: center;
   font-size: 1.2rem;
   color: #bbbbbb !important;
@@ -700,14 +681,14 @@ html.scheduler-page {
   line-height: 1.7;
 }
 
-.learnings-grid {
+.college-scheduler-project .learnings-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   margin-bottom: 4rem;
 }
 
-.learning-card {
+.college-scheduler-project .learning-card {
   padding: 2rem;
   background: rgba(255, 255, 255, 0.03) !important;
   border-radius: 12px;
@@ -722,29 +703,29 @@ html.scheduler-page {
   border-color: rgba(255, 152, 0, 0.3) !important;
 }
 
-.learning-icon {
+.college-scheduler-project .learning-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   display: block;
 }
 
-.learning-card h3 {
+.college-scheduler-project .learning-card h3 {
   color: #ffffff !important;
   font-size: 1.3rem;
   margin-bottom: 1rem;
   font-weight: 500;
 }
 
-.learning-card p {
+.college-scheduler-project .learning-card p {
   color: #bbbbbb !important;
   line-height: 1.6;
 }
 
-.technical-skills {
+.college-scheduler-project .technical-skills {
   margin-top: 4rem;
 }
 
-.technical-skills h3 {
+.college-scheduler-project .technical-skills h3 {
   font-size: 2rem;
   color: #ffffff !important;
   text-align: center;
@@ -752,69 +733,69 @@ html.scheduler-page {
   font-weight: 300;
 }
 
-.skills-list {
+.college-scheduler-project .skills-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
 }
 
-.skill-item {
+.college-scheduler-project .skill-item {
   padding: 2rem;
   background: rgba(255, 255, 255, 0.02) !important;
   border-radius: 8px;
   border-left: 4px solid #FF9800 !important;
 }
 
-.skill-item h4 {
+.college-scheduler-project .skill-item h4 {
   color: #FF9800 !important;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   font-weight: 500;
 }
 
-.skill-item p {
+.college-scheduler-project .skill-item p {
   color: #cccccc !important;
   line-height: 1.6;
 }
 
-/* Project Navigation Section */
-.project-navigation {
+/* College Project Navigation */
+.college-scheduler-project .project-navigation {
   padding: 4rem 4rem;
   background: #000000 !important;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.project-navigation-container {
+.college-scheduler-project .project-navigation-container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.nav-content {
+.college-scheduler-project .nav-content {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   gap: 2rem;
   align-items: center;
 }
 
-.nav-item {
+.college-scheduler-project .nav-item {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.nav-item.next {
+.college-scheduler-project .nav-item.next {
   align-items: flex-end;
   text-align: right;
 }
 
-.nav-label {
+.college-scheduler-project .nav-label {
   font-size: 0.9rem;
   color: #888888 !important;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-.nav-link {
+.college-scheduler-project .nav-link {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -825,21 +806,21 @@ html.scheduler-page {
   transition: all 0.3s ease;
 }
 
-.nav-link:hover {
+.college-scheduler-project .nav-link:hover {
   color: #FF9800 !important;
   transform: translateX(5px);
 }
 
-.nav-item.prev .nav-link:hover {
+.college-scheduler-project .nav-item.prev .nav-link:hover {
   transform: translateX(-5px);
 }
 
-.nav-arrow {
+.college-scheduler-project .nav-arrow {
   font-size: 1.5rem;
   color: #FF9800 !important;
 }
 
-.back-to-projects {
+.college-scheduler-project .back-to-projects {
   background: linear-gradient(135deg, #FF9800 0%, #FFB74D 100%) !important;
   color: #000000 !important;
   padding: 1rem 2rem;
@@ -849,225 +830,233 @@ html.scheduler-page {
   transition: all 0.3s ease;
 }
 
-.back-to-projects:hover {
+.college-scheduler-project .back-to-projects:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(255, 152, 0, 0.3);
 }
 
-/* Animation fixes */
-.fade-in-element {
+/* College Animation fixes */
+.college-scheduler-project .fade-in-element {
   opacity: 1 !important;
   transform: translateY(0) !important;
   transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), 
               transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.fade-in-element.fade-in-visible {
+.college-scheduler-project .fade-in-element.fade-in-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Responsive Design */
+/* College Responsive Design */
 @media (max-width: 1024px) {
-  .project-hero-content {
+  .college-scheduler-project .project-hero-content {
     grid-template-columns: 1fr;
     gap: 3rem;
     text-align: center;
   }
   
-  .project-hero-image {
+  .college-scheduler-project .project-hero-image {
     order: -1;
     max-width: 500px;
     margin: 0 auto;
   }
   
-  .showcase-gallery {
+  .college-scheduler-project .showcase-gallery {
     grid-template-columns: 1fr;
     gap: 2rem;
     text-align: center;
   }
   
-  .screen-thumbnails {
+  .college-scheduler-project .screen-thumbnails {
     flex-direction: row;
     overflow-x: auto;
     padding-bottom: 1rem;
     justify-content: center;
   }
   
-  .screen-thumb {
+  .college-scheduler-project .screen-thumb {
     flex-shrink: 0;
     min-width: 200px;
   }
   
-  .nav-content {
+  .college-scheduler-project .nav-content {
     grid-template-columns: 1fr;
     gap: 2rem;
     text-align: center;
   }
   
-  .nav-item {
+  .college-scheduler-project .nav-item {
     align-items: center;
     text-align: center;
   }
   
-  .nav-item.next {
+  .college-scheduler-project .nav-item.next {
     align-items: center;
     text-align: center;
   }
 }
 
 @media (max-width: 768px) {
-  .project-hero {
+  .college-scheduler-project .project-hero {
     padding: 100px 2rem 2rem;
   }
   
-  .project-details,
-  .app-showcase,
-  .user-impact,
-  .development-process,
-  .learnings-future,
-  .project-navigation {
+  .college-scheduler-project .project-details,
+  .college-scheduler-project .app-showcase,
+  .college-scheduler-project .user-impact,
+  .college-scheduler-project .development-process,
+  .college-scheduler-project .learnings-future,
+  .college-scheduler-project .project-navigation {
     padding: 4rem 2rem;
   }
   
-  .features-grid {
+  .college-scheduler-project .features-grid {
     grid-template-columns: 1fr;
   }
   
-  .tech-details {
+  .college-scheduler-project .tech-details {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
   
-  .challenges-grid {
+  .college-scheduler-project .challenges-grid {
     grid-template-columns: 1fr;
   }
   
-  .project-meta {
+  .college-scheduler-project .project-meta {
     justify-content: center;
   }
   
-  .achievements-grid {
+  .college-scheduler-project .achievements-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   
-  .methodology-steps {
+  .college-scheduler-project .methodology-steps {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
   
-  .screen-thumbnails {
+  .college-scheduler-project .screen-thumbnails {
     flex-direction: column;
   }
   
-  .screen-thumb {
+  .college-scheduler-project .screen-thumb {
     min-width: auto;
   }
   
-  .main-screen {
+  .college-scheduler-project .main-screen {
     width: 200px;
     height: 400px;
   }
 }
 
 @media (max-width: 480px) {
-  .project-hero {
+  .college-scheduler-project .project-hero {
     padding: 80px 1rem 1rem;
   }
   
-  .project-details,
-  .app-showcase,
-  .user-impact,
-  .development-process,
-  .learnings-future,
-  .project-navigation {
+  .college-scheduler-project .project-details,
+  .college-scheduler-project .app-showcase,
+  .college-scheduler-project .user-impact,
+  .college-scheduler-project .development-process,
+  .college-scheduler-project .learnings-future,
+  .college-scheduler-project .project-navigation {
     padding: 3rem 1rem;
   }
   
-  .back-button {
+  .college-scheduler-project .back-button {
     margin-bottom: 2rem;
   }
   
-  .feature-card {
+  .college-scheduler-project .feature-card {
     padding: 1.5rem;
   }
   
-  .challenge-item {
+  .college-scheduler-project .challenge-item {
     padding: 1.5rem;
   }
   
-  .achievements-grid {
+  .college-scheduler-project .achievements-grid {
     grid-template-columns: 1fr;
   }
   
-  .main-screen {
+  .college-scheduler-project .main-screen {
     width: 180px;
     height: 360px;
   }
   
-  .phone-mockup {
+  .college-scheduler-project .phone-mockup {
     padding: 1rem;
   }
   
-  .team-member,
-  .learning-card,
-  .feature-item {
+  .college-scheduler-project .team-member,
+  .college-scheduler-project .learning-card,
+  .college-scheduler-project .skill-item {
     padding: 1.5rem;
   }
   
-  .method-step {
+  .college-scheduler-project .method-step {
     flex-direction: column;
     text-align: center;
     gap: 1rem;
   }
   
-  .step-number {
+  .college-scheduler-project .step-number {
     margin: 0 auto;
   }
   
-  .nav-link {
+  .college-scheduler-project .nav-link {
     flex-direction: column;
     gap: 0.5rem;
     text-align: center;
   }
   
-  .nav-arrow {
+  .college-scheduler-project .nav-arrow {
     transform: rotate(90deg);
   }
   
-  .nav-item.prev .nav-arrow {
+  .college-scheduler-project .nav-item.prev .nav-arrow {
     transform: rotate(-90deg);
   }
 }
 
+/* Force black background on body and html for College Scheduler */
+body.scheduler-page,
+html.scheduler-page {
+  background: #000000 !important;
+  margin: 0;
+  padding: 0;
+}
+
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
-  .fade-in-element {
+  .college-scheduler-project .fade-in-element {
     transition: none;
     opacity: 1;
     transform: none;
   }
   
-  .project-hero {
+  .college-scheduler-project .project-hero {
     transition: none;
     opacity: 1;
   }
   
-  .feature-card,
-  .stat-card,
-  .team-member,
-  .learning-card {
+  .college-scheduler-project .feature-card,
+  .college-scheduler-project .achievement-card,
+  .college-scheduler-project .team-member,
+  .college-scheduler-project .learning-card {
     transition: none;
   }
   
-  .cta-button,
-  .back-to-projects,
-  .nav-link {
+  .college-scheduler-project .cta-button,
+  .college-scheduler-project .back-to-projects,
+  .college-scheduler-project .nav-link {
     transition: none;
   }
   
-  .project-hero-image img,
-  .main-screen {
+  .college-scheduler-project .project-hero-image img,
+  .college-scheduler-project .main-screen {
     transition: none;
   }
 }
