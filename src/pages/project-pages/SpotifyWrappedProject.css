@@ -1,255 +1,277 @@
-/* SpotifyWrappedProject.css - Place this in src/pages/ */
+/* Enhanced styles for new sections - Add these to your existing SpotifyWrappedProject.css */
 
-.spotify-wrapped-project {
+/* Project Showcase Section */
+.project-showcase {
+  padding: 0rem 4rem 8rem;
   background: #000000;
-  color: #ffffff;
-  min-height: 100vh;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
-/* Project Hero Section */
-.project-hero {
-  position: relative;
-  z-index: 10;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 120px 4rem 4rem;
-  opacity: 0;
-  transition: opacity 1.5s ease;
-}
-
-.project-hero.visible {
-  opacity: 1;
-}
-
-.project-hero-container {
-  max-width: 1400px;
+.project-showcase-container {
+  max-width: 1200px;
   margin: 0 auto;
-  width: 100%;
 }
 
-.back-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #888888;
-  text-decoration: none;
-  font-size: 0.95rem;
-  margin-bottom: 3rem;
-  transition: color 0.3s ease;
-}
-
-.back-button:hover {
-  color: #ffffff;
-}
-
-.back-button .arrow-left {
-  font-size: 1.2rem;
-  margin-right: 0.5rem;
-}
-
-.project-hero-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-.project-main-title {
-  font-size: clamp(3rem, 6vw, 4.5rem);
+.showcase-content h2 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 300;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
   color: #ffffff;
 }
 
-/* Project-specific highlight for Spotify Wrapped */
-.spotify-wrapped-project .highlight {
-  background: linear-gradient(135deg, #1DB954 0%, #1ed760 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.project-subtitle {
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  line-height: 1.6;
-  color: #bbbbbb;
-  margin-bottom: 2rem;
-}
-
-.project-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
-}
-
-.meta-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #888888;
-  font-size: 0.9rem;
-}
-
-.meta-item .icon {
-  margin-right: 0.5rem;
-}
-
-.spotify-wrapped-project .cta-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  background: linear-gradient(135deg, #1DB954 0%, #1ed760 100%);
-  color: #000000;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  border: none;
-  cursor: pointer;
-}
-
-.spotify-wrapped-project .cta-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(29, 185, 84, 0.3);
-}
-
-.cta-button .external-link {
+.showcase-subtitle {
+  text-align: center;
   font-size: 1.2rem;
-  margin-right: 0.75rem;
+  color: #bbbbbb;
+  margin-bottom: 4rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.project-hero-image {
+.showcase-gallery {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.gallery-main {
   position: relative;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-.project-hero-image img {
+.main-image {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 400px;
+  object-fit: cover;
   transition: transform 0.6s ease;
 }
 
-.project-hero-image:hover img {
-  transform: scale(1.02);
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 2rem;
+  color: white;
 }
 
-/* Project Details Section */
-.project-details {
+.image-overlay h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #1DB954;
+}
+
+.image-overlay p {
+  color: #cccccc;
+  line-height: 1.6;
+}
+
+.gallery-thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.thumbnail {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.thumbnail:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.thumbnail.active {
+  background: rgba(29, 185, 84, 0.1);
+  border-color: #1DB954;
+}
+
+.thumbnail img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.thumbnail-title {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Project Impact Section */
+.project-impact {
   padding: 8rem 4rem;
   background: #000000;
 }
 
-.project-details-container {
+.project-impact-container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.project-overview {
-  margin-bottom: 6rem;
-}
-
-.project-overview h2 {
+.impact-content h2 {
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 300;
+  text-align: center;
   margin-bottom: 2rem;
   color: #ffffff;
 }
 
-.project-overview p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #cccccc;
-  margin-bottom: 1.5rem;
-}
-
-.features-section {
-  margin-bottom: 6rem;
-}
-
-.section-title {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  font-weight: 300;
+.impact-description {
   text-align: center;
+  font-size: 1.2rem;
+  color: #bbbbbb;
   margin-bottom: 4rem;
-  color: #ffffff;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
 }
 
-.features-grid {
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+}
+
+.spotify-wrapped-project .stat-card:hover {
+  transform: translateY(-5px);
+  background: rgba(29, 185, 84, 0.1);
+  border-color: rgba(29, 185, 84, 0.3);
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #1DB954;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: #bbbbbb;
+  font-size: 1rem;
+}
+
+.impact-highlights {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
-.feature-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
+.highlight-item {
   padding: 2rem;
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  border-left: 4px solid #1DB954;
 }
 
-.spotify-wrapped-project .feature-card:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(29, 185, 84, 0.3);
-}
-
-.feature-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  display: block;
-}
-
-.feature-card h3 {
-  font-size: 1.3rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
+.highlight-item h3 {
   color: #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
 }
 
-.feature-card p {
-  color: #bbbbbb;
+.highlight-item p {
+  color: #cccccc;
   line-height: 1.6;
 }
 
-.tech-stack {
-  margin-bottom: 6rem;
+/* Team Collaboration Section */
+.team-collaboration {
+  padding: 8rem 4rem;
+  background: #000000;
 }
 
-.tech-stack h2 {
+.team-collaboration-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-content h2 {
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 300;
-  margin-bottom: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
   color: #ffffff;
 }
 
-.tech-details {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3rem;
+.team-description {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #bbbbbb;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
 }
 
-.spotify-wrapped-project .tech-category h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.team-member {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+}
+
+.team-member.highlight {
+  background: rgba(29, 185, 84, 0.1);
+  border-color: rgba(29, 185, 84, 0.3);
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.team-member h3 {
   color: #1DB954;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
   font-weight: 500;
 }
 
-.tech-category ul {
+.team-member ul {
   list-style: none;
   padding: 0;
 }
 
-.tech-category li {
+.team-member li {
   color: #cccccc;
   margin-bottom: 0.75rem;
   padding-left: 1.5rem;
@@ -257,7 +279,7 @@
   line-height: 1.6;
 }
 
-.spotify-wrapped-project .tech-category li::before {
+.team-member li::before {
   content: "▸";
   position: absolute;
   left: 0;
@@ -265,142 +287,514 @@
   font-weight: bold;
 }
 
-.project-challenges h2 {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  font-weight: 300;
+.collaboration-process {
+  margin-top: 4rem;
+}
+
+.collaboration-process h3 {
+  font-size: 2rem;
+  color: #ffffff;
+  text-align: center;
   margin-bottom: 3rem;
-  color: #ffffff;
+  font-weight: 300;
 }
 
-.challenges-grid {
+.process-steps {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
 }
 
-.spotify-wrapped-project .challenge-item {
-  background: rgba(255, 255, 255, 0.02);
-  border-left: 4px solid #1DB954;
-  padding: 2rem;
-  border-radius: 8px;
+.process-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
-.challenge-item h3 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
+.step-number {
+  background: linear-gradient(135deg, #1DB954 0%, #1ed760 100%);
+  color: #000000;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.step-content h4 {
   color: #ffffff;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
   font-weight: 500;
 }
 
-.challenge-item p {
+.step-content p {
   color: #bbbbbb;
+  line-height: 1.6;
+}
+
+/* Lessons Learned Section */
+.lessons-learned {
+  padding: 8rem 4rem;
+  background: #000000;
+}
+
+.lessons-learned-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.lessons-content h2 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.lessons-description {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #bbbbbb;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
   line-height: 1.7;
 }
 
-/* Fade-in Animation Styles */
-.fade-in-element {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), 
-              transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+.lessons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
 }
 
-.fade-in-element.fade-in-visible {
-  opacity: 1;
-  transform: translateY(0);
+.lesson-card {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  transition: all 0.4s ease;
 }
 
-/* Responsive Design */
+.spotify-wrapped-project .lesson-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(29, 185, 84, 0.3);
+}
+
+.lesson-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.lesson-card h3 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.lesson-card p {
+  color: #bbbbbb;
+  line-height: 1.6;
+}
+
+.future-improvements {
+  margin-top: 4rem;
+}
+
+.future-improvements h3 {
+  font-size: 2rem;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 300;
+}
+
+.improvements-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.improvement-item {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  border-left: 4px solid #1DB954;
+}
+
+.improvement-item h4 {
+  color: #1DB954;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.improvement-item p {
+  color: #cccccc;
+  line-height: 1.6;
+}
+
+/* Project Navigation Section */
+.project-navigation {
+  padding: 4rem 4rem;
+  background: #000000;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-navigation-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-content {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-item.next {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.nav-label {
+  font-size: 0.9rem;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #1DB954;
+  transform: translateX(5px);
+}
+
+.nav-item.prev .nav-link:hover {
+  transform: translateX(-5px);
+}
+
+.nav-arrow {
+  font-size: 1.5rem;
+  color: #1DB954;
+}
+
+.back-to-projects {
+  background: linear-gradient(135deg, #1DB954 0%, #1ed760 100%);
+  color: #000000;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.back-to-projects:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(29, 185, 84, 0.3);
+}
+
+/* Responsive Design for New Sections */
 @media (max-width: 1024px) {
-  .project-hero-content {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    text-align: center;
-  }
-  
-  .project-hero-image {
-    order: -1;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .project-hero {
-    padding: 100px 2rem 2rem;
-  }
-  
-  .project-details {
-    padding: 4rem 2rem;
-  }
-  
-  .features-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .tech-details {
+  .showcase-gallery {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
   
-  .challenges-grid {
+  .gallery-thumbnails {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+  }
+  
+  .thumbnail {
+    flex-shrink: 0;
+    min-width: 200px;
+  }
+  
+  .nav-content {
     grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
   }
   
-  .project-meta {
-    justify-content: center;
+  .nav-item {
+    align-items: center;
+    text-align: center;
   }
   
-  .fade-in-element {
-    transform: translateY(20px);
-    transition-duration: 0.6s;
+  .nav-item.next {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-showcase,
+  .project-impact,
+  .team-collaboration,
+  .lessons-learned,
+  .project-navigation {
+    padding: 4rem 2rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .process-steps {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .gallery-thumbnails {
+    flex-direction: column;
+  }
+  
+  .thumbnail {
+    min-width: auto;
   }
 }
 
 @media (max-width: 480px) {
-  .project-hero {
-    padding: 80px 1rem 1rem;
-  }
-  
-  .project-details {
+  .project-showcase,
+  .project-impact,
+  .team-collaboration,
+  .lessons-learned,
+  .project-navigation {
     padding: 3rem 1rem;
   }
   
-  .back-button {
-    margin-bottom: 2rem;
+  .stats-grid {
+    grid-template-columns: 1fr;
   }
   
-  .feature-card {
+  .main-image {
+    height: 300px;
+  }
+  
+  .image-overlay {
     padding: 1.5rem;
   }
   
-  .challenge-item {
+  .team-member,
+  .lesson-card,
+  .improvement-item {
     padding: 1.5rem;
+  }
+  
+  .process-step {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .step-number {
+    margin: 0 auto;
+  }
+  
+  .nav-link {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  
+  .nav-arrow {
+    transform: rotate(90deg);
+  }
+  
+  .nav-item.prev .nav-arrow {
+    transform: rotate(-90deg);
   }
 }
 
-/* Accessibility */
-@media (prefers-reduced-motion: reduce) {
-  .fade-in-element {
-    transition: none;
+/* Additional Animation Enhancements */
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
     opacity: 1;
-    transform: none;
+    transform: translateY(0);
   }
-  
-  .project-hero {
-    transition: none;
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
     opacity: 1;
+    transform: translateX(0);
   }
-  
-  .feature-card {
-    transition: none;
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
   }
-  
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.stats-grid .stat-card {
+  animation: slideInFromBottom 0.6s ease forwards;
+  opacity: 0;
+}
+
+.stats-grid .stat-card:nth-child(1) { animation-delay: 0.1s; }
+.stats-grid .stat-card:nth-child(2) { animation-delay: 0.2s; }
+.stats-grid .stat-card:nth-child(3) { animation-delay: 0.3s; }
+.stats-grid .stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+.process-steps .process-step {
+  animation: slideInFromLeft 0.6s ease forwards;
+  opacity: 0;
+}
+
+.process-steps .process-step:nth-child(1) { animation-delay: 0.1s; }
+.process-steps .process-step:nth-child(2) { animation-delay: 0.2s; }
+.process-steps .process-step:nth-child(3) { animation-delay: 0.3s; }
+.process-steps .process-step:nth-child(4) { animation-delay: 0.4s; }
+
+/* Hover Effects for Interactive Elements */
+.thumbnail:hover img {
+  transform: scale(1.1);
+}
+
+.stat-card:hover .stat-icon {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+.lesson-card:hover .lesson-icon {
+  transform: scale(1.1) rotate(5deg);
+  transition: transform 0.3s ease;
+}
+
+/* Loading States and Skeleton Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Dark Mode Specific Enhancements */
+.spotify-wrapped-project {
+  --primary-green: #1DB954;
+  --primary-green-light: #1ed760;
+  --text-primary: #ffffff;
+  --text-secondary: #bbbbbb;
+  --text-muted: #888888;
+  --bg-primary: #000000;
+  --bg-secondary: rgba(255, 255, 255, 0.03);
+  --bg-tertiary: rgba(255, 255, 255, 0.05);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* CRITICAL: Make "Reimagined" text green */
+.spotify-wrapped-project .highlight {
+  background: linear-gradient(135deg, #1DB954 0%, #1ed760 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: #1DB954 !important; /* Fallback for browsers that don't support background-clip */
+}
+
+/* Alternative fallback for better browser support */
+.spotify-wrapped-project .project-main-title .highlight {
+  color: #1DB954 !important;
+  background: linear-gradient(135deg, #1DB954 0%, #1ed760 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  display: inline !important;
+}
+
+/* Focus States for Accessibility */
+.cta-button:focus,
+.nav-link:focus,
+.back-to-projects:focus,
+.thumbnail:focus {
+  outline: 2px solid var(--primary-green);
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  .project-navigation,
   .cta-button {
-    transition: none;
+    display: none;
   }
   
-  .project-hero-image img {
-    transition: none;
+  .project-showcase,
+  .project-impact,
+  .team-collaboration,
+  .lessons-learned {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  
+  .spotify-wrapped-project {
+    background: white;
+    color: black;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .spotify-wrapped-project {
+    --text-primary: #ffffff;
+    --text-secondary: #ffffff;
+    --bg-secondary: rgba(255, 255, 255, 0.1);
+    --border-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  .feature-card,
+  .stat-card,
+  .team-member,
+  .lesson-card {
+    border: 2px solid var(--border-color);
   }
 }

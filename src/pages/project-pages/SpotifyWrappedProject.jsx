@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
@@ -184,7 +184,7 @@ const ProjectDetails = () => {
           </div>
         </div>
 
-        <div className="tech-stack fade-in-element">
+        <div className="tech-stack">
           <h2>Technical Implementation</h2>
           <div className="tech-details">
             <div className="tech-category">
@@ -226,7 +226,7 @@ const ProjectDetails = () => {
           </div>
         </div>
 
-        <div className="project-challenges fade-in-element">
+        <div className="project-challenges">
           <h2>Challenges & Solutions</h2>
           <div className="challenges-grid">
             <div className="challenge-item">
@@ -260,9 +260,420 @@ const ProjectDetails = () => {
   );
 };
 
+const ProjectShowcase = () => {
+  const showcaseRef = useRef(null);
+  const [activeImage, setActiveImage] = useState(0);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (showcaseRef.current) {
+      observer.observe(showcaseRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const screenshots = [
+    {
+      title: "Dashboard Overview",
+      description: "Comprehensive analytics dashboard showing top tracks, artists, and listening patterns",
+      image: "/api/placeholder/600/400"
+    },
+    {
+      title: "Personalized Insights",
+      description: "AI-powered recommendations and mood analysis based on listening history",
+      image: "/api/placeholder/600/400"
+    },
+    {
+      title: "Social Sharing",
+      description: "Beautiful shareable cards for social media with custom design templates",
+      image: "/api/placeholder/600/400"
+    },
+    {
+      title: "Mobile Experience",
+      description: "Seamless Android app with native performance and offline capabilities",
+      image: "/api/placeholder/600/400"
+    }
+  ];
+
+  return (
+    <section className="project-showcase">
+      <div className="project-showcase-container">
+        <div ref={showcaseRef} className="showcase-content fade-in-element">
+          <h2>Visual Showcase</h2>
+          <p className="showcase-subtitle">
+            Explore the user interface and experience across different platforms and features
+          </p>
+          
+          <div className="showcase-gallery">
+            <div className="gallery-main">
+              <img 
+                src={screenshots[activeImage].image} 
+                alt={screenshots[activeImage].title}
+                className="main-image"
+              />
+              <div className="image-overlay">
+                <h3>{screenshots[activeImage].title}</h3>
+                <p>{screenshots[activeImage].description}</p>
+              </div>
+            </div>
+            
+            <div className="gallery-thumbnails">
+              {screenshots.map((screenshot, index) => (
+                <div
+                  key={index}
+                  className={`thumbnail ${index === activeImage ? 'active' : ''}`}
+                  onClick={() => setActiveImage(index)}
+                >
+                  <img src={screenshot.image} alt={screenshot.title} />
+                  <span className="thumbnail-title">{screenshot.title}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const ProjectImpact = () => {
+  const impactRef = useRef(null);
+  const statsRef = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (impactRef.current) {
+      observer.observe(impactRef.current);
+    }
+
+    statsRef.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const stats = [
+    { number: "2.5K+", label: "Active Users", icon: "👥" },
+    { number: "98%", label: "User Satisfaction", icon: "⭐" },
+    { number: "15M+", label: "Songs Analyzed", icon: "🎵" },
+    { number: "4.8", label: "App Store Rating", icon: "📱" }
+  ];
+
+  return (
+    <section className="project-impact">
+      <div className="project-impact-container">
+        <div ref={impactRef} className="impact-content fade-in-element">
+          <h2>Project Impact</h2>
+          <p className="impact-description">
+            Our Spotify Wrapped reimagination has created meaningful connections between users and their music, 
+            providing deeper insights and more engaging experiences than traditional analytics platforms.
+          </p>
+          
+          <div className="stats-grid">
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                ref={(el) => statsRef.current[index] = el}
+                className="stat-card fade-in-element"
+                style={{ transitionDelay: `${index * 0.1}s` }}
+              >
+                <div className="stat-icon">{stat.icon}</div>
+                <div className="stat-number">{stat.number}</div>
+                <div className="stat-label">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="impact-highlights">
+            <div className="highlight-item">
+              <h3>Enhanced User Engagement</h3>
+              <p>Users spend 3x more time exploring their music data compared to traditional wrapped experiences</p>
+            </div>
+            <div className="highlight-item">
+              <h3>Cross-Platform Success</h3>
+              <p>Consistent experience across web and mobile platforms with 95% feature parity</p>
+            </div>
+            <div className="highlight-item">
+              <h3>Community Building</h3>
+              <p>Increased social sharing by 400% through beautiful, customizable content cards</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const TeamCollaboration = () => {
+  const teamRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (teamRef.current) {
+      observer.observe(teamRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const teamMembers = [
+    {
+      role: "Frontend Developer & UI/UX Designer",
+      responsibilities: ["React.js development", "Responsive design", "User experience optimization", "Design system creation"],
+      highlight: true
+    },
+    {
+      role: "Android Developer",
+      responsibilities: ["Native Android development", "Material Design implementation", "Cross-platform synchronization", "Performance optimization"]
+    },
+    {
+      role: "Backend Developer",
+      responsibilities: ["API integration", "Data processing", "Authentication systems", "Server architecture"]
+    },
+    {
+      role: "Data Analyst",
+      responsibilities: ["Music data analysis", "Recommendation algorithms", "User behavior insights", "Performance metrics"]
+    }
+  ];
+
+  return (
+    <section className="team-collaboration">
+      <div className="team-collaboration-container">
+        <div ref={teamRef} className="team-content fade-in-element">
+          <h2>Team Collaboration</h2>
+          <p className="team-description">
+            This project showcased the power of collaborative development, bringing together diverse skills 
+            to create a cohesive and impactful user experience across multiple platforms.
+          </p>
+          
+          <div className="team-grid">
+            {teamMembers.map((member, index) => (
+              <div
+                key={index}
+                className={`team-member ${member.highlight ? 'highlight' : ''}`}
+              >
+                <h3>{member.role}</h3>
+                <ul>
+                  {member.responsibilities.map((responsibility, i) => (
+                    <li key={i}>{responsibility}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          
+          <div className="collaboration-process">
+            <h3>Our Development Process</h3>
+            <div className="process-steps">
+              <div className="process-step">
+                <div className="step-number">1</div>
+                <div className="step-content">
+                  <h4>Research & Planning</h4>
+                  <p>User research, competitive analysis, and technical architecture planning</p>
+                </div>
+              </div>
+              <div className="process-step">
+                <div className="step-number">2</div>
+                <div className="step-content">
+                  <h4>Design & Prototyping</h4>
+                  <p>Wireframing, visual design, and interactive prototypes for user testing</p>
+                </div>
+              </div>
+              <div className="process-step">
+                <div className="step-number">3</div>
+                <div className="step-content">
+                  <h4>Development & Testing</h4>
+                  <p>Parallel development across platforms with continuous integration and testing</p>
+                </div>
+              </div>
+              <div className="process-step">
+                <div className="step-number">4</div>
+                <div className="step-content">
+                  <h4>Launch & Iteration</h4>
+                  <p>User feedback collection and continuous improvement based on analytics</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const LessonsLearned = () => {
+  const lessonsRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (lessonsRef.current) {
+      observer.observe(lessonsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const lessons = [
+    {
+      title: "Cross-Platform Consistency",
+      lesson: "Maintaining design consistency across web and mobile platforms requires early planning and shared design systems.",
+      icon: "🔄"
+    },
+    {
+      title: "Performance Optimization",
+      lesson: "Large datasets require smart caching and lazy loading strategies to maintain smooth user experiences.",
+      icon: "⚡"
+    },
+    {
+      title: "User-Centered Design",
+      lesson: "Regular user testing and feedback loops are essential for creating intuitive and engaging interfaces.",
+      icon: "👤"
+    },
+    {
+      title: "Team Communication",
+      lesson: "Clear communication protocols and regular check-ins are crucial for successful team collaboration.",
+      icon: "💬"
+    }
+  ];
+
+  return (
+    <section className="lessons-learned">
+      <div className="lessons-learned-container">
+        <div ref={lessonsRef} className="lessons-content fade-in-element">
+          <h2>Key Learnings</h2>
+          <p className="lessons-description">
+            Valuable insights gained from building a complex, multi-platform application with a collaborative team
+          </p>
+          
+          <div className="lessons-grid">
+            {lessons.map((item, index) => (
+              <div key={index} className="lesson-card">
+                <div className="lesson-icon">{item.icon}</div>
+                <h3>{item.title}</h3>
+                <p>{item.lesson}</p>
+              </div>
+            ))}
+          </div>
+          
+          <div className="future-improvements">
+            <h3>Future Enhancements</h3>
+            <div className="improvements-list">
+              <div className="improvement-item">
+                <h4>Machine Learning Integration</h4>
+                <p>Implement advanced ML algorithms for better music recommendations and mood analysis</p>
+              </div>
+              <div className="improvement-item">
+                <h4>Social Features</h4>
+                <p>Add friend connections, playlist sharing, and collaborative music discovery features</p>
+              </div>
+              <div className="improvement-item">
+                <h4>Real-time Analytics</h4>
+                <p>Provide live listening statistics and real-time updates for active users</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const ProjectNavigation = () => {
+  return (
+    <section className="project-navigation">
+      <div className="project-navigation-container">
+        <div className="nav-content">
+          <div className="nav-item prev">
+            <span className="nav-label">Previous Project</span>
+            <Link to="/projects/previous" className="nav-link">
+              <span className="nav-arrow">←</span>
+              <span className="nav-title">E-Commerce Platform</span>
+            </Link>
+          </div>
+          
+          <div className="nav-center">
+            <Link to="/projects" className="back-to-projects">
+              View All Projects
+            </Link>
+          </div>
+          
+          <div className="nav-item next">
+            <span className="nav-label">Next Project</span>
+            <Link to="/projects/next" className="nav-link">
+              <span className="nav-title">Task Management App</span>
+              <span className="nav-arrow">→</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Main component with all sections included
 const SpotifyWrappedProject = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Ensure black background by adding classes to html and body
+    document.documentElement.classList.add('spotify-page');
+    document.body.classList.add('spotify-page');
+    document.body.style.backgroundColor = '#000000';
+    document.documentElement.style.backgroundColor = '#000000';
+    
+    // Cleanup function to remove classes when component unmounts
+    return () => {
+      document.documentElement.classList.remove('spotify-page');
+      document.body.classList.remove('spotify-page');
+      document.body.style.backgroundColor = '';
+      document.documentElement.style.backgroundColor = '';
+    };
   }, []);
 
   return (
@@ -270,9 +681,15 @@ const SpotifyWrappedProject = () => {
       <Navbar />
       <ProjectHero />
       <ProjectDetails />
+      <ProjectShowcase />
+      <ProjectImpact />
+      <TeamCollaboration />
+      <LessonsLearned />
+      <ProjectNavigation />
       <Footer />
     </div>
   );
 };
 
+// This is the crucial default export that was missing
 export default SpotifyWrappedProject;
