@@ -646,9 +646,9 @@ const ProjectNavigation = () => {
           </div>
           
           <div className="nav-item next">
-            <span className="nav-label">Next Project</span>
-            <Link to="/projects/next" className="nav-link">
-              <span className="nav-title">Next Project</span>
+            <span className="nav-label">More Projects</span>
+            <Link to="/projects" className="nav-link">
+              <span className="nav-title">Coming Soon</span>
               <span className="nav-arrow">→</span>
             </Link>
           </div>

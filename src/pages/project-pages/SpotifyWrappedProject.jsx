@@ -350,7 +350,7 @@ const ProjectShowcase = () => {
 
 const ProjectImpact = () => {
   const impactRef = useRef(null);
-  const statsRef = useRef([]);
+  const achievementsRef = useRef([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -369,57 +369,57 @@ const ProjectImpact = () => {
       observer.observe(impactRef.current);
     }
 
-    statsRef.current.forEach((ref) => {
+    achievementsRef.current.forEach((ref) => {
       if (ref) observer.observe(ref);
     });
 
     return () => observer.disconnect();
   }, []);
 
-  const stats = [
-    { number: "2.5K+", label: "Active Users", icon: "👥" },
-    { number: "98%", label: "User Satisfaction", icon: "⭐" },
-    { number: "15M+", label: "Songs Analyzed", icon: "🎵" },
-    { number: "4.8", label: "App Store Rating", icon: "📱" }
+  const achievements = [
+    { title: "Full-Stack Development", description: "Successfully built both web and mobile platforms with consistent functionality", icon: "💻" },
+    { title: "API Integration", description: "Implemented Spotify Web API integration with OAuth 2.0 authentication", icon: "🔗" },
+    { title: "Cross-Platform Design", description: "Created cohesive user experience across Android and web platforms", icon: "📱" },
+    { title: "Data Visualization", description: "Built interactive charts and analytics using Chart.js and custom components", icon: "📊" }
   ];
 
   return (
     <section className="project-impact">
       <div className="project-impact-container">
         <div ref={impactRef} className="impact-content fade-in-element">
-          <h2>Project Impact</h2>
+          <h2>Project Achievements</h2>
           <p className="impact-description">
-            Our Spotify Wrapped reimagination has created meaningful connections between users and their music, 
-            providing deeper insights and more engaging experiences than traditional analytics platforms.
+            Our Spotify Wrapped reimagination successfully demonstrated advanced web and mobile development skills 
+            while creating a more comprehensive alternative to Spotify's annual feature.
           </p>
           
-          <div className="stats-grid">
-            {stats.map((stat, index) => (
+          <div className="achievements-grid">
+            {achievements.map((achievement, index) => (
               <div
                 key={index}
-                ref={(el) => statsRef.current[index] = el}
-                className="stat-card fade-in-element"
+                ref={(el) => achievementsRef.current[index] = el}
+                className="achievement-card fade-in-element"
                 style={{ transitionDelay: `${index * 0.1}s` }}
               >
-                <div className="stat-icon">{stat.icon}</div>
-                <div className="stat-number">{stat.number}</div>
-                <div className="stat-label">{stat.label}</div>
+                <div className="achievement-icon">{achievement.icon}</div>
+                <h3>{achievement.title}</h3>
+                <p>{achievement.description}</p>
               </div>
             ))}
           </div>
           
           <div className="impact-highlights">
             <div className="highlight-item">
-              <h3>Enhanced User Engagement</h3>
-              <p>Users spend 3x more time exploring their music data compared to traditional wrapped experiences</p>
+              <h3>Technical Complexity</h3>
+              <p>Successfully handled complex data processing and visualization across multiple platforms</p>
             </div>
             <div className="highlight-item">
-              <h3>Cross-Platform Success</h3>
-              <p>Consistent experience across web and mobile platforms with 95% feature parity</p>
+              <h3>Team Coordination</h3>
+              <p>Effective collaboration between frontend, backend, and mobile development team members</p>
             </div>
             <div className="highlight-item">
-              <h3>Community Building</h3>
-              <p>Increased social sharing by 400% through beautiful, customizable content cards</p>
+              <h3>Design Innovation</h3>
+              <p>Created enhanced user experience with additional features beyond standard Spotify Wrapped</p>
             </div>
           </div>
         </div>
@@ -561,22 +561,22 @@ const LessonsLearned = () => {
 
   const lessons = [
     {
-      title: "Cross-Platform Consistency",
+      title: "Cross-Platform Development",
       lesson: "Maintaining design consistency across web and mobile platforms requires early planning and shared design systems.",
       icon: "🔄"
     },
     {
-      title: "Performance Optimization",
-      lesson: "Large datasets require smart caching and lazy loading strategies to maintain smooth user experiences.",
+      title: "API Integration",
+      lesson: "Working with third-party APIs like Spotify requires careful handling of authentication and rate limiting.",
       icon: "⚡"
     },
     {
-      title: "User-Centered Design",
-      lesson: "Regular user testing and feedback loops are essential for creating intuitive and engaging interfaces.",
+      title: "Data Visualization",
+      lesson: "Creating meaningful visualizations from complex music data requires thoughtful design and user testing.",
       icon: "👤"
     },
     {
-      title: "Team Communication",
+      title: "Team Collaboration",
       lesson: "Clear communication protocols and regular check-ins are crucial for successful team collaboration.",
       icon: "💬"
     }
@@ -601,20 +601,20 @@ const LessonsLearned = () => {
             ))}
           </div>
           
-          <div className="future-improvements">
-            <h3>Future Enhancements</h3>
-            <div className="improvements-list">
-              <div className="improvement-item">
-                <h4>Machine Learning Integration</h4>
-                <p>Implement advanced ML algorithms for better music recommendations and mood analysis</p>
+          <div className="technical-skills">
+            <h3>Technical Skills Gained</h3>
+            <div className="skills-list">
+              <div className="skill-item">
+                <h4>React.js Development</h4>
+                <p>Advanced component architecture, state management, and responsive design implementation</p>
               </div>
-              <div className="improvement-item">
-                <h4>Social Features</h4>
-                <p>Add friend connections, playlist sharing, and collaborative music discovery features</p>
+              <div className="skill-item">
+                <h4>Android Development</h4>
+                <p>Native mobile development with cross-platform design consistency and performance optimization</p>
               </div>
-              <div className="improvement-item">
-                <h4>Real-time Analytics</h4>
-                <p>Provide live listening statistics and real-time updates for active users</p>
+              <div className="skill-item">
+                <h4>API Integration</h4>
+                <p>OAuth 2.0 implementation, data processing, and real-time visualization with Chart.js</p>
               </div>
             </div>
           </div>
@@ -630,10 +630,10 @@ const ProjectNavigation = () => {
       <div className="project-navigation-container">
         <div className="nav-content">
           <div className="nav-item prev">
-            <span className="nav-label">Previous Project</span>
-            <Link to="/projects/previous" className="nav-link">
+            <span className="nav-label">More Projects</span>
+            <Link to="/projects" className="nav-link">
               <span className="nav-arrow">←</span>
-              <span className="nav-title">E-Commerce Platform</span>
+              <span className="nav-title">Coming Soon</span>
             </Link>
           </div>
           
@@ -645,8 +645,8 @@ const ProjectNavigation = () => {
           
           <div className="nav-item next">
             <span className="nav-label">Next Project</span>
-            <Link to="/projects/next" className="nav-link">
-              <span className="nav-title">Task Management App</span>
+            <Link to="/projects/college-scheduler" className="nav-link">
+              <span className="nav-title">College Scheduler</span>
               <span className="nav-arrow">→</span>
             </Link>
           </div>
