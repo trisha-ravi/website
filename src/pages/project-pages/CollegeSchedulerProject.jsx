@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
@@ -136,8 +136,8 @@ const ProjectDetails = () => {
       icon: "✅"
     },
     {
-      title: "Unified Dashboard",
-      description: "Centralized view combining classes, assignments, exams, and personal tasks in one organized interface.",
+      title: "Calendar Integration",
+      description: "Visual calendar view showing all academic commitments and deadlines in one organized interface.",
       icon: "📊"
     },
     {
@@ -184,7 +184,7 @@ const ProjectDetails = () => {
           </div>
         </div>
 
-        <div className="tech-stack fade-in-element">
+        <div className="tech-stack">
           <h2>Technical Implementation</h2>
           <div className="tech-details">
             <div className="tech-category">
@@ -226,7 +226,7 @@ const ProjectDetails = () => {
           </div>
         </div>
 
-        <div className="project-challenges fade-in-element">
+        <div className="project-challenges">
           <h2>Challenges & Solutions</h2>
           <div className="challenges-grid">
             <div className="challenge-item">
@@ -260,9 +260,420 @@ const ProjectDetails = () => {
   );
 };
 
+const AppShowcase = () => {
+  const showcaseRef = useRef(null);
+  const [activeScreen, setActiveScreen] = useState(0);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (showcaseRef.current) {
+      observer.observe(showcaseRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const appScreens = [
+    {
+      title: "Dashboard Overview",
+      description: "Main dashboard showing today's schedule, upcoming assignments, and quick task overview",
+      image: "/api/placeholder/300/600"
+    },
+    {
+      title: "Class Schedule",
+      description: "Weekly class schedule view with conflict detection and time slot management",
+      image: "/api/placeholder/300/600"
+    },
+    {
+      title: "Assignment Tracker",
+      description: "Comprehensive assignment management with priority levels and due date tracking",
+      image: "/api/placeholder/300/600"
+    },
+    {
+      title: "Task Management",
+      description: "Flexible task organization system with categories and completion tracking",
+      image: "/api/placeholder/300/600"
+    }
+  ];
+
+  return (
+    <section className="app-showcase">
+      <div className="app-showcase-container">
+        <div ref={showcaseRef} className="showcase-content fade-in-element">
+          <h2>App Interface</h2>
+          <p className="showcase-subtitle">
+            Explore the intuitive design and user-friendly interface of our college scheduling application
+          </p>
+          
+          <div className="showcase-gallery">
+            <div className="gallery-main">
+              <div className="phone-mockup">
+                <img 
+                  src={appScreens[activeScreen].image} 
+                  alt={appScreens[activeScreen].title}
+                  className="main-screen"
+                />
+              </div>
+              <div className="screen-info">
+                <h3>{appScreens[activeScreen].title}</h3>
+                <p>{appScreens[activeScreen].description}</p>
+              </div>
+            </div>
+            
+            <div className="screen-thumbnails">
+              {appScreens.map((screen, index) => (
+                <div
+                  key={index}
+                  className={`screen-thumb ${index === activeScreen ? 'active' : ''}`}
+                  onClick={() => setActiveScreen(index)}
+                >
+                  <img src={screen.image} alt={screen.title} />
+                  <span className="thumb-title">{screen.title}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const UserImpact = () => {
+  const impactRef = useRef(null);
+  const achievementsRef = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (impactRef.current) {
+      observer.observe(impactRef.current);
+    }
+
+    achievementsRef.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const achievements = [
+    { title: "Android Development", description: "Successfully built a native Android application using Java/Kotlin", icon: "📱" },
+    { title: "Team Collaboration", description: "Effective collaboration with multiple developers across different components", icon: "👥" },
+    { title: "UI/UX Design", description: "Created intuitive user interfaces following Material Design principles", icon: "🎨" },
+    { title: "Database Management", description: "Implemented local SQLite database for efficient data storage and retrieval", icon: "💾" }
+  ];
+
+  return (
+    <section className="user-impact">
+      <div className="user-impact-container">
+        <div ref={impactRef} className="impact-content fade-in-element">
+          <h2>Project Achievements</h2>
+          <p className="impact-description">
+            Our College Scheduler App project successfully demonstrated our ability to build a comprehensive 
+            Android application that addresses real student needs through thoughtful design and development.
+          </p>
+          
+          <div className="achievements-grid">
+            {achievements.map((achievement, index) => (
+              <div
+                key={index}
+                ref={(el) => achievementsRef.current[index] = el}
+                className="achievement-card fade-in-element"
+                style={{ transitionDelay: `${index * 0.1}s` }}
+              >
+                <div className="achievement-icon">{achievement.icon}</div>
+                <h3>{achievement.title}</h3>
+                <p>{achievement.description}</p>
+              </div>
+            ))}
+          </div>
+          
+          <div className="impact-highlights">
+            <div className="highlight-item">
+              <h3>Academic Problem Solving</h3>
+              <p>Identified and addressed real challenges students face in managing their academic responsibilities</p>
+            </div>
+            <div className="highlight-item">
+              <h3>Technical Skills Development</h3>
+              <p>Gained hands-on experience with Android development, database design, and mobile UI/UX principles</p>
+            </div>
+            <div className="highlight-item">
+              <h3>Project Management</h3>
+              <p>Successfully coordinated team efforts to deliver a functional application within project timeline</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const DevelopmentProcess = () => {
+  const processRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (processRef.current) {
+      observer.observe(processRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const teamMembers = [
+    {
+      role: "Frontend Developer & UI/UX Designer",
+      responsibilities: ["Android UI development", "User experience design", "Interface prototyping", "Usability testing"],
+      highlight: true
+    },
+    {
+      role: "Android Developer",
+      responsibilities: ["Core app functionality", "Database implementation", "Notification system", "Performance optimization"]
+    },
+    {
+      role: "Backend Developer",
+      responsibilities: ["Data architecture", "Local storage optimization", "API design", "Data synchronization"]
+    },
+    {
+      role: "Product Designer",
+      responsibilities: ["User research", "Visual design", "Design systems", "User journey mapping"]
+    }
+  ];
+
+  return (
+    <section className="development-process">
+      <div className="development-process-container">
+        <div ref={processRef} className="process-content fade-in-element">
+          <h2>Development Process</h2>
+          <p className="process-description">
+            Our collaborative approach combined user-centered design with agile development 
+            methodologies to create an app that truly serves student needs.
+          </p>
+          
+          <div className="team-grid">
+            {teamMembers.map((member, index) => (
+              <div
+                key={index}
+                className={`team-member ${member.highlight ? 'highlight' : ''}`}
+              >
+                <h3>{member.role}</h3>
+                <ul>
+                  {member.responsibilities.map((responsibility, i) => (
+                    <li key={i}>{responsibility}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          
+          <div className="methodology-section">
+            <h3>Our Development Methodology</h3>
+            <div className="methodology-steps">
+              <div className="method-step">
+                <div className="step-number">1</div>
+                <div className="step-content">
+                  <h4>User Research</h4>
+                  <p>Conducted interviews with 50+ college students to understand pain points and needs</p>
+                </div>
+              </div>
+              <div className="method-step">
+                <div className="step-number">2</div>
+                <div className="step-content">
+                  <h4>Design & Prototyping</h4>
+                  <p>Created wireframes and interactive prototypes based on user feedback and requirements</p>
+                </div>
+              </div>
+              <div className="method-step">
+                <div className="step-number">3</div>
+                <div className="step-content">
+                  <h4>Iterative Development</h4>
+                  <p>Built the app in sprints with continuous user testing and feature refinement</p>
+                </div>
+              </div>
+              <div className="method-step">
+                <div className="step-number">4</div>
+                <div className="step-content">
+                  <h4>Testing & Launch</h4>
+                  <p>Comprehensive testing with beta users followed by Play Store deployment</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const LearningsAndFuture = () => {
+  const learningsRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (learningsRef.current) {
+      observer.observe(learningsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const learnings = [
+    {
+      title: "User-Centered Design",
+      lesson: "Conducting user research with college students was essential for understanding real pain points and needs.",
+      icon: "👥"
+    },
+    {
+      title: "Mobile Performance",
+      lesson: "Optimizing for various Android devices and maintaining smooth performance with local data storage.",
+      icon: "⚡"
+    },
+    {
+      title: "Collaborative Development",
+      lesson: "Effective team communication and code review processes are crucial for maintaining quality in team projects.",
+      icon: "🤝"
+    },
+    {
+      title: "Iterative Improvement",
+      lesson: "Building prototypes and testing with potential users led to significant improvements in the final design.",
+      icon: "🔄"
+    }
+  ];
+
+  return (
+    <section className="learnings-future">
+      <div className="learnings-future-container">
+        <div ref={learningsRef} className="learnings-content fade-in-element">
+          <h2>Key Learnings</h2>
+          <p className="learnings-description">
+            Valuable insights gained from building a student-focused mobile application as a collaborative team project
+          </p>
+          
+          <div className="learnings-grid">
+            {learnings.map((item, index) => (
+              <div key={index} className="learning-card">
+                <div className="learning-icon">{item.icon}</div>
+                <h3>{item.title}</h3>
+                <p>{item.lesson}</p>
+              </div>
+            ))}
+          </div>
+          
+          <div className="technical-skills">
+            <h3>Technical Skills Gained</h3>
+            <div className="skills-list">
+              <div className="skill-item">
+                <h4>Android Development</h4>
+                <p>Hands-on experience with Java/Kotlin, Android SDK, and Material Design components</p>
+              </div>
+              <div className="skill-item">
+                <h4>Database Design</h4>
+                <p>SQLite implementation for local data storage, relationships, and efficient data retrieval</p>
+              </div>
+              <div className="skill-item">
+                <h4>Team Collaboration</h4>
+                <p>Version control with Git, code reviews, and coordinated development across team members</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const ProjectNavigation = () => {
+  return (
+    <section className="project-navigation">
+      <div className="project-navigation-container">
+        <div className="nav-content">
+          <div className="nav-item prev">
+            <span className="nav-label">Previous Project</span>
+            <Link to="/projects/spotify-wrapped" className="nav-link">
+              <span className="nav-arrow">←</span>
+              <span className="nav-title">Spotify Wrapped</span>
+            </Link>
+          </div>
+          
+          <div className="nav-center">
+            <Link to="/projects" className="back-to-projects">
+              View All Projects
+            </Link>
+          </div>
+          
+          <div className="nav-item next">
+            <span className="nav-label">Next Project</span>
+            <Link to="/projects/next" className="nav-link">
+              <span className="nav-title">Next Project</span>
+              <span className="nav-arrow">→</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const CollegeSchedulerProject = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Ensure black background
+    document.documentElement.classList.add('scheduler-page');
+    document.body.classList.add('scheduler-page');
+    document.body.style.backgroundColor = '#000000';
+    document.documentElement.style.backgroundColor = '#000000';
+    
+    return () => {
+      document.documentElement.classList.remove('scheduler-page');
+      document.body.classList.remove('scheduler-page');
+      document.body.style.backgroundColor = '';
+      document.documentElement.style.backgroundColor = '';
+    };
   }, []);
 
   return (
@@ -270,6 +681,11 @@ const CollegeSchedulerProject = () => {
       <Navbar />
       <ProjectHero />
       <ProjectDetails />
+      <AppShowcase />
+      <UserImpact />
+      <DevelopmentProcess />
+      <LearningsAndFuture />
+      <ProjectNavigation />
       <Footer />
     </div>
   );
