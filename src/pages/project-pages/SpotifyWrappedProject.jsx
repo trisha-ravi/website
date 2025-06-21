@@ -70,7 +70,7 @@ const ProjectHero = () => {
               className="cta-button"
             >
               <span className="external-link">↗</span>
-              View Project
+              View Design Mockups
             </a>
           </div>
           <div className="project-hero-image">
@@ -256,93 +256,93 @@ const ProjectDetails = () => {
   );
 };
 
-const DesignShowcase = () => {
-  const showcaseRef = useRef(null);
-  const [activeImage, setActiveImage] = useState(0);
+// const DesignShowcase = () => {
+//   const showcaseRef = useRef(null);
+//   const [activeImage, setActiveImage] = useState(0);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+//   useEffect(() => {
+//     const observer = new IntersectionObserver(
+//       (entries) => {
+//         entries.forEach((entry) => {
+//           if (entry.isIntersecting) {
+//             entry.target.classList.add('fade-in-visible');
+//             observer.unobserve(entry.target);
+//           }
+//         });
+//       },
+//       { threshold: 0.1 }
+//     );
 
-    if (showcaseRef.current) {
-      observer.observe(showcaseRef.current);
-    }
+//     if (showcaseRef.current) {
+//       observer.observe(showcaseRef.current);
+//     }
 
-    return () => observer.disconnect();
-  }, []);
+//     return () => observer.disconnect();
+//   }, []);
 
-  const mockups = [
-    {
-      title: "Home Dashboard",
-      description: "Clean, mobile-optimized dashboard showing personalized music insights and quick access to features",
-      image: "/api/placeholder/300/600"
-    },
-    {
-      title: "Analytics Deep Dive",
-      description: "Interactive charts and graphs designed for touch navigation with detailed listening statistics",
-      image: "/api/placeholder/300/600"
-    },
-    {
-      title: "Social Sharing",
-      description: "Beautifully designed shareable cards with customizable templates for social media",
-      image: "/api/placeholder/300/600"
-    },
-    {
-      title: "Profile & Settings",
-      description: "User profile management with Spotify integration and personalization options",
-      image: "/api/placeholder/300/600"
-    }
-  ];
+//   const mockups = [
+//     {
+//       title: "Home Dashboard",
+//       description: "Clean, mobile-optimized dashboard showing personalized music insights and quick access to features",
+//       image: "/api/placeholder/300/600"
+//     },
+//     {
+//       title: "Analytics Deep Dive",
+//       description: "Interactive charts and graphs designed for touch navigation with detailed listening statistics",
+//       image: "/api/placeholder/300/600"
+//     },
+//     {
+//       title: "Social Sharing",
+//       description: "Beautifully designed shareable cards with customizable templates for social media",
+//       image: "/api/placeholder/300/600"
+//     },
+//     {
+//       title: "Profile & Settings",
+//       description: "User profile management with Spotify integration and personalization options",
+//       image: "/api/placeholder/300/600"
+//     }
+//   ];
 
-  return (
-    <section className="project-showcase">
-      <div className="project-showcase-container">
-        <div ref={showcaseRef} className="showcase-content fade-in-element">
-          <h2>Design Mockups</h2>
-          <p className="showcase-subtitle">
-            Explore the mobile interface design created in Figma, showcasing the user experience and visual design
-          </p>
+//   return (
+//     <section className="project-showcase">
+//       <div className="project-showcase-container">
+//         <div ref={showcaseRef} className="showcase-content fade-in-element">
+//           <h2>Design Mockups</h2>
+//           <p className="showcase-subtitle">
+//             Explore the mobile interface design created in Figma, showcasing the user experience and visual design
+//           </p>
           
-          <div className="showcase-gallery">
-            <div className="gallery-main">
-              <img 
-                src={mockups[activeImage].image} 
-                alt={mockups[activeImage].title}
-                className="main-image mobile-mockup"
-              />
-              <div className="image-overlay">
-                <h3>{mockups[activeImage].title}</h3>
-                <p>{mockups[activeImage].description}</p>
-              </div>
-            </div>
+//           <div className="showcase-gallery">
+//             <div className="gallery-main">
+//               <img 
+//                 src={mockups[activeImage].image} 
+//                 alt={mockups[activeImage].title}
+//                 className="main-image mobile-mockup"
+//               />
+//               <div className="image-overlay">
+//                 <h3>{mockups[activeImage].title}</h3>
+//                 <p>{mockups[activeImage].description}</p>
+//               </div>
+//             </div>
             
-            <div className="gallery-thumbnails">
-              {mockups.map((mockup, index) => (
-                <div
-                  key={index}
-                  className={`thumbnail ${index === activeImage ? 'active' : ''}`}
-                  onClick={() => setActiveImage(index)}
-                >
-                  <img src={mockup.image} alt={mockup.title} />
-                  <span className="thumbnail-title">{mockup.title}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
+//             <div className="gallery-thumbnails">
+//               {mockups.map((mockup, index) => (
+//                 <div
+//                   key={index}
+//                   className={`thumbnail ${index === activeImage ? 'active' : ''}`}
+//                   onClick={() => setActiveImage(index)}
+//                 >
+//                   <img src={mockup.image} alt={mockup.title} />
+//                   <span className="thumbnail-title">{mockup.title}</span>
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
 
 const DesignProcess = () => {
   const processRef = useRef(null);
@@ -683,7 +683,7 @@ const SpotifyWrappedProject = () => {
       <Navbar />
       <ProjectHero />
       <ProjectDetails />
-      <DesignShowcase />
+      {/* <DesignShowcase /> */}
       <ProjectImpact />
       <DesignProcess />
       <LessonsLearned />
