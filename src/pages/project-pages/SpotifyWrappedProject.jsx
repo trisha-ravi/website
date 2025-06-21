@@ -40,10 +40,10 @@ const ProjectHero = () => {
           <div className="project-hero-text">
             <h1 className="project-main-title">
               Spotify Wrapped
-              <span className="highlight"> Reimagined</span>
+              <span className="highlight"> Mobile App</span>
             </h1>
             <p className="project-subtitle">
-              A personalized music analytics platform that transforms your listening habits into beautiful, shareable insights and visualizations.
+              A reimagined mobile application that transforms your music listening habits into beautiful, personalized insights and shareable visualizations.
             </p>
             <div className="project-meta">
               <div className="meta-item">
@@ -51,20 +51,16 @@ const ProjectHero = () => {
                 <span>2024</span>
               </div>
               <div className="meta-item">
-                <span className="icon">👥</span>
-                <span>Team Project</span>
-              </div>
-              <div className="meta-item">
                 <span className="icon">📱</span>
-                <span>Android Development</span>
-              </div>
-              <div className="meta-item">
-                <span className="icon">💻</span>
-                <span>Frontend Development</span>
+                <span>Mobile Development</span>
               </div>
               <div className="meta-item">
                 <span className="icon">🎨</span>
                 <span>UI/UX Design</span>
+              </div>
+              <div className="meta-item">
+                <span className="icon">✏️</span>
+                <span>Figma Prototyping</span>
               </div>
             </div>
             <a 
@@ -74,11 +70,11 @@ const ProjectHero = () => {
               className="cta-button"
             >
               <span className="external-link">↗</span>
-              View Live Project
+              View Project
             </a>
           </div>
           <div className="project-hero-image">
-            <img src={wrapped} alt="Spotify Wrapped App Interface" />
+            <img src={wrapped} alt="Spotify Wrapped Mobile App Interface" />
           </div>
         </div>
       </div>
@@ -117,33 +113,33 @@ const ProjectDetails = () => {
   const features = [
     {
       title: "Personalized Analytics",
-      description: "Deep dive into your music listening patterns with comprehensive statistics and trends over time.",
+      description: "Deep dive into your music listening patterns with comprehensive mobile-optimized statistics and trends.",
       icon: "📊"
     },
     {
-      title: "Beautiful Visualizations",
-      description: "Transform raw data into stunning charts and graphics that tell your musical story.",
-      icon: "🎨"
-    },
-    {
-      title: "Social Sharing",
-      description: "Create shareable cards and stories to showcase your music taste with friends and followers.",
+      title: "Mobile-First Design",
+      description: "Intuitive touch-based interface designed specifically for mobile devices with smooth gestures.",
       icon: "📱"
     },
     {
-      title: "Genre Discovery",
-      description: "Explore new music recommendations based on your listening history and preferences.",
+      title: "Social Sharing",
+      description: "Create beautiful shareable cards optimized for social media platforms directly from your phone.",
+      icon: "🔗"
+    },
+    {
+      title: "Interactive Visualizations",
+      description: "Touch-friendly charts and graphs that respond to gestures for exploring your music data.",
+      icon: "🎨"
+    },
+    {
+      title: "Spotify Integration",
+      description: "Seamless connection with your Spotify account to access listening history and preferences.",
       icon: "🎵"
     },
     {
-      title: "Timeline View",
-      description: "See how your music taste has evolved throughout the year with interactive timelines.",
-      icon: "📅"
-    },
-    {
-      title: "Artist Insights",
-      description: "Get detailed information about your top artists and discover similar musicians.",
-      icon: "🎤"
+      title: "Personalized Insights",
+      description: "AI-powered recommendations and mood analysis tailored to your unique listening habits.",
+      icon: "🤖"
     }
   ];
 
@@ -153,16 +149,16 @@ const ProjectDetails = () => {
         <div ref={detailsRef} className="project-overview fade-in-element">
           <h2>Project Overview</h2>
           <p>
-            The Spotify Wrapped Reimagined project was a collaborative team effort to create a more comprehensive 
-            and visually appealing alternative to Spotify's annual Wrapped feature. As a team, we wanted to push 
-            the boundaries of what music analytics could look like with enhanced visualizations, deeper data analysis, 
-            and more personalization options across both mobile and web platforms.
+            The Spotify Wrapped Mobile App is a personal project that reimagines how users interact with their 
+            music analytics on mobile devices. Recognizing that most music consumption happens on smartphones, 
+            I designed a mobile-first experience that goes beyond Spotify's annual Wrapped feature with 
+            year-round insights and enhanced personalization.
           </p>
           <p>
-            This application was developed for both Android and web platforms, connecting to users' Spotify accounts 
-            through the official API to analyze listening history and present data through interactive charts, 
-            personalized recommendations, and shareable content cards. My role focused on frontend development and 
-            UI/UX design, working closely with the team to create an experience that feels both informative and entertaining.
+            This project focused on creating an intuitive mobile interface that makes complex music data 
+            accessible and engaging through thoughtful UI/UX design. Using Figma for comprehensive mockups 
+            and prototyping, I developed a design system that prioritizes mobile usability while maintaining 
+            visual appeal and data clarity.
           </p>
         </div>
 
@@ -185,72 +181,72 @@ const ProjectDetails = () => {
         </div>
 
         <div className="tech-stack">
-          <h2>Technical Implementation</h2>
+          <h2>Design & Development Approach</h2>
           <div className="tech-details">
             <div className="tech-category">
-              <h3>Frontend & Web</h3>
+              <h3>Mobile Development</h3>
               <ul>
-                <li>React.js for component-based architecture</li>
-                <li>Chart.js for data visualizations</li>
-                <li>CSS3 with modern animations and transitions</li>
-                <li>Responsive design for all device sizes</li>
+                <li>Native Android development for optimal performance</li>
+                <li>Material Design principles and components</li>
+                <li>Touch-optimized interfaces and gesture controls</li>
+                <li>Responsive layouts for various screen sizes</li>
               </ul>
             </div>
             <div className="tech-category">
-              <h3>Android Development</h3>
+              <h3>Design Process</h3>
               <ul>
-                <li>Native Android development with Java/Kotlin</li>
-                <li>Material Design components</li>
-                <li>Android SDK for mobile-specific features</li>
-                <li>Cross-platform data synchronization</li>
+                <li>Figma for wireframing and high-fidelity mockups</li>
+                <li>Interactive prototyping for user flow validation</li>
+                <li>Component-based design system creation</li>
+                <li>Mobile-first design methodology</li>
               </ul>
             </div>
             <div className="tech-category">
-              <h3>Backend & APIs</h3>
+              <h3>API Integration</h3>
               <ul>
-                <li>Spotify Web API for music data</li>
-                <li>OAuth 2.0 for secure authentication</li>
-                <li>Node.js for server-side processing</li>
-                <li>RESTful API design patterns</li>
+                <li>Spotify Web API for music data access</li>
+                <li>OAuth 2.0 authentication implementation</li>
+                <li>Real-time data synchronization</li>
+                <li>Offline data caching strategies</li>
               </ul>
             </div>
             <div className="tech-category">
-              <h3>Design & UX</h3>
+              <h3>User Experience</h3>
               <ul>
-                <li>Figma for wireframing and prototyping</li>
-                <li>User research and testing methodologies</li>
-                <li>Accessibility-first design approach</li>
-                <li>Cross-platform design consistency</li>
+                <li>User research and persona development</li>
+                <li>Accessibility-focused design decisions</li>
+                <li>Performance optimization for mobile devices</li>
+                <li>Intuitive navigation and information architecture</li>
               </ul>
             </div>
           </div>
         </div>
 
         <div className="project-challenges">
-          <h2>Challenges & Solutions</h2>
+          <h2>Design Challenges & Solutions</h2>
           <div className="challenges-grid">
             <div className="challenge-item">
-              <h3>Cross-Platform Consistency</h3>
+              <h3>Mobile Data Visualization</h3>
               <p>
-                Maintaining design and functionality consistency between Android and web platforms required careful 
-                coordination between team members. We established design systems and shared components to ensure 
-                a unified user experience across all platforms.
+                Presenting complex music analytics on small screens required innovative visualization approaches. 
+                I developed touch-friendly chart interactions and progressive disclosure patterns that reveal 
+                detailed information without overwhelming the mobile interface.
               </p>
             </div>
             <div className="challenge-item">
-              <h3>Team Collaboration</h3>
+              <h3>Performance on Mobile</h3>
               <p>
-                Working with multiple developers across different platforms required effective communication and 
-                version control strategies. We implemented agile methodologies and used collaborative tools to 
-                keep the project synchronized and on track.
+                Ensuring smooth performance while handling large datasets required careful optimization strategies. 
+                I implemented lazy loading, data caching, and efficient rendering techniques to maintain 60fps 
+                interactions even with complex visualizations.
               </p>
             </div>
             <div className="challenge-item">
-              <h3>Performance Optimization</h3>
+              <h3>User Engagement</h3>
               <p>
-                With large datasets and complex animations across multiple platforms, performance was crucial. 
-                Each platform required specific optimization strategies while maintaining feature parity and 
-                smooth user interactions.
+                Creating an app that users would want to use year-round, not just annually, required thoughtful 
+                feature planning. I designed dynamic content updates, personalized notifications, and social 
+                sharing features to maintain ongoing engagement.
               </p>
             </div>
           </div>
@@ -260,7 +256,7 @@ const ProjectDetails = () => {
   );
 };
 
-const ProjectShowcase = () => {
+const DesignShowcase = () => {
   const showcaseRef = useRef(null);
   const [activeImage, setActiveImage] = useState(0);
 
@@ -284,26 +280,26 @@ const ProjectShowcase = () => {
     return () => observer.disconnect();
   }, []);
 
-  const screenshots = [
+  const mockups = [
     {
-      title: "Dashboard Overview",
-      description: "Comprehensive analytics dashboard showing top tracks, artists, and listening patterns",
-      image: "/api/placeholder/600/400"
+      title: "Home Dashboard",
+      description: "Clean, mobile-optimized dashboard showing personalized music insights and quick access to features",
+      image: "/api/placeholder/300/600"
     },
     {
-      title: "Personalized Insights",
-      description: "AI-powered recommendations and mood analysis based on listening history",
-      image: "/api/placeholder/600/400"
+      title: "Analytics Deep Dive",
+      description: "Interactive charts and graphs designed for touch navigation with detailed listening statistics",
+      image: "/api/placeholder/300/600"
     },
     {
       title: "Social Sharing",
-      description: "Beautiful shareable cards for social media with custom design templates",
-      image: "/api/placeholder/600/400"
+      description: "Beautifully designed shareable cards with customizable templates for social media",
+      image: "/api/placeholder/300/600"
     },
     {
-      title: "Mobile Experience",
-      description: "Seamless Android app with native performance and offline capabilities",
-      image: "/api/placeholder/600/400"
+      title: "Profile & Settings",
+      description: "User profile management with Spotify integration and personalization options",
+      image: "/api/placeholder/300/600"
     }
   ];
 
@@ -311,35 +307,149 @@ const ProjectShowcase = () => {
     <section className="project-showcase">
       <div className="project-showcase-container">
         <div ref={showcaseRef} className="showcase-content fade-in-element">
-          <h2>Visual Showcase</h2>
+          <h2>Design Mockups</h2>
           <p className="showcase-subtitle">
-            Explore the user interface and experience across different platforms and features
+            Explore the mobile interface design created in Figma, showcasing the user experience and visual design
           </p>
           
           <div className="showcase-gallery">
             <div className="gallery-main">
               <img 
-                src={screenshots[activeImage].image} 
-                alt={screenshots[activeImage].title}
-                className="main-image"
+                src={mockups[activeImage].image} 
+                alt={mockups[activeImage].title}
+                className="main-image mobile-mockup"
               />
               <div className="image-overlay">
-                <h3>{screenshots[activeImage].title}</h3>
-                <p>{screenshots[activeImage].description}</p>
+                <h3>{mockups[activeImage].title}</h3>
+                <p>{mockups[activeImage].description}</p>
               </div>
             </div>
             
             <div className="gallery-thumbnails">
-              {screenshots.map((screenshot, index) => (
+              {mockups.map((mockup, index) => (
                 <div
                   key={index}
                   className={`thumbnail ${index === activeImage ? 'active' : ''}`}
                   onClick={() => setActiveImage(index)}
                 >
-                  <img src={screenshot.image} alt={screenshot.title} />
-                  <span className="thumbnail-title">{screenshot.title}</span>
+                  <img src={mockup.image} alt={mockup.title} />
+                  <span className="thumbnail-title">{mockup.title}</span>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const DesignProcess = () => {
+  const processRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (processRef.current) {
+      observer.observe(processRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section className="team-collaboration">
+      <div className="team-collaboration-container">
+        <div ref={processRef} className="team-content fade-in-element">
+          <h2>Design Process</h2>
+          <p className="team-description">
+            A comprehensive mobile-first design approach that prioritized user experience and technical feasibility 
+            throughout the development process.
+          </p>
+          
+          <div className="collaboration-process">
+            <h3>Development Workflow</h3>
+            <div className="process-steps">
+              <div className="process-step">
+                <div className="step-number">1</div>
+                <div className="step-content">
+                  <h4>Research & Analysis</h4>
+                  <p>User research, competitive analysis of music apps, and identification of pain points in existing solutions</p>
+                </div>
+              </div>
+              <div className="process-step">
+                <div className="step-number">2</div>
+                <div className="step-content">
+                  <h4>Figma Mockups</h4>
+                  <p>Wireframing, high-fidelity designs, and interactive prototypes to validate user flows</p>
+                </div>
+              </div>
+              <div className="process-step">
+                <div className="step-number">3</div>
+                <div className="step-content">
+                  <h4>Mobile Development</h4>
+                  <p>Native Android implementation with API integration and performance optimization</p>
+                </div>
+              </div>
+              <div className="process-step">
+                <div className="step-number">4</div>
+                <div className="step-content">
+                  <h4>Testing & Iteration</h4>
+                  <p>User testing, performance analysis, and iterative improvements based on feedback</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="design-principles" style={{ marginTop: '4rem' }}>
+            <h3>Design Principles</h3>
+            <div className="team-grid">
+              <div className="team-member">
+                <h3>Mobile-First Approach</h3>
+                <ul>
+                  <li>Touch-optimized interface design</li>
+                  <li>Thumb-friendly navigation patterns</li>
+                  <li>Responsive layouts for all devices</li>
+                  <li>Performance optimization for mobile</li>
+                </ul>
+              </div>
+              <div className="team-member">
+                <h3>User-Centered Design</h3>
+                <ul>
+                  <li>Intuitive information architecture</li>
+                  <li>Accessibility-first design decisions</li>
+                  <li>Progressive disclosure of complex data</li>
+                  <li>Consistent design language</li>
+                </ul>
+              </div>
+              <div className="team-member">
+                <h3>Visual Design</h3>
+                <ul>
+                  <li>Spotify-inspired color palette</li>
+                  <li>Modern typography and spacing</li>
+                  <li>Engaging micro-interactions</li>
+                  <li>Beautiful data visualizations</li>
+                </ul>
+              </div>
+              <div className="team-member highlight">
+                <h3>Technical Implementation</h3>
+                <ul>
+                  <li>Native Android development</li>
+                  <li>Spotify API integration</li>
+                  <li>Real-time data processing</li>
+                  <li>Offline functionality support</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -377,10 +487,10 @@ const ProjectImpact = () => {
   }, []);
 
   const achievements = [
-    { title: "Full-Stack Development", description: "Successfully built both web and mobile platforms with consistent functionality", icon: "💻" },
+    { title: "Mobile-First Development", description: "Successfully designed and built a native Android application with intuitive mobile UX", icon: "📱" },
+    { title: "Figma Prototyping", description: "Created comprehensive design system and interactive prototypes for user validation", icon: "🎨" },
     { title: "API Integration", description: "Implemented Spotify Web API integration with OAuth 2.0 authentication", icon: "🔗" },
-    { title: "Cross-Platform Design", description: "Created cohesive user experience across Android and web platforms", icon: "📱" },
-    { title: "Data Visualization", description: "Built interactive charts and analytics using Chart.js and custom components", icon: "📊" }
+    { title: "Data Visualization", description: "Built touch-friendly analytics and charts optimized for mobile interaction", icon: "📊" }
   ];
 
   return (
@@ -389,8 +499,8 @@ const ProjectImpact = () => {
         <div ref={impactRef} className="impact-content fade-in-element">
           <h2>Project Achievements</h2>
           <p className="impact-description">
-            Our Spotify Wrapped reimagination successfully demonstrated advanced web and mobile development skills 
-            while creating a more comprehensive alternative to Spotify's annual feature.
+            This mobile-focused project successfully demonstrated advanced mobile development skills and user-centered 
+            design thinking while creating an enhanced alternative to Spotify's annual Wrapped feature.
           </p>
           
           <div className="achievements-grid">
@@ -410,124 +520,16 @@ const ProjectImpact = () => {
           
           <div className="impact-highlights">
             <div className="highlight-item">
-              <h3>Technical Complexity</h3>
-              <p>Successfully handled complex data processing and visualization across multiple platforms</p>
+              <h3>Mobile Expertise</h3>
+              <p>Gained deep understanding of mobile-first design principles and Android development patterns</p>
             </div>
             <div className="highlight-item">
-              <h3>Team Coordination</h3>
-              <p>Effective collaboration between frontend, backend, and mobile development team members</p>
+              <h3>Design Systems</h3>
+              <p>Created comprehensive design system in Figma with reusable components and consistent styling</p>
             </div>
             <div className="highlight-item">
-              <h3>Design Innovation</h3>
-              <p>Created enhanced user experience with additional features beyond standard Spotify Wrapped</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-const TeamCollaboration = () => {
-  const teamRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (teamRef.current) {
-      observer.observe(teamRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  const teamMembers = [
-    {
-      role: "Frontend Developer & UI/UX Designer",
-      responsibilities: ["React.js development", "Responsive design", "User experience optimization", "Design system creation"],
-      highlight: true
-    },
-    {
-      role: "Android Developer",
-      responsibilities: ["Native Android development", "Material Design implementation", "Cross-platform synchronization", "Performance optimization"]
-    },
-    {
-      role: "Backend Developer",
-      responsibilities: ["API integration", "Data processing", "Authentication systems", "Server architecture"]
-    },
-    {
-      role: "Data Analyst",
-      responsibilities: ["Music data analysis", "Recommendation algorithms", "User behavior insights", "Performance metrics"]
-    }
-  ];
-
-  return (
-    <section className="team-collaboration">
-      <div className="team-collaboration-container">
-        <div ref={teamRef} className="team-content fade-in-element">
-          <h2>Team Collaboration</h2>
-          <p className="team-description">
-            This project showcased the power of collaborative development, bringing together diverse skills 
-            to create a cohesive and impactful user experience across multiple platforms.
-          </p>
-          
-          <div className="team-grid">
-            {teamMembers.map((member, index) => (
-              <div
-                key={index}
-                className={`team-member ${member.highlight ? 'highlight' : ''}`}
-              >
-                <h3>{member.role}</h3>
-                <ul>
-                  {member.responsibilities.map((responsibility, i) => (
-                    <li key={i}>{responsibility}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-          
-          <div className="collaboration-process">
-            <h3>Our Development Process</h3>
-            <div className="process-steps">
-              <div className="process-step">
-                <div className="step-number">1</div>
-                <div className="step-content">
-                  <h4>Research & Planning</h4>
-                  <p>User research, competitive analysis, and technical architecture planning</p>
-                </div>
-              </div>
-              <div className="process-step">
-                <div className="step-number">2</div>
-                <div className="step-content">
-                  <h4>Design & Prototyping</h4>
-                  <p>Wireframing, visual design, and interactive prototypes for user testing</p>
-                </div>
-              </div>
-              <div className="process-step">
-                <div className="step-number">3</div>
-                <div className="step-content">
-                  <h4>Development & Testing</h4>
-                  <p>Parallel development across platforms with continuous integration and testing</p>
-                </div>
-              </div>
-              <div className="process-step">
-                <div className="step-number">4</div>
-                <div className="step-content">
-                  <h4>Launch & Iteration</h4>
-                  <p>User feedback collection and continuous improvement based on analytics</p>
-                </div>
-              </div>
+              <h3>User Experience</h3>
+              <p>Developed intuitive touch-based interactions that make complex data accessible on mobile devices</p>
             </div>
           </div>
         </div>
@@ -561,24 +563,24 @@ const LessonsLearned = () => {
 
   const lessons = [
     {
-      title: "Cross-Platform Development",
-      lesson: "Maintaining design consistency across web and mobile platforms requires early planning and shared design systems.",
-      icon: "🔄"
+      title: "Mobile-First Design",
+      lesson: "Designing for mobile first requires different thinking about information hierarchy and user interactions.",
+      icon: "📱"
     },
     {
       title: "API Integration",
-      lesson: "Working with third-party APIs like Spotify requires careful handling of authentication and rate limiting.",
+      lesson: "Working with third-party APIs like Spotify requires careful handling of authentication and data processing.",
       icon: "⚡"
     },
     {
-      title: "Data Visualization",
-      lesson: "Creating meaningful visualizations from complex music data requires thoughtful design and user testing.",
+      title: "User Testing",
+      lesson: "Regular testing with real users revealed important insights about mobile usability and gesture preferences.",
       icon: "👤"
     },
     {
-      title: "Team Collaboration",
-      lesson: "Clear communication protocols and regular check-ins are crucial for successful team collaboration.",
-      icon: "💬"
+      title: "Performance Optimization",
+      lesson: "Mobile devices require special attention to performance, especially when handling large datasets.",
+      icon: "🚀"
     }
   ];
 
@@ -588,7 +590,7 @@ const LessonsLearned = () => {
         <div ref={lessonsRef} className="lessons-content fade-in-element">
           <h2>Key Learnings</h2>
           <p className="lessons-description">
-            Valuable insights gained from building a complex, multi-platform application with a collaborative team
+            Valuable insights gained from designing and developing a complex mobile application with rich data visualizations
           </p>
           
           <div className="lessons-grid">
@@ -605,16 +607,16 @@ const LessonsLearned = () => {
             <h3>Technical Skills Gained</h3>
             <div className="skills-list">
               <div className="skill-item">
-                <h4>React.js Development</h4>
-                <p>Advanced component architecture, state management, and responsive design implementation</p>
+                <h4>Android Development</h4>
+                <p>Native mobile development with Material Design principles and performance optimization</p>
               </div>
               <div className="skill-item">
-                <h4>Android Development</h4>
-                <p>Native mobile development with cross-platform design consistency and performance optimization</p>
+                <h4>Figma Design</h4>
+                <p>Advanced prototyping, component systems, and interactive mockup creation for mobile interfaces</p>
               </div>
               <div className="skill-item">
                 <h4>API Integration</h4>
-                <p>OAuth 2.0 implementation, data processing, and real-time visualization with Chart.js</p>
+                <p>OAuth 2.0 implementation, data processing, and real-time synchronization with Spotify's API</p>
               </div>
             </div>
           </div>
@@ -633,7 +635,7 @@ const ProjectNavigation = () => {
             <span className="nav-label">More Projects</span>
             <Link to="/projects" className="nav-link">
               <span className="nav-arrow">←</span>
-              <span className="nav-title">Coming Soon</span>
+              <span className="nav-title">Portfolio</span>
             </Link>
           </div>
           
@@ -646,7 +648,7 @@ const ProjectNavigation = () => {
           <div className="nav-item next">
             <span className="nav-label">Next Project</span>
             <Link to="/projects/college-scheduler" className="nav-link">
-              <span className="nav-title">College Scheduler</span>
+              <span className="nav-title">Coming Soon</span>
               <span className="nav-arrow">→</span>
             </Link>
           </div>
@@ -681,9 +683,9 @@ const SpotifyWrappedProject = () => {
       <Navbar />
       <ProjectHero />
       <ProjectDetails />
-      <ProjectShowcase />
+      <DesignShowcase />
       <ProjectImpact />
-      <TeamCollaboration />
+      <DesignProcess />
       <LessonsLearned />
       <ProjectNavigation />
       <Footer />
@@ -691,5 +693,4 @@ const SpotifyWrappedProject = () => {
   );
 };
 
-// This is the crucial default export that was missing
 export default SpotifyWrappedProject;
