@@ -260,95 +260,95 @@ const ProjectDetails = () => {
   );
 };
 
-const AppShowcase = () => {
-  const showcaseRef = useRef(null);
-  const [activeScreen, setActiveScreen] = useState(0);
+// const AppShowcase = () => {
+//   const showcaseRef = useRef(null);
+//   const [activeScreen, setActiveScreen] = useState(0);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+//   useEffect(() => {
+//     const observer = new IntersectionObserver(
+//       (entries) => {
+//         entries.forEach((entry) => {
+//           if (entry.isIntersecting) {
+//             entry.target.classList.add('fade-in-visible');
+//             observer.unobserve(entry.target);
+//           }
+//         });
+//       },
+//       { threshold: 0.1 }
+//     );
 
-    if (showcaseRef.current) {
-      observer.observe(showcaseRef.current);
-    }
+//     if (showcaseRef.current) {
+//       observer.observe(showcaseRef.current);
+//     }
 
-    return () => observer.disconnect();
-  }, []);
+//     return () => observer.disconnect();
+//   }, []);
 
-  const appScreens = [
-    {
-      title: "Dashboard Overview",
-      description: "Main dashboard showing today's schedule, upcoming assignments, and quick task overview",
-      image: "/api/placeholder/300/600"
-    },
-    {
-      title: "Class Schedule",
-      description: "Weekly class schedule view with conflict detection and time slot management",
-      image: "/api/placeholder/300/600"
-    },
-    {
-      title: "Assignment Tracker",
-      description: "Comprehensive assignment management with priority levels and due date tracking",
-      image: "/api/placeholder/300/600"
-    },
-    {
-      title: "Task Management",
-      description: "Flexible task organization system with categories and completion tracking",
-      image: "/api/placeholder/300/600"
-    }
-  ];
+//   const appScreens = [
+//     {
+//       title: "Dashboard Overview",
+//       description: "Main dashboard showing today's schedule, upcoming assignments, and quick task overview",
+//       image: "/api/placeholder/300/600"
+//     },
+//     {
+//       title: "Class Schedule",
+//       description: "Weekly class schedule view with conflict detection and time slot management",
+//       image: "/api/placeholder/300/600"
+//     },
+//     {
+//       title: "Assignment Tracker",
+//       description: "Comprehensive assignment management with priority levels and due date tracking",
+//       image: "/api/placeholder/300/600"
+//     },
+//     {
+//       title: "Task Management",
+//       description: "Flexible task organization system with categories and completion tracking",
+//       image: "/api/placeholder/300/600"
+//     }
+//   ];
 
-  return (
-    <section className="app-showcase">
-      <div className="app-showcase-container">
-        <div ref={showcaseRef} className="showcase-content fade-in-element">
-          <h2>App Interface</h2>
-          <p className="showcase-subtitle">
-            Explore the intuitive design and user-friendly interface of our college scheduling application
-          </p>
+//   return (
+//     <section className="app-showcase">
+//       <div className="app-showcase-container">
+//         <div ref={showcaseRef} className="showcase-content fade-in-element">
+//           <h2>App Interface</h2>
+//           <p className="showcase-subtitle">
+//             Explore the intuitive design and user-friendly interface of our college scheduling application
+//           </p>
           
-          <div className="showcase-gallery">
-            <div className="gallery-main">
-              <div className="phone-mockup">
-                <img 
-                  src={appScreens[activeScreen].image} 
-                  alt={appScreens[activeScreen].title}
-                  className="main-screen"
-                />
-              </div>
-              <div className="screen-info">
-                <h3>{appScreens[activeScreen].title}</h3>
-                <p>{appScreens[activeScreen].description}</p>
-              </div>
-            </div>
+//           <div className="showcase-gallery">
+//             <div className="gallery-main">
+//               <div className="phone-mockup">
+//                 <img 
+//                   src={appScreens[activeScreen].image} 
+//                   alt={appScreens[activeScreen].title}
+//                   className="main-screen"
+//                 />
+//               </div>
+//               <div className="screen-info">
+//                 <h3>{appScreens[activeScreen].title}</h3>
+//                 <p>{appScreens[activeScreen].description}</p>
+//               </div>
+//             </div>
             
-            <div className="screen-thumbnails">
-              {appScreens.map((screen, index) => (
-                <div
-                  key={index}
-                  className={`screen-thumb ${index === activeScreen ? 'active' : ''}`}
-                  onClick={() => setActiveScreen(index)}
-                >
-                  <img src={screen.image} alt={screen.title} />
-                  <span className="thumb-title">{screen.title}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
+//             <div className="screen-thumbnails">
+//               {appScreens.map((screen, index) => (
+//                 <div
+//                   key={index}
+//                   className={`screen-thumb ${index === activeScreen ? 'active' : ''}`}
+//                   onClick={() => setActiveScreen(index)}
+//                 >
+//                   <img src={screen.image} alt={screen.title} />
+//                   <span className="thumb-title">{screen.title}</span>
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
 
 const UserImpact = () => {
   const impactRef = useRef(null);
@@ -681,7 +681,7 @@ const CollegeSchedulerProject = () => {
       <Navbar />
       <ProjectHero />
       <ProjectDetails />
-      <AppShowcase />
+      {/* <AppShowcase /> */}
       <UserImpact />
       <DevelopmentProcess />
       <LearningsAndFuture />
