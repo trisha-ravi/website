@@ -456,8 +456,7 @@ const DevelopmentProcess = () => {
   const teamMembers = [
     {
       role: "Frontend Developer & UI/UX Designer",
-      responsibilities: ["Android UI development", "User experience design", "Interface prototyping", "Usability testing"],
-      highlight: true
+      responsibilities: ["Android UI development", "User experience design", "Interface prototyping", "Usability testing"]
     },
     {
       role: "Android Developer",
@@ -487,7 +486,7 @@ const DevelopmentProcess = () => {
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className={`team-member ${member.highlight ? 'highlight' : ''}`}
+                className="team-member"
               >
                 <h3>{member.role}</h3>
                 <ul>
