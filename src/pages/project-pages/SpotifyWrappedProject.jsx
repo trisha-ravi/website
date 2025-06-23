@@ -441,7 +441,7 @@ const DesignProcess = () => {
                   <li>Beautiful data visualizations</li>
                 </ul>
               </div>
-              <div className="team-member highlight">
+              <div className="team-member">
                 <h3>Technical Implementation</h3>
                 <ul>
                   <li>Native Android development</li>

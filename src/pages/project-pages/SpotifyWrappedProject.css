@@ -565,21 +565,20 @@
   transition: all 0.4s ease;
 }
 
-.spotify-wrapped-project .team-member.highlight {
-  background: rgba(29, 185, 84, 0.1) !important;
-  border-color: rgba(29, 185, 84, 0.3) !important;
-}
-
 .spotify-wrapped-project .team-member:hover {
   transform: translateY(-5px);
   background: rgba(255, 255, 255, 0.05) !important;
 }
 
-.spotify-wrapped-project .team-member h3 {
-  color: #1DB954 !important;
+.spotify-wrapped-project .design-principles .team-member h3 {
+  color: #ffffff !important;
   font-size: 1.3rem;
   margin-bottom: 1.5rem;
   font-weight: 500;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
 }
 
 .spotify-wrapped-project .team-member ul {
@@ -613,6 +612,26 @@
   text-align: center;
   margin-bottom: 3rem;
   font-weight: 300;
+}
+
+.spotify-wrapped-project .design-principles > h3 {
+  font-size: 2.5rem !important;
+  color: #ffffff !important;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 400 !important;
+  letter-spacing: 0.5px;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
+}
+
+.spotify-wrapped-project .team-member h3 {
+  color: #1DB954 !important;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
 }
 
 .spotify-wrapped-project .process-steps {
