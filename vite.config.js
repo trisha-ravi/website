@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/website'
+  base: '/' // Changed from '/website' to '/' for custom domain
 })

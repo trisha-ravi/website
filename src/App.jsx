@@ -10,7 +10,7 @@ import './App.css';
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/">
       <div className="app">
         <Routes>
           {/* Main routes - Projects page as default */}
@@ -27,9 +27,6 @@ const App = () => {
           <Route path="/sketchbook" element={<div style={{padding: '120px 4rem 4rem', minHeight: '100vh', background: '#0a0a0a', color: '#fff'}}><h1>Sketchbook - Coming Soon</h1></div>} />
           <Route path="/store" element={<div style={{padding: '120px 4rem 4rem', minHeight: '100vh', background: '#0a0a0a', color: '#fff'}}><h1>Store - Coming Soon</h1></div>} />
           <Route path="/gallery" element={<div style={{padding: '120px 4rem 4rem', minHeight: '100vh', background: '#0a0a0a', color: '#fff'}}><h1>Gallery - Coming Soon</h1></div>} />
-          
-          {/* Legacy route support */}
-          <Route path="/website" element={<Projects />} />
           
           {/* Catch-all route - redirects any unknown paths to Projects */}
           <Route path="*" element={<Navigate to="/" replace />} />
